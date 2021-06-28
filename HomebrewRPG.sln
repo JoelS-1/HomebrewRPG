@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomebrewRPG.WebMVC", "HomebrewRPG.WebMVC\HomebrewRPG.WebMVC.csproj", "{5E3CDE8E-D002-4918-9F99-BA75417B2E28}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomebrewRPG.Data", "HomebrewRPG.Data\HomebrewRPG.Data.csproj", "{72E358FA-A349-4911-A8E6-3A55A84EC9B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomebrewRPG.Models", "HomebrewRPG.Models\HomebrewRPG.Models.csproj", "{3F5B2DC2-B7CB-4099-BAA0-E776C653C0C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomebrewRPG.Services", "HomebrewRPG.Services\HomebrewRPG.Services.csproj", "{BED0020E-59BE-4EC6-A776-9BB783844403}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5E3CDE8E-D002-4918-9F99-BA75417B2E28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E3CDE8E-D002-4918-9F99-BA75417B2E28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E3CDE8E-D002-4918-9F99-BA75417B2E28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E3CDE8E-D002-4918-9F99-BA75417B2E28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72E358FA-A349-4911-A8E6-3A55A84EC9B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72E358FA-A349-4911-A8E6-3A55A84EC9B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72E358FA-A349-4911-A8E6-3A55A84EC9B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72E358FA-A349-4911-A8E6-3A55A84EC9B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F5B2DC2-B7CB-4099-BAA0-E776C653C0C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F5B2DC2-B7CB-4099-BAA0-E776C653C0C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F5B2DC2-B7CB-4099-BAA0-E776C653C0C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F5B2DC2-B7CB-4099-BAA0-E776C653C0C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BED0020E-59BE-4EC6-A776-9BB783844403}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BED0020E-59BE-4EC6-A776-9BB783844403}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BED0020E-59BE-4EC6-A776-9BB783844403}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BED0020E-59BE-4EC6-A776-9BB783844403}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2A236B2B-1B70-4442-BFCC-6A6C8B0F832D}
+	EndGlobalSection
+EndGlobal
