@@ -30,7 +30,7 @@ namespace HomebrewRPG.Services
                     CharacterLevel = model.CharacterLevel,
                     Age = model.Age,
                     Gender = model.Gender,
-                    Allignment = model.Gender,
+                    Allignment = model.Allignment,
                     Health = model.Health,
                     Strength = model.Strength,
                     Agility = model.Agility,
@@ -76,13 +76,36 @@ namespace HomebrewRPG.Services
                     CharacterLevel = entity.CharacterLevel,
                     Age = entity.Age,
                     Gender = entity.Gender,
-                    Allignment = entity.Gender,
+                    Allignment = entity.Allignment,
                     Health = entity.Health,
                     Strength = entity.Strength,
                     Agility = entity.Agility,
                     Intelligence = entity.Intelligence,
                     Charisma = entity.Charisma
                 };
+        }
+
+        public bool UpdateCharacter(CharacterEdit model)
+        {
+            var entity =
+                _ctx
+                    .Characters
+                    .Single(e => e.CharacterId == model.CharacterId && e.OwnerId == _userId);
+
+            entity.CharacterId = model.CharacterId;
+            entity.CharacterName = model.CharacterName;
+            entity.Race = model.Race;
+            entity.CharacterLevel = model.CharacterLevel;
+            entity.Age = model.Age;
+            entity.Gender = model.Gender;
+            entity.Allignment = model.Allignment;
+            entity.Health = model.Health;
+            entity.Strength = model.Strength;
+            entity.Agility = model.Agility;
+            entity.Intelligence = model.Intelligence;
+            entity.Charisma = model.Charisma;
+
+            return _ctx.SaveChanges() == 1;
         }
     }
 }

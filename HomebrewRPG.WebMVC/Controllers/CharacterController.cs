@@ -31,7 +31,7 @@ namespace HomebrewRPG.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(CharacterCreate model)
         {
-            if (ModelState.IsValid) return View(model);
+            if (!ModelState.IsValid) return View(model);
 
             var service = CreateCharacterService();
             if (service.CreateCharacter(model))
@@ -57,6 +57,50 @@ namespace HomebrewRPG.WebMVC.Controllers
             var svc = CreateCharacterService();
             var model = svc.GetCharacterById(id);
 
+            return View(model);
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var service = CreateCharacterService();
+            var detail = service.GetCharacterById(id);
+            var model =
+                new CharacterEdit
+                {
+                    CharacterId = detail.CharacterId,
+                    CharacterName = detail.CharacterName,
+                    Race = detail.Race,
+                    CharacterLevel = detail.CharacterLevel,
+                    Age = detail.Age,
+                    Gender = detail.Gender,
+                    Allignment = detail.Allignment,
+                    Health = detail.Health,
+                    Strength = detail.Strength,
+                    Agility = detail.Agility,
+                    Intelligence = detail.Intelligence,
+                    Charisma = detail.Charisma
+                };
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, CharacterEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if(model.CharacterId != id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+            var service = CreateCharacterService();
+            if(service.UpdateCharacter(model))
+            {
+                TempData["SaveResult"] = "Your character was updated.";
+                return RedirectToAction("Index");
+            }
+            ModelState.AddModelError("", "Your character could not be updated.");
             return View(model);
         }
     }
