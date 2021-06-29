@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HomebrewRPG.Data
+namespace HomebrewRPG.Models
 {
-    public class Character
+    public class CharacterCreate
     {
-        [Key]
+        [Required]
         public int CharacterId { get; set; }
         [Required]
         public string CharacterName { get; set; }
@@ -31,20 +31,5 @@ namespace HomebrewRPG.Data
         public int Intelligence { get; set; }
         [Required]
         public int Charisma { get; set; }
-
-        public int HitPoints { get; set; }
-        public int Sanity { get; set; }
-        public int Dodge { get; set; }
-        public int Reaction { get; set; }
-        public int BaseProwess { get; set; }
-        public int Magic { get; set; }
-        public int Fate { get; set; }
-        public int Speed { get; set; }
-
-
-        public int DamageResistance { get; set; }
-        public int MagicResistance { get; set; }
-
-        public Guid OwnerId { get; set; }
     }
 }
