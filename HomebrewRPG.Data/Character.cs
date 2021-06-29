@@ -32,6 +32,8 @@ namespace HomebrewRPG.Data
         [Required]
         public int Charisma { get; set; }
 
+        //public virtual EssentialSkills EssentialSkills { get; set; }
+
         public Guid OwnerId { get; set; }
     }
 }

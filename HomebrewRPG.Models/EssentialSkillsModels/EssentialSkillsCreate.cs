@@ -1,17 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HomebrewRPG.Data
+namespace HomebrewRPG.Models.EssentialSkillsModels
 {
-    public class EssentialSkills
+    public class EssentialSkillsCreate
     {
-        [Key]
-        public int EssentialSkillsId { get; set; }
+        [Required]
+        public int CharacterId { get; set; }
         public int HitPoints { get; set; }
         public int Sanity { get; set; }
         public int Dodge { get; set; }
@@ -42,15 +41,5 @@ namespace HomebrewRPG.Data
         public int Intimidation { get; set; }
         public int Performance { get; set; }
         public int Seduction { get; set; }
-
-
-        public int DamageResistance { get; set; }
-        public int MagicResistance { get; set; }
-
-        [ForeignKey(nameof(Character))]
-        public int CharacterId { get; set; }
-        public virtual Character Character { get; set; }
-
-        public Guid OwnerId { get; set; }
     }
 }

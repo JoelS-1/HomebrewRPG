@@ -57,11 +57,21 @@
     <Compile Include="Character.cs" />
     <Compile Include="EssentialSkills.cs" />
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="Migrations\202106292055447_EssenialSkills.cs" />
+    <Compile Include="Migrations\202106292055447_EssenialSkills.Designer.cs">
+      <DependentUpon>202106292055447_EssenialSkills.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202106292055447_EssenialSkills.resx">
+      <DependentUpon>202106292055447_EssenialSkills.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

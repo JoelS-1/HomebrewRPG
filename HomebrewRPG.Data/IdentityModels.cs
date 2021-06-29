@@ -33,6 +33,7 @@ namespace HomebrewRPG.Data
         }
 
         public DbSet<Character> Characters { get; set; }
+        public DbSet<EssentialSkills> EssentialSkillsDb { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
