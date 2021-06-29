@@ -10,8 +10,6 @@ namespace HomebrewRPG.Models
     public class CharacterCreate
     {
         [Required]
-        public int CharacterId { get; set; }
-        [Required]
         public string CharacterName { get; set; }
         [Required]
         public string Race { get; set; }

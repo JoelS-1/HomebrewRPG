@@ -107,5 +107,16 @@ namespace HomebrewRPG.Services
 
             return _ctx.SaveChanges() == 1;
         }
+
+        public bool DeleteCharacter(int characterId)
+        {
+            var entity =
+                _ctx
+                    .Characters
+                    .Single(e => e.CharacterId == characterId && e.OwnerId == _userId);
+            _ctx.Characters.Remove(entity);
+
+            return _ctx.SaveChanges() == 1;
+        }
     }
 }

@@ -103,5 +103,27 @@ namespace HomebrewRPG.WebMVC.Controllers
             ModelState.AddModelError("", "Your character could not be updated.");
             return View(model);
         }
+
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateCharacterService();
+            var model = svc.GetCharacterById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletePost(int id)
+        {
+            var svc = CreateCharacterService();
+            svc.DeleteCharacter(id);
+
+            TempData["SaveResult"] = "Your character was deleted";
+
+            return RedirectToAction("Index");
+        }
     }
 }
