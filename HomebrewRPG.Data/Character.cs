@@ -32,19 +32,6 @@ namespace HomebrewRPG.Data
         [Required]
         public int Charisma { get; set; }
 
-        public int HitPoints { get; set; }
-        public int Sanity { get; set; }
-        public int Dodge { get; set; }
-        public int Reaction { get; set; }
-        public int BaseProwess { get; set; }
-        public int Magic { get; set; }
-        public int Fate { get; set; }
-        public int Speed { get; set; }
-
-
-        public int DamageResistance { get; set; }
-        public int MagicResistance { get; set; }
-
         public Guid OwnerId { get; set; }
     }
 }

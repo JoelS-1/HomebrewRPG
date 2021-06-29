@@ -1,4 +1,6 @@
 ﻿using HomebrewRPG.Models;
+using HomebrewRPG.Services;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +15,9 @@ namespace HomebrewRPG.WebMVC.Controllers
         // GET: Character
         public ActionResult Index()
         {
-            var model = new CharacterListItem[0];
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new CharacterService(userId);
+            var model = service.GetCharacters();
             return View(model);
         }
 
@@ -27,11 +31,25 @@ namespace HomebrewRPG.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(CharacterCreate model)
         {
-            if(ModelState.IsValid)
-            {
+            if (ModelState.IsValid) return View(model);
 
-            }
-            return View();
+            var service = CreateCharacterService();
+            if (service.CreateCharacter(model))
+            {
+                TempData["SaveResult"] = "Your character was created.";
+                return RedirectToAction("Index");
+            };
+
+            ModelState.AddModelError("", "Character could not be created.");
+
+            return View("Index");
+        }
+
+        private CharacterService CreateCharacterService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new CharacterService(userId);
+            return service;
         }
     }
 }
