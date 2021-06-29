@@ -54,11 +54,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CharacterService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HomebrewRPG.Data\HomebrewRPG.Data.csproj">
+      <Project>{72e358fa-a349-4911-a8e6-3a55a84ec9b9}</Project>
+      <Name>HomebrewRPG.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HomebrewRPG.Models\HomebrewRPG.Models.csproj">
+      <Project>{3f5b2dc2-b7cb-4099-baa0-e776c653c0c7}</Project>
+      <Name>HomebrewRPG.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

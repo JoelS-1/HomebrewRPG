@@ -60,5 +60,29 @@ namespace HomebrewRPG.Services
                     );
             return query.ToArray();
         }
+
+        public CharacterDetail GetCharacterById(int id)
+        {
+            var entity =
+                _ctx
+                    .Characters
+                    .Single(e => e.CharacterId == id && e.OwnerId == _userId);
+            return
+                new CharacterDetail
+                {
+                    CharacterId = entity.CharacterId,
+                    CharacterName = entity.CharacterName,
+                    Race = entity.Race,
+                    CharacterLevel = entity.CharacterLevel,
+                    Age = entity.Age,
+                    Gender = entity.Gender,
+                    Allignment = entity.Gender,
+                    Health = entity.Health,
+                    Strength = entity.Strength,
+                    Agility = entity.Agility,
+                    Intelligence = entity.Intelligence,
+                    Charisma = entity.Charisma
+                };
+        }
     }
 }

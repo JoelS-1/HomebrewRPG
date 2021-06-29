@@ -51,5 +51,13 @@ namespace HomebrewRPG.WebMVC.Controllers
             var service = new CharacterService(userId);
             return service;
         }
+
+        public ActionResult Details(int id)
+        {
+            var svc = CreateCharacterService();
+            var model = svc.GetCharacterById(id);
+
+            return View(model);
+        }
     }
 }
