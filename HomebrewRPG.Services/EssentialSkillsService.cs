@@ -37,40 +37,72 @@ namespace HomebrewRPG.Services
 
         public bool CreateEssentialSkills(EssentialSkillsCreate model)
         {
+            Character characterModel =
+                _ctx.Characters.Single(e => e.CharacterId == model.CharacterId);
+
             var entity =
                 new EssentialSkills()
                 {
                     OwnerId = _userId,
-                    HitPoints = model.HitPoints,
-                    Sanity = model.Sanity,
-                    Dodge = model.Dodge,
-                    Reaction = model.Reaction,
-                    BaseProwess = model.BaseProwess,
-                    Magic = model.Magic,
-                    Fate = model.Fate,
-                    Speed = model.Speed,
-                    Endurance = model.Endurance,
-                    Constitution = model.Constitution,
-                    Athletics = model.Athletics,
-                    Tenacity = model.Tenacity,
-                    Acrobatics = model.Acrobatics,
-                    SleightOfHand = model.SleightOfHand,
-                    Sneak = model.Sneak,
-                    Willpower = model.Willpower,
-                    Investigation = model.Investigation,
-                    Knowledge = model.Knowledge,
-                    Bravery = model.Bravery,
-                    Pilotry = model.Pilotry,
-                    Insight = model.Insight,
-                    Perception = model.Perception,
-                    Survival = model.Survival,
-                    Faith = model.Faith,
-                    Deception = model.Deception,
-                    Diplomacy = model.Diplomacy,
-                    Intimidation = model.Intimidation,
-                    Performance = model.Performance,
-                    Seduction = model.Seduction
+                    CharacterId = model.CharacterId,
+                    HitPoints = 10 + (characterModel.Health * 2),
+                    Sanity = 10 + (characterModel.Intelligence * 2),
+                    Dodge = 10 + model.Dodge + (characterModel.Agility * 2),
+                    Reaction = 10 + model.Reaction +(characterModel.Instinct * 2),
+                    Fate = 1 + characterModel.Charisma,
+                    Speed = 6 + characterModel.Agility,
+
+                    Endurance = model.Endurance + characterModel.Proficiency + (characterModel.Health * 3),
+                    Constitution = model.Constitution + characterModel.Proficiency + (characterModel.Health * 3),
+                    Athletics = model.Athletics + characterModel.Proficiency + (characterModel.Strength * 3),
+                    Tenacity = model.Tenacity + characterModel.Proficiency + (characterModel.Strength * 3),
+                    Acrobatics = model.Acrobatics + characterModel.Proficiency + (characterModel.Agility * 3),
+                    SleightOfHand = model.SleightOfHand + characterModel.Proficiency + (characterModel.Agility * 3),
+                    Sneak = model.Sneak + characterModel.Proficiency + (characterModel.Agility * 3),
+                    Willpower = model.Willpower + characterModel.Proficiency + (characterModel.Intelligence * 3),
+                    Investigation = model.Investigation + characterModel.Proficiency + (characterModel.Intelligence * 3),
+                    Knowledge = model.Knowledge + characterModel.Proficiency + (characterModel.Intelligence * 3),
+                    Bravery = model.Bravery + characterModel.Proficiency + (characterModel.Instinct * 3),
+                    Pilotry = model.Pilotry + characterModel.Proficiency + (characterModel.Instinct * 3),
+                    Insight = model.Insight + characterModel.Proficiency + (characterModel.Instinct * 3),
+                    Perception = model.Perception + characterModel.Proficiency + (characterModel.Instinct * 3),
+                    Survival = model.Survival + characterModel.Proficiency + (characterModel.Instinct * 3),
+                    Faith = model.Faith + characterModel.Proficiency + (characterModel.Charisma * 3),
+                    Deception = model.Deception + characterModel.Proficiency + (characterModel.Charisma * 3),
+                    Diplomacy = model.Diplomacy + characterModel.Proficiency + (characterModel.Charisma * 3),
+                    Intimidation = model.Intimidation + characterModel.Proficiency + (characterModel.Charisma * 3),
+                    Performance = model.Performance + characterModel.Proficiency + (characterModel.Charisma * 3),
+                    Seduction = model.Seduction + characterModel.Proficiency + (characterModel.Charisma * 3)
                 };
+            if(characterModel.ProwessType == "Strength")
+            {
+                entity.BaseProwess = 10 + (characterModel.Strength * 2);
+            }
+            else if(characterModel.ProwessType == "Agility")
+            {
+                entity.BaseProwess = 10 + (characterModel.Agility * 2);
+            }
+            else
+            {
+                entity.BaseProwess = 10;
+            }
+            if (characterModel.MagicType == "Intelligence")
+            {
+                entity.Magic = 10 + (characterModel.Intelligence * 2);
+            }
+            else if(characterModel.MagicType == "Charisma")
+            {
+                entity.Magic = 10 + (characterModel.Charisma * 2);
+            }
+            else if (characterModel.MagicType == "Instinct")
+            {
+                entity.Magic = 10 + (characterModel.Instinct * 2);
+            }
+            else
+            {
+                entity.Magic = 0;
+            }
+
             _ctx.EssentialSkillsDb.Add(entity);
             return _ctx.SaveChanges() == 1;
         }

@@ -18,8 +18,13 @@ namespace HomebrewRPG.Models
 
         public int Health { get; set; }
         public int Strength { get; set; }
+        public int Instinct { get; set; }
         public int Agility { get; set; }
         public int Intelligence { get; set; }
         public int Charisma { get; set; }
+
+        public string MagicType { get; set; }
+        public string ProwessType { get; set; }
+        public int Proficiency { get; set; }
     }
 }

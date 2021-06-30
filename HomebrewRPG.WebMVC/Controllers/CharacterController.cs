@@ -76,10 +76,37 @@ namespace HomebrewRPG.WebMVC.Controllers
                     Allignment = detail.Allignment,
                     Health = detail.Health,
                     Strength = detail.Strength,
+                    Instinct = detail.Instinct,
                     Agility = detail.Agility,
                     Intelligence = detail.Intelligence,
-                    Charisma = detail.Charisma
+                    Charisma = detail.Charisma,
+                    MagicType = detail.MagicType,
+                    ProwessType = detail.ProwessType
                 };
+            if(detail.CharacterLevel < 3)
+            {
+                model.Proficiency = 2;
+            }
+            else if(detail.CharacterLevel < 8)
+            {
+                model.Proficiency = 3;
+            }
+            else if (detail.CharacterLevel < 13)
+            {
+                model.Proficiency = 4;
+            }
+            else if (detail.CharacterLevel < 18)
+            {
+                model.Proficiency = 5;
+            }
+            else if (detail.CharacterLevel < 18)
+            {
+                model.Proficiency = 6;
+            }
+            else if (detail.CharacterLevel >= 20)
+            {
+                model.Proficiency = 7;
+            }
             return View(model);
         }
 

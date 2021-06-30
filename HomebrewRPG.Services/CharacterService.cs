@@ -33,12 +33,40 @@ namespace HomebrewRPG.Services
                     Allignment = model.Allignment,
                     Health = model.Health,
                     Strength = model.Strength,
+                    Instinct = model.Instinct,
                     Agility = model.Agility,
                     Intelligence = model.Intelligence,
-                    Charisma = model.Charisma
+                    Charisma = model.Charisma,
+                    MagicType = model.MagicType,
+                    ProwessType = model.ProwessType
                 };
 
-                _ctx.Characters.Add(entity);
+            if (model.CharacterLevel < 3)
+            {
+                entity.Proficiency = 2;
+            }
+            else if (model.CharacterLevel < 8)
+            {
+                entity.Proficiency = 3;
+            }
+            else if (model.CharacterLevel < 13)
+            {
+                entity.Proficiency = 4;
+            }
+            else if (model.CharacterLevel < 18)
+            {
+                entity.Proficiency = 5;
+            }
+            else if (model.CharacterLevel < 18)
+            {
+                entity.Proficiency = 6;
+            }
+            else if (model.CharacterLevel >= 20)
+            {
+                entity.Proficiency = 7;
+            }
+
+            _ctx.Characters.Add(entity);
                 return _ctx.SaveChanges() == 1;
         }
 
@@ -79,9 +107,13 @@ namespace HomebrewRPG.Services
                     Allignment = entity.Allignment,
                     Health = entity.Health,
                     Strength = entity.Strength,
+                    Instinct = entity.Instinct,
                     Agility = entity.Agility,
                     Intelligence = entity.Intelligence,
-                    Charisma = entity.Charisma
+                    Charisma = entity.Charisma,
+                    MagicType = entity.MagicType,
+                    ProwessType = entity.ProwessType,
+                    Proficiency = entity.Proficiency
                 };
         }
 
@@ -101,9 +133,37 @@ namespace HomebrewRPG.Services
             entity.Allignment = model.Allignment;
             entity.Health = model.Health;
             entity.Strength = model.Strength;
+            entity.Instinct = model.Instinct;
             entity.Agility = model.Agility;
             entity.Intelligence = model.Intelligence;
             entity.Charisma = model.Charisma;
+            entity.MagicType = model.MagicType;
+            entity.ProwessType = model.ProwessType;
+
+            if (model.CharacterLevel < 3)
+            {
+                entity.Proficiency = 2;
+            }
+            else if (model.CharacterLevel < 8)
+            {
+                entity.Proficiency = 3;
+            }
+            else if (model.CharacterLevel < 13)
+            {
+                entity.Proficiency = 4;
+            }
+            else if (model.CharacterLevel < 18)
+            {
+                entity.Proficiency = 5;
+            }
+            else if (model.CharacterLevel < 18)
+            {
+                entity.Proficiency = 6;
+            }
+            else if (model.CharacterLevel >= 20)
+            {
+                entity.Proficiency = 7;
+            }
 
             return _ctx.SaveChanges() == 1;
         }
