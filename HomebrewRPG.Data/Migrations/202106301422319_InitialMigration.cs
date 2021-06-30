@@ -3,7 +3,7 @@ namespace HomebrewRPG.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class EssenialSkills : DbMigration
+    public partial class InitialMigration : DbMigration
     {
         public override void Up()
         {

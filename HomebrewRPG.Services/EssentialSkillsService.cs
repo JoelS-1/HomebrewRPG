@@ -18,7 +18,7 @@ namespace HomebrewRPG.Services
             _userId = userId;
         }
 
-        public IEnumerable<EssentialSkillsDetail> GetSkills()
+        public IEnumerable<EssentialSkillsList> GetSkills()
         {
             var query =
                 _ctx
@@ -26,9 +26,10 @@ namespace HomebrewRPG.Services
                     .Where(e => e.OwnerId == _userId)
                     .Select(
                         e =>
-                            new EssentialSkillsDetail
+                            new EssentialSkillsList
                             {
-                                CharacterId = e.CharacterId
+                                CharacterId = e.CharacterId,
+                                EssentialSkillsId = e.EssentialSkillsId
                             }
                     );
             return query.ToArray();
