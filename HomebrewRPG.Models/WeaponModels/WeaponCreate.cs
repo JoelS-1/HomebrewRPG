@@ -33,6 +33,12 @@ namespace HomebrewRPG.Models.WeaponModels
         public int PhysicalBlocking { get; set; }
         public int MagicalBlocking { get; set; }
 
-        public Dictionary<string, int> StatBonuses { get; set; }
+        public Dictionary<string, int> StatBonuses { get; set; } = new Dictionary<string, int>();
+
+        public WeaponCreate Add(string key, int value)
+        {
+            StatBonuses.Add(key, value);
+            return this;
+        }
     }
 }

@@ -1,0 +1,130 @@
+﻿@model HomebrewRPG.Models.WeaponModels.WeaponDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>WeaponDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.WeaponId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WeaponId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WeaponName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WeaponName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WeaponType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WeaponType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DamageDice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DamageDice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DamageModifier)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DamageModifier)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProwessBonus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProwessBonus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Range)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Range)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CriticalRange)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CriticalRange)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Special)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Special)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Parrying)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Parrying)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhysicalBlocking)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhysicalBlocking)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MagicalBlocking)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MagicalBlocking)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StatBonuses)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StatBonuses)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new {  id = Model.WeaponId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
