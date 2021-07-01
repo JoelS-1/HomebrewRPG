@@ -65,6 +65,10 @@
     <Compile Include="Migrations\202106302015372_character table contains types.Designer.cs">
       <DependentUpon>202106302015372_character table contains types.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107011342442_CharacterRefactor.cs" />
+    <Compile Include="Migrations\202107011342442_CharacterRefactor.Designer.cs">
+      <DependentUpon>202107011342442_CharacterRefactor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -78,6 +82,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106302015372_character table contains types.resx">
       <DependentUpon>202106302015372_character table contains types.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107011342442_CharacterRefactor.resx">
+      <DependentUpon>202107011342442_CharacterRefactor.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
