@@ -23,5 +23,6 @@ namespace HomebrewRPG.Data
         public int Range { get; set; }
         [Required]
         public int SpellDC { get; set; }
+        public Guid OwnerId { get; set; }
     }
 }

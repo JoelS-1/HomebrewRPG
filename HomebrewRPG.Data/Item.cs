@@ -18,5 +18,6 @@ namespace HomebrewRPG.Data
         public int? UsesRemaining { get; set; }
 
         public Dictionary<string, int> StatBonuses { get; set; }
+        public Guid OwnerId { get; set; }
     }
 }

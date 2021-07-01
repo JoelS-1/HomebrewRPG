@@ -34,5 +34,6 @@ namespace HomebrewRPG.Data
         public int Gold { get; set; }
         public int Silver { get; set; }
         public int Copper { get; set; }
+        public Guid OwnerId { get; set; }
     }
 }

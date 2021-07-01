@@ -171,6 +171,7 @@
     <Compile Include="Controllers\CharacterController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\WeaponController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -240,6 +241,8 @@
     <Content Include="Views\Character\Details.cshtml" />
     <Content Include="Views\Character\Edit.cshtml" />
     <Content Include="Views\Character\Delete.cshtml" />
+    <Content Include="Views\Weapon\Index.cshtml" />
+    <Content Include="Views\Weapon\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

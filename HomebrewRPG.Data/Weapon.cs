@@ -36,5 +36,6 @@ namespace HomebrewRPG.Data
         public int MagicalBlocking { get; set; }
 
         public Dictionary<string, int> StatBonuses { get; set; }
+        public Guid OwnerId { get; set; }
     }
 }

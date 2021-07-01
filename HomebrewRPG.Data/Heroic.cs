@@ -21,6 +21,6 @@ namespace HomebrewRPG.Data
         public int RequiredIntelligence { get; set; }
         public int RequiredCharisma { get; set; }
         public int RequiredHealth { get; set; }
-
+        public Guid OwnerId { get; set; }
     }
 }
