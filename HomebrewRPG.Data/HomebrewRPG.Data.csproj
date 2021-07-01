@@ -55,19 +55,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Character.cs" />
-    <Compile Include="EssentialSkills.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202106301422319_InitialMigration.cs" />
-    <Compile Include="Migrations\202106301422319_InitialMigration.Designer.cs">
-      <DependentUpon>202106301422319_InitialMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106302015372_character table contains types.cs" />
-    <Compile Include="Migrations\202106302015372_character table contains types.Designer.cs">
-      <DependentUpon>202106302015372_character table contains types.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107011342442_CharacterRefactor.cs" />
-    <Compile Include="Migrations\202107011342442_CharacterRefactor.Designer.cs">
-      <DependentUpon>202107011342442_CharacterRefactor.cs</DependentUpon>
+    <Compile Include="Migrations\202107011414055_Initial.cs" />
+    <Compile Include="Migrations\202107011414055_Initial.Designer.cs">
+      <DependentUpon>202107011414055_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -77,14 +68,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202106301422319_InitialMigration.resx">
-      <DependentUpon>202106301422319_InitialMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106302015372_character table contains types.resx">
-      <DependentUpon>202106302015372_character table contains types.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107011342442_CharacterRefactor.resx">
-      <DependentUpon>202107011342442_CharacterRefactor.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202107011414055_Initial.resx">
+      <DependentUpon>202107011414055_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

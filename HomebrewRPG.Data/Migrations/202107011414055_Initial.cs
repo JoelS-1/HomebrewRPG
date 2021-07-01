@@ -3,7 +3,7 @@ namespace HomebrewRPG.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialMigration : DbMigration
+    public partial class Initial : DbMigration
     {
         public override void Up()
         {
@@ -20,18 +20,13 @@ namespace HomebrewRPG.Data.Migrations
                         Allignment = c.String(),
                         Health = c.Int(nullable: false),
                         Strength = c.Int(nullable: false),
+                        Instinct = c.Int(nullable: false),
                         Agility = c.Int(nullable: false),
                         Intelligence = c.Int(nullable: false),
                         Charisma = c.Int(nullable: false),
-                        OwnerId = c.Guid(nullable: false),
-                    })
-                .PrimaryKey(t => t.CharacterId);
-            
-            CreateTable(
-                "dbo.EssentialSkills",
-                c => new
-                    {
-                        EssentialSkillsId = c.Int(nullable: false, identity: true),
+                        MagicType = c.String(nullable: false),
+                        ProwessType = c.String(nullable: false),
+                        Proficiency = c.Int(nullable: false),
                         HitPoints = c.Int(nullable: false),
                         Sanity = c.Int(nullable: false),
                         Dodge = c.Int(nullable: false),
@@ -63,12 +58,9 @@ namespace HomebrewRPG.Data.Migrations
                         Seduction = c.Int(nullable: false),
                         DamageResistance = c.Int(nullable: false),
                         MagicResistance = c.Int(nullable: false),
-                        CharacterId = c.Int(nullable: false),
                         OwnerId = c.Guid(nullable: false),
                     })
-                .PrimaryKey(t => t.EssentialSkillsId)
-                .ForeignKey("dbo.Character", t => t.CharacterId, cascadeDelete: true)
-                .Index(t => t.CharacterId);
+                .PrimaryKey(t => t.CharacterId);
             
             CreateTable(
                 "dbo.IdentityRole",
@@ -148,18 +140,15 @@ namespace HomebrewRPG.Data.Migrations
             DropForeignKey("dbo.IdentityUserLogin", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserClaim", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserRole", "IdentityRole_Id", "dbo.IdentityRole");
-            DropForeignKey("dbo.EssentialSkills", "CharacterId", "dbo.Character");
             DropIndex("dbo.IdentityUserLogin", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserClaim", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "IdentityRole_Id" });
-            DropIndex("dbo.EssentialSkills", new[] { "CharacterId" });
             DropTable("dbo.IdentityUserLogin");
             DropTable("dbo.IdentityUserClaim");
             DropTable("dbo.ApplicationUser");
             DropTable("dbo.IdentityUserRole");
             DropTable("dbo.IdentityRole");
-            DropTable("dbo.EssentialSkills");
             DropTable("dbo.Character");
         }
     }

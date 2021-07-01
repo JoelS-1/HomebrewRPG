@@ -58,9 +58,6 @@
     <Compile Include="CharacterDetail.cs" />
     <Compile Include="CharacterEdit.cs" />
     <Compile Include="CharacterListItem.cs" />
-    <Compile Include="EssentialSkillsModels\EssentialSkillsCreate.cs" />
-    <Compile Include="EssentialSkillsModels\EssentialSkillsDetail.cs" />
-    <Compile Include="EssentialSkillsModels\EssentialSkillsList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
