@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -75,7 +76,9 @@ namespace HomebrewRPG.Data
         public int DamageResistance { get; set; }
         public int MagicResistance { get; set; }
 
-        //public virtual EssentialSkills EssentialSkills { get; set; }
+        [ForeignKey(nameof(Inventory))]
+        public int InventoryId { get; set; }
+        public virtual Inventory Inventory { get; set; }
 
         public Guid OwnerId { get; set; }
     }
