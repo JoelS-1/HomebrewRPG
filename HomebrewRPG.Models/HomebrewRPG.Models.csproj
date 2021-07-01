@@ -64,6 +64,12 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="HeroicModels\" />
+    <Folder Include="InventoryModels\" />
+    <Folder Include="ItemModels\" />
+    <Folder Include="SpellModels\" />
+    <Folder Include="WeaponModels\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
