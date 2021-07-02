@@ -49,5 +49,74 @@ namespace HomebrewRPG.WebMVC.Controllers
             var service = new SpellService(userId);
             return service;
         }
+
+        public ActionResult Details(int id)
+        {
+            var svc = CreateSpellService();
+            var model = svc.GetSpellById(id);
+
+            return View(model);
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var svc = CreateSpellService();
+            var detail = svc.GetSpellById(id);
+            var model =
+                new SpellEdit
+                {
+                    SpellId = detail.SpellId,
+                    SpellName = detail.SpellName,
+                    SpellDescription = detail.SpellDescription,
+                    SpellEffect = detail.SpellEffect,
+                    SpellType = detail.SpellType,
+                    Range = detail.Range,
+                    SpellDC = detail.SpellDC
+                };
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, SpellEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if (model.SpellId != id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+            var service = CreateSpellService();
+            if (service.UpdateSpell(model))
+            {
+                TempData["SaveResult"] = "Your spell was updated.";
+                return RedirectToAction("Index");
+            }
+            ModelState.AddModelError("", "Your spell could not be updated.");
+            return View(model);
+        }
+
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateSpellService();
+            var model = svc.GetSpellById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletePost(int id)
+        {
+            var svc = CreateSpellService();
+            svc.DeleteSpell(id);
+
+            TempData["SaveResult"] = "Your spell was deleted";
+
+            return RedirectToAction("Index");
+        }
     }
 }

@@ -52,5 +52,52 @@ namespace HomebrewRPG.Services
                     );
             return query.ToArray();
         }
+
+        public SpellDetail GetSpellById(int id)
+        {
+            var entity =
+                _ctx
+                    .Spells
+                    .Single(e => e.SpellId == id && e.OwnerId == _userId);
+            return
+                new SpellDetail
+                {
+                    SpellId = entity.SpellId,
+                    SpellName = entity.SpellName,
+                    SpellDescription = entity.SpellDescription,
+                    SpellEffect = entity.SpellEffect,
+                    SpellType = entity.SpellType,
+                    Range = entity.Range,
+                    SpellDC = entity.SpellDC
+                };
+        }
+
+        public bool UpdateSpell(SpellEdit model)
+        {
+            var entity =
+                _ctx
+                    .Spells
+                    .Single(e => e.SpellId == model.SpellId && e.OwnerId == _userId);
+            entity.SpellId = model.SpellId;
+            entity.SpellName = model.SpellName;
+            entity.SpellDescription = model.SpellDescription;
+            entity.SpellEffect = model.SpellEffect;
+            entity.SpellType = model.SpellType;
+            entity.Range = model.Range;
+            entity.SpellDC = model.SpellDC;
+
+            return _ctx.SaveChanges() == 1;
+        }
+
+        public bool DeleteSpell(int itemId)
+        {
+            var entity =
+                _ctx
+                    .Spells
+                    .Single(e => e.SpellId == itemId && e.OwnerId == _userId);
+            _ctx.Spells.Remove(entity);
+
+            return _ctx.SaveChanges() == 1;
+        }
     }
 }
