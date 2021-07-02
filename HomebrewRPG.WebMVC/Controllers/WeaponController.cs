@@ -23,8 +23,7 @@ namespace HomebrewRPG.WebMVC.Controllers
 
         public ActionResult Create()
         {
-            var model = new WeaponCreate().Add("enter bonus here", 0);
-            return View(model);
+            return View();
         }
 
         [HttpPost]
