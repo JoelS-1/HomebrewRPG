@@ -1,0 +1,51 @@
+﻿@model IEnumerable<HomebrewRPG.Models.WardrobeItemModels.WardrobeListItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.WardobeItemId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ArmorName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ArmorType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.WardobeItemId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ArmorName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ArmorType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.WardobeItemId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.WardobeItemId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.WardobeItemId })
+        </td>
+    </tr>
+}
+
+</table>
