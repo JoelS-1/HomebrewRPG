@@ -51,5 +51,46 @@ namespace HomebrewRPG.Services
                     );
             return query.ToArray();
         }
+
+        public ItemDetail GetItemById(int id)
+        {
+            var entity =
+                _ctx
+                    .Items
+                    .Single(e => e.ItemId == id && e.OwnerId == _userId);
+            return
+                new ItemDetail
+                {
+                    ItemId = entity.ItemId,
+                    ItemName = entity.ItemName,
+                    Description = entity.Description,
+                    Uses = entity.Uses
+                };
+        }
+
+        public bool UpdateItem(ItemEdit model)
+        {
+            var entity =
+                _ctx
+                    .Items
+                    .Single(e => e.ItemId == model.ItemId && e.OwnerId == _userId);
+            entity.ItemId = model.ItemId;
+            entity.ItemName = model.ItemName;
+            entity.Description = model.Description;
+            entity.Uses = model.Uses;
+
+            return _ctx.SaveChanges() == 1;
+        }
+
+        public bool DeleteItem(int itemId)
+        {
+            var entity =
+                _ctx
+                    .Items
+                    .Single(e => e.ItemId == itemId && e.OwnerId == _userId);
+            _ctx.Items.Remove(entity);
+
+            return _ctx.SaveChanges() == 1;
+        }
     }
 }
