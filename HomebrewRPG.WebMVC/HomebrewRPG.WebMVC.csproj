@@ -255,6 +255,9 @@
     <Content Include="Views\Item\Delete.cshtml" />
     <Content Include="Views\WardrobeItem\Index.cshtml" />
     <Content Include="Views\WardrobeItem\Create.cshtml" />
+    <Content Include="Views\WardrobeItem\Details.cshtml" />
+    <Content Include="Views\WardrobeItem\Edit.cshtml" />
+    <Content Include="Views\WardrobeItem\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

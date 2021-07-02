@@ -9,6 +9,15 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+@if (TempData.ContainsKey("SaveResult"))
+{
+    <div class="alert" alert-success fade in" role="alert">
+        @ViewBag.SaveResult
+        <button type="button" class="close" data-dismiss="alert">
+            <span>&times;</span>
+        </button>
+    </div>
+}
 <table class="table">
     <tr>
         <th>
@@ -26,26 +35,27 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.WardobeItemId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ArmorName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ArmorType)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.WardobeItemId }) |
-            @Html.ActionLink("Details", "Details", new { id = item.WardobeItemId }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.WardobeItemId })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.WardobeItemId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ArmorName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ArmorType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.WardobeItemId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.WardobeItemId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.WardobeItemId })
+            </td>
+        </tr>
+    }
 
 </table>
