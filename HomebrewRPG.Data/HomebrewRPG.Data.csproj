@@ -79,6 +79,10 @@
     <Compile Include="Migrations\202107021929571_RemovedNullableInts.Designer.cs">
       <DependentUpon>202107021929571_RemovedNullableInts.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107022128087_HeroicChange.cs" />
+    <Compile Include="Migrations\202107022128087_HeroicChange.Designer.cs">
+      <DependentUpon>202107022128087_HeroicChange.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Spell.cs" />
@@ -104,6 +108,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107021929571_RemovedNullableInts.resx">
       <DependentUpon>202107021929571_RemovedNullableInts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107022128087_HeroicChange.resx">
+      <DependentUpon>202107022128087_HeroicChange.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
