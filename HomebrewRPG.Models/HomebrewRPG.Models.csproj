@@ -58,11 +58,15 @@
     <Compile Include="CharacterDetail.cs" />
     <Compile Include="CharacterEdit.cs" />
     <Compile Include="CharacterListItem.cs" />
-    <Compile Include="ItemListItem.cs" />
+    <Compile Include="ItemModels\ItemListItem.cs" />
     <Compile Include="ItemModels\ItemCreate.cs" />
     <Compile Include="ItemModels\ItemDetail.cs" />
     <Compile Include="ItemModels\ItemEdit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WardrobeItemModels\WardrobeItemCreate.cs" />
+    <Compile Include="WardrobeItemModels\WardrobeItemDetail.cs" />
+    <Compile Include="WardrobeItemModels\WardrobeItemEdit.cs" />
+    <Compile Include="WardrobeItemModels\WardrobeListItem.cs" />
     <Compile Include="WeaponModels\WeaponCreate.cs" />
     <Compile Include="WeaponModels\WeaponDetail.cs" />
     <Compile Include="WeaponModels\WeaponEdit.cs" />
