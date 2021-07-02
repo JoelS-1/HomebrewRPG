@@ -63,6 +63,10 @@
     <Compile Include="ItemModels\ItemDetail.cs" />
     <Compile Include="ItemModels\ItemEdit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SpellModels\SpellCreate.cs" />
+    <Compile Include="SpellModels\SpellDetail.cs" />
+    <Compile Include="SpellModels\SpellEdit.cs" />
+    <Compile Include="SpellModels\SpellListItem.cs" />
     <Compile Include="WardrobeItemModels\WardrobeItemCreate.cs" />
     <Compile Include="WardrobeItemModels\WardrobeItemDetail.cs" />
     <Compile Include="WardrobeItemModels\WardrobeItemEdit.cs" />

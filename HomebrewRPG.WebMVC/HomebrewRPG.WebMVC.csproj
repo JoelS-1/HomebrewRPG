@@ -172,6 +172,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ItemController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\SpellController.cs" />
     <Compile Include="Controllers\WardrobeItemController.cs" />
     <Compile Include="Controllers\WeaponController.cs" />
     <Compile Include="Global.asax.cs">
@@ -258,6 +259,8 @@
     <Content Include="Views\WardrobeItem\Details.cshtml" />
     <Content Include="Views\WardrobeItem\Edit.cshtml" />
     <Content Include="Views\WardrobeItem\Delete.cshtml" />
+    <Content Include="Views\Spell\Index.cshtml" />
+    <Content Include="Views\Spell\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
