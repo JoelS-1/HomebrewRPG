@@ -5,12 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HomebrewRPG.Data
+namespace HomebrewRPG.Models.HeroicModels
 {
-    public class Heroic
+    public class HeroicCreate
     {
-        [Key]
-        public int HeroicId { get; set; }
         [Required]
         public string HeroicName { get; set; }
         [Required]
@@ -34,6 +32,5 @@ namespace HomebrewRPG.Data
         public int RequiredCharisma { get; set; }
         [Required]
         public int RequiredHealth { get; set; }
-        public Guid OwnerId { get; set; }
     }
 }

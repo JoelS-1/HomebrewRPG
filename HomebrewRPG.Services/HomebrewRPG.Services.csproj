@@ -55,7 +55,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CharacterService.cs" />
+    <Compile Include="HeroicService.cs" />
+    <Compile Include="ItemService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SpellService.cs" />
+    <Compile Include="WardrobeItemService.cs" />
+    <Compile Include="WeaponService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

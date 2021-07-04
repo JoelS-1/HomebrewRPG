@@ -1,0 +1,128 @@
+﻿@model HomebrewRPG.Models.WardrobeItemModels.WardrobeItemDetail
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>WardrobeItemDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.WardobeItemId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WardobeItemId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ArmorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ArmorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ArmorType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ArmorType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HealthRequired)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HealthRequired)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StrengthRequired)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StrengthRequired)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AgilityRequired)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AgilityRequired)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MagicRequired)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MagicRequired)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Special)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Special)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhysicalBlocking)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhysicalBlocking)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MagicalBlocking)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MagicalBlocking)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhysicalResistance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhysicalResistance)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MagicalResistance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MagicalResistance)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

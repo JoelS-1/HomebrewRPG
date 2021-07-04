@@ -5,12 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HomebrewRPG.Data
+namespace HomebrewRPG.Models.WardrobeItemModels
 {
-    public class WardrobeItem
+    public class WardrobeItemCreate
     {
-        [Key]
-        public int WardobeItemId { get; set; }
         [Required]
         public string ArmorName { get; set; }
         [Required]
@@ -36,8 +34,5 @@ namespace HomebrewRPG.Data
         public int PhysicalResistance { get; set; }
         [Required]
         public int MagicalResistance { get; set; }
-
-        public Dictionary<string, int> StatBonuses { get; set; }
-        public Guid OwnerId { get; set; }
     }
 }

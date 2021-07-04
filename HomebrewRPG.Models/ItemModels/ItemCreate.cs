@@ -5,19 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HomebrewRPG.Data
+namespace HomebrewRPG.Models.ItemModels
 {
-    public class Item
+    public class ItemCreate
     {
-        [Key]
-        public int ItemId { get; set; }
         [Required]
         public string ItemName { get; set; }
         [Required]
         public string Description { get; set; }
         public int Uses { get; set; }
-
-        public Dictionary<string, int> StatBonuses { get; set; }
-        public Guid OwnerId { get; set; }
     }
 }

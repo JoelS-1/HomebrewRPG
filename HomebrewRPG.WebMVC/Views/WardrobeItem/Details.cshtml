@@ -1,0 +1,122 @@
+﻿@model HomebrewRPG.Models.WardrobeItemModels.WardrobeItemDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>WardrobeItemDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.WardobeItemId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WardobeItemId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ArmorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ArmorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ArmorType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ArmorType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HealthRequired)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HealthRequired)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StrengthRequired)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StrengthRequired)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AgilityRequired)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AgilityRequired)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MagicRequired)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MagicRequired)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Special)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Special)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhysicalBlocking)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhysicalBlocking)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MagicalBlocking)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MagicalBlocking)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhysicalResistance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhysicalResistance)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MagicalResistance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MagicalResistance)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.WardobeItemId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

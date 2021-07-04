@@ -1,0 +1,120 @@
+﻿@model HomebrewRPG.Models.HeroicDetail
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>HeroicDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.HeroicId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HeroicId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HeroicName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HeroicName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsPersonalHeroic)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsPersonalHeroic)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RequiredLevel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RequiredLevel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RequiredHeroic)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RequiredHeroic)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RequiredAgility)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RequiredAgility)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RequiredStrength)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RequiredStrength)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RequiredInstinct)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RequiredInstinct)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RequiredIntelligence)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RequiredIntelligence)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RequiredCharisma)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RequiredCharisma)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RequiredHealth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RequiredHealth)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

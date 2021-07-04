@@ -5,12 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HomebrewRPG.Data
+namespace HomebrewRPG.Models.WeaponModels
 {
-    public class Weapon
+    public class WeaponCreate
     {
-        [Key]
-        public int WeaponId { get; set; }
         [Required]
         public string WeaponName { get; set; }
         [Required]
@@ -35,7 +33,12 @@ namespace HomebrewRPG.Data
         public int PhysicalBlocking { get; set; }
         public int MagicalBlocking { get; set; }
 
-        public Dictionary<string, int> StatBonuses { get; set; }
-        public Guid OwnerId { get; set; }
+        public Dictionary<string, int> StatBonuses { get; set; } = new Dictionary<string, int>();
+
+        public WeaponCreate Add(string key, int value)
+        {
+            StatBonuses.Add(key, value);
+            return this;
+        }
     }
 }

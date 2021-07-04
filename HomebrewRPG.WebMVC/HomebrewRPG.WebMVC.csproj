@@ -169,8 +169,13 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CharacterController.cs" />
+    <Compile Include="Controllers\HeroicController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ItemController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\SpellController.cs" />
+    <Compile Include="Controllers\WardrobeItemController.cs" />
+    <Compile Include="Controllers\WeaponController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -240,6 +245,31 @@
     <Content Include="Views\Character\Details.cshtml" />
     <Content Include="Views\Character\Edit.cshtml" />
     <Content Include="Views\Character\Delete.cshtml" />
+    <Content Include="Views\Weapon\Index.cshtml" />
+    <Content Include="Views\Weapon\Create.cshtml" />
+    <Content Include="Views\Weapon\Edit.cshtml" />
+    <Content Include="Views\Weapon\Delete.cshtml" />
+    <Content Include="Views\Weapon\Details.cshtml" />
+    <Content Include="Views\Item\Index.cshtml" />
+    <Content Include="Views\Item\Create.cshtml" />
+    <Content Include="Views\Item\Details.cshtml" />
+    <Content Include="Views\Item\Edit.cshtml" />
+    <Content Include="Views\Item\Delete.cshtml" />
+    <Content Include="Views\WardrobeItem\Index.cshtml" />
+    <Content Include="Views\WardrobeItem\Create.cshtml" />
+    <Content Include="Views\WardrobeItem\Details.cshtml" />
+    <Content Include="Views\WardrobeItem\Edit.cshtml" />
+    <Content Include="Views\WardrobeItem\Delete.cshtml" />
+    <Content Include="Views\Spell\Index.cshtml" />
+    <Content Include="Views\Spell\Create.cshtml" />
+    <Content Include="Views\Spell\Details.cshtml" />
+    <Content Include="Views\Spell\Edit.cshtml" />
+    <Content Include="Views\Spell\Delete.cshtml" />
+    <Content Include="Views\Heroic\Index.cshtml" />
+    <Content Include="Views\Heroic\Create.cshtml" />
+    <Content Include="Views\Heroic\Details.cshtml" />
+    <Content Include="Views\Heroic\Edit.cshtml" />
+    <Content Include="Views\Heroic\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
