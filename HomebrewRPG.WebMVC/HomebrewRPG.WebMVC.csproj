@@ -267,6 +267,9 @@
     <Content Include="Views\Spell\Delete.cshtml" />
     <Content Include="Views\Heroic\Index.cshtml" />
     <Content Include="Views\Heroic\Create.cshtml" />
+    <Content Include="Views\Heroic\Details.cshtml" />
+    <Content Include="Views\Heroic\Edit.cshtml" />
+    <Content Include="Views\Heroic\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
