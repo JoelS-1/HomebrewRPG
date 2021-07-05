@@ -12,24 +12,10 @@ namespace HomebrewRPG.Data
     {
         [Key]
         public int InventoryId { get; set; }
-        [Required]
-        public string InventoryName { get; set; }
 
-        [ForeignKey(nameof(Weapon))]
-        public int WeaponId { get; set; }
-        public virtual Weapon Weapon { get; set; }
-        public List<Weapon> Weapons { get; set; }
-
-        [ForeignKey(nameof(Item))]
-        public int ItemId { get; set; }
-        public virtual Item Item { get; set; }
-        public List<Item> Items { get; set; }
-
-
-        [ForeignKey(nameof(WardrobeItem))]
-        public int WardrobeItemId { get; set; }
-        public virtual WardrobeItem WardrobeItem { get; set; }
-        public List<WardrobeItem> Wardrobe { get; set; }
+        public int InventoryItem { get; set; }
+        public int InventoryWardrobe { get; set; }
+        public int InventoryWeapon { get; set; }
 
         public int Gold { get; set; }
         public int Silver { get; set; }
