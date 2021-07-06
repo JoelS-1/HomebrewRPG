@@ -8,18 +8,17 @@ using System.Threading.Tasks;
 
 namespace HomebrewRPG.Data
 {
-    public class Inventory
+    public class Money
     {
         [Key]
-        public int InventoryId { get; set; }
-
-        public int InventoryItem { get; set; }
-        public int InventoryWardrobe { get; set; }
-        public int InventoryWeapon { get; set; }
-
+        public int MoneyId { get; set; }
         public int Gold { get; set; }
         public int Silver { get; set; }
         public int Copper { get; set; }
+
+        [ForeignKey(nameof(Character))]
+        public int CharacterId { get; set; }
+        public virtual Character Character { get; set; }
         public Guid OwnerId { get; set; }
     }
 }
