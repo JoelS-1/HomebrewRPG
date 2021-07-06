@@ -27,7 +27,7 @@ namespace HomebrewRPG.WebMVC.Controllers
             var model =
                 new CharacterCreate
                 {
-
+                    CharacterLevel = 1,
                     Health = 0,
                     Strength = 0,
                     Instinct = 0,
