@@ -62,6 +62,7 @@
     <Compile Include="HeroicModels\HeroicCreate.cs" />
     <Compile Include="HeroicModels\HeroicEdit.cs" />
     <Compile Include="HeroicModels\HeroicListItem.cs" />
+    <Compile Include="InventoryModels\InventoryCreate.cs" />
     <Compile Include="ItemModels\ItemListItem.cs" />
     <Compile Include="ItemModels\ItemCreate.cs" />
     <Compile Include="ItemModels\ItemDetail.cs" />
@@ -84,6 +85,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\HomebrewRPG.Data\HomebrewRPG.Data.csproj">
+      <Project>{72E358FA-A349-4911-A8E6-3A55A84EC9B9}</Project>
+      <Name>HomebrewRPG.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

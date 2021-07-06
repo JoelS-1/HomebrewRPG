@@ -76,10 +76,6 @@ namespace HomebrewRPG.Data
         public int DamageResistance { get; set; }
         public int MagicResistance { get; set; }
 
-        [ForeignKey(nameof(Inventory))]
-        public int InventoryId { get; set; }
-        public virtual Inventory Inventory { get; set; }
-
         public Guid OwnerId { get; set; }
     }
 }
