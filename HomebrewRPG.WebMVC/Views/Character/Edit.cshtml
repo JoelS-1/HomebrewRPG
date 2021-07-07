@@ -116,7 +116,7 @@
     <div class="form-group">
         @Html.LabelFor(model => model.MagicType, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.MagicType, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.DropDownListFor(model => model.MagicType, ViewBag.MagicType as SelectList, new { @class = "form-control" })
             @Html.ValidationMessageFor(model => model.MagicType, "", new { @class = "text-danger" })
         </div>
     </div>
@@ -124,7 +124,7 @@
     <div class="form-group">
         @Html.LabelFor(model => model.ProwessType, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.ProwessType, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.DropDownListFor(model => model.ProwessType, ViewBag.ProwessType as SelectList, new { @class = "form-control" })
             @Html.ValidationMessageFor(model => model.ProwessType, "", new { @class = "text-danger" })
         </div>
     </div>
