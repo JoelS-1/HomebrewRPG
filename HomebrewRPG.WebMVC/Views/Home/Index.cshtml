@@ -2,13 +2,13 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
+<div class="jumbotron div-color">
+    <h1>HomeBrewRPG</h1>
     <p class="lead">Welcome, please log in to gain access to all the cool character management features for this homebrew RPG system! If you are already logged in feel free to click the link below to start a new character, or click any of the navigation links above.</p>
     @if (User.Identity.IsAuthenticated)
     {
-        <p><a href="/Character/Index" class="btn btn-primary btn-lg">Your Characters &raquo;</a></p>
-        <p><a href="/Character/Create" class="btn btn-primary btn-lg">Create A Character &raquo;</a></p>
+        <p><a href="/Character/Index" class="btn btn-primary btn-lg button-color">Your Characters &raquo;</a></p>
+        <p><a href="/Character/Create" class="btn btn-primary btn-lg button-color">Create A Character &raquo;</a></p>
     }
 </div>
 
@@ -16,8 +16,8 @@
     <div class="col-md-4">
         <h2>Getting started</h2>
         <p>
-            Curious about the system or need a refresher on the rules? Here is a link to the most recent system rules page:
+            Curious about the system or need a refresher on the rules? Here is a link to the most recent system rules pdf:
         </p>
-        <p><a class="btn btn-default" href="">Learn more &raquo;</a></p>
+        <p><a class="btn btn-default button-color" href="https://drive.google.com/file/d/1056rrcSorqj-yNZjr1V4umxc2A4zMwAN/view?usp=sharing">Learn more &raquo;</a></p>
     </div>
 </div>

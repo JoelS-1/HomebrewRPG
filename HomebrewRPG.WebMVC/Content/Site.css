@@ -1,6 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-color: antiquewhite;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -23,7 +24,7 @@ textarea {
     max-width: 280px;
 }
 
-.tab{
+.tab {
     display: none;
 }
 
@@ -37,9 +38,26 @@ textarea {
     display: inline-block;
     opacity: 0.5;
 }
-.step-active{
+
+.step-active {
     opacity: 1;
 }
+
 .step-finish {
     background-color: darkslategrey;
 }
+
+.button-color {
+    color: whitesmoke;
+    background-color: dimgray;
+    border-color: darkslategrey;
+}
+
+    .button-color:hover,
+    .button-color:focus {
+        background-color: gray;
+        background-position: 0 -15px;
+    }
+    .div-color{
+        background-color:antiquewhite;
+    }
