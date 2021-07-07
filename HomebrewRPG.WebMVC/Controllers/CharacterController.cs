@@ -24,6 +24,35 @@ namespace HomebrewRPG.WebMVC.Controllers
         //GET
         public ActionResult Create()
         {
+            ViewBag.Title = "New Character";
+
+            List<string> magicTypes = new List<string>()
+            {
+                "charisma",
+                "intelligence",
+                "instinct"
+            };
+            var magicQuery = from o in magicTypes
+                        select new SelectListItem()
+                        {
+                            Value = o,
+                            Text = o
+                        };
+            ViewBag.MagicType = magicQuery.ToList();
+
+            List<string> prowessTypes = new List<string>()
+            {
+                "agility",
+                "strength"
+            };
+            var prowessQuery = from o in prowessTypes
+                        select new SelectListItem()
+                        {
+                            Value = o,
+                            Text = o
+                        };
+            ViewBag.ProwessType = prowessQuery.ToList();
+
             var model =
                 new CharacterCreate
                 {
