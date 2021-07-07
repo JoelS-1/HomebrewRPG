@@ -196,6 +196,13 @@
     <Content Include="Images\annie-spratt-4aVUigDCLV8-unsplash.jpg" />
     <Content Include="Images\annie-spratt-xTaOPMa6wAE-unsplash.jpg" />
     <Content Include="Images\dndBackground.jpeg" />
+    <Content Include="Images\sheet-attribute-bg.png" />
+    <Content Include="Images\sheet-bar-border.png" />
+    <Content Include="Images\sheet-bar-spacer.png" />
+    <Content Include="Images\sheet-box-border.png" />
+    <Content Include="Images\sheet-header-bg.png" />
+    <Content Include="Images\sheet-spell-header.png" />
+    <Content Include="Images\sheet-well-border.png" />
     <Content Include="Images\vintage-textured-paper-background-vector.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

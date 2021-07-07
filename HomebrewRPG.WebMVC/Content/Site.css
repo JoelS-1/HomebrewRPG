@@ -61,3 +61,48 @@ textarea {
     .div-color{
         background-color:antiquewhite;
     }
+.character-sheet {
+    border: solid;
+    border-radius: 5px;
+    background-color: floralwhite;
+    width: 70em;
+    position: absolute;
+}
+.character-info {
+    display: flex;
+    margin: 5px;
+    padding: 5px;
+    background-repeat: no-repeat;
+}
+.character-name {
+    border: 1px solid black;
+    border-radius: 10px 0 0 10px;
+    padding: 10px;
+    height: 10%;
+    width: 20%;
+    display: flex;
+    flex-direction: column-reverse;
+    background-color: antiquewhite;
+}
+.character-info-list {
+    width: 50%;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 1em;
+    display: flex;
+    background-color: antiquewhite;
+}
+    .character-info-list-items {
+
+        overflow: hidden;
+    }
+    .character-info-list-items dd{
+
+        width: 10%;
+        padding: 1em;
+    }
+        .character-info-list-items dt {
+            text-align: center;
+            width: 10%;
+            padding: 1em;
+        }
