@@ -136,7 +136,7 @@ namespace HomebrewRPG.WebMVC.Controllers
                              select new SelectListItem()
                              {
                                  Value = o,
-                                 Text = o
+                                 Text = o,
                              };
             ViewBag.MagicType = magicQuery.ToList();
 
@@ -154,7 +154,7 @@ namespace HomebrewRPG.WebMVC.Controllers
             ViewBag.ProwessType = prowessQuery.ToList();
 
             var service = CreateCharacterService();
-            var detail = service.GetCharacterById(id);
+            var detail = service.GetEditCharacterById(id);
             var model =
                 new CharacterEdit
                 {
@@ -172,7 +172,39 @@ namespace HomebrewRPG.WebMVC.Controllers
                     Intelligence = detail.Intelligence,
                     Charisma = detail.Charisma,
                     MagicType = detail.MagicType,
-                    ProwessType = detail.ProwessType
+                    ProwessType = detail.ProwessType,
+
+                    HitPoints = detail.HitPoints,
+                    Sanity = detail.Sanity,
+                    Dodge = detail.Dodge,
+                    Reaction = detail.Reaction,
+                    BaseProwess = detail.BaseProwess,
+                    Magic = detail.Magic,
+                    Fate = detail.Fate,
+                    Speed = detail.Speed,
+                    
+
+                    Endurance = detail.Endurance,
+                    Constitution = detail.Constitution,
+                    Athletics = detail.Athletics,
+                    Tenacity = detail.Tenacity,
+                    Acrobatics = detail.Acrobatics,
+                    SleightOfHand = detail.SleightOfHand,
+                    Sneak = detail.Sneak,
+                    Willpower = detail.Willpower,
+                    Investigation = detail.Investigation,
+                    Knowledge = detail.Knowledge,
+                    Bravery = detail.Bravery,
+                    Pilotry = detail.Pilotry,
+                    Insight = detail.Insight,
+                    Perception = detail.Perception,
+                    Survival = detail.Survival,
+                    Faith = detail.Faith,
+                    Deception = detail.Deception,
+                    Diplomacy = detail.Diplomacy,
+                    Intimidation = detail.Intimidation,
+                    Performance = detail.Performance,
+                    Seduction = detail.Seduction,
                 };
             if(detail.CharacterLevel < 3)
             {

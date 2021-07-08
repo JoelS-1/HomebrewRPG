@@ -102,7 +102,6 @@ namespace HomebrewRPG.WebMVC.Controllers
                             Text = o
                         };
             ViewBag.ArmorType = query.ToList();
-            return View();
 
             var svc = CreateWardrobeItemService();
             var detail = svc.GetWardrobeItemById(id);

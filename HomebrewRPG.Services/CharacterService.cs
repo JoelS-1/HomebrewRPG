@@ -40,34 +40,34 @@ namespace HomebrewRPG.Services
                     MagicType = model.MagicType,
                     ProwessType = model.ProwessType,
 
-                    HitPoints = 10 + (model.Health * 2),
-                    Sanity = 10 + (model.Intelligence * 2),
-                    Dodge = 10 + model.Dodge + (model.Agility * 2),
-                    Reaction = 10 + model.Reaction + (model.Instinct * 2),
-                    Fate = 1 + model.Charisma,
-                    Speed = 6 + model.Agility,
+                    HitPoints = 0,
+                    Sanity = 0,
+                    Dodge = model.Dodge,
+                    Reaction = model.Reaction,
+                    Fate = 0,
+                    Speed = 0,
 
-                    Endurance = model.Endurance + model.Proficiency + (model.Health * 3),
-                    Constitution = model.Constitution + model.Proficiency + (model.Health * 3),
-                    Athletics = model.Athletics + model.Proficiency + (model.Strength * 3),
-                    Tenacity = model.Tenacity + model.Proficiency + (model.Strength * 3),
-                    Acrobatics = model.Acrobatics + model.Proficiency + (model.Agility * 3),
-                    SleightOfHand = model.SleightOfHand + model.Proficiency + (model.Agility * 3),
-                    Sneak = model.Sneak + model.Proficiency + (model.Agility * 3),
-                    Willpower = model.Willpower + model.Proficiency + (model.Intelligence * 3),
-                    Investigation = model.Investigation + model.Proficiency + (model.Intelligence * 3),
-                    Knowledge = model.Knowledge + model.Proficiency + (model.Intelligence * 3),
-                    Bravery = model.Bravery + model.Proficiency + (model.Instinct * 3),
-                    Pilotry = model.Pilotry + model.Proficiency + (model.Instinct * 3),
-                    Insight = model.Insight + model.Proficiency + (model.Instinct * 3),
-                    Perception = model.Perception + model.Proficiency + (model.Instinct * 3),
-                    Survival = model.Survival + model.Proficiency + (model.Instinct * 3),
-                    Faith = model.Faith + model.Proficiency + (model.Charisma * 3),
-                    Deception = model.Deception + model.Proficiency + (model.Charisma * 3),
-                    Diplomacy = model.Diplomacy + model.Proficiency + (model.Charisma * 3),
-                    Intimidation = model.Intimidation + model.Proficiency + (model.Charisma * 3),
-                    Performance = model.Performance + model.Proficiency + (model.Charisma * 3),
-                    Seduction = model.Seduction + model.Proficiency + (model.Charisma * 3)
+                    Endurance = model.Endurance,
+                    Constitution = model.Constitution,
+                    Athletics = model.Athletics,
+                    Tenacity = model.Tenacity,
+                    Acrobatics = model.Acrobatics,
+                    SleightOfHand = model.SleightOfHand,
+                    Sneak = model.Sneak,
+                    Willpower = model.Willpower,
+                    Investigation = model.Investigation,
+                    Knowledge = model.Knowledge,
+                    Bravery = model.Bravery,
+                    Pilotry = model.Pilotry,
+                    Insight = model.Insight,
+                    Perception = model.Perception,
+                    Survival = model.Survival,
+                    Faith = model.Faith,
+                    Deception = model.Deception,
+                    Diplomacy = model.Diplomacy,
+                    Intimidation = model.Intimidation,
+                    Performance = model.Performance,
+                    Seduction = model.Seduction,
                 };
 
             if (model.CharacterLevel < 3)
@@ -93,35 +93,6 @@ namespace HomebrewRPG.Services
             else if (model.CharacterLevel >= 20)
             {
                 entity.Proficiency = 7;
-            }
-
-            if (model.ProwessType == "Strength")
-            {
-                entity.BaseProwess = 10 + (model.Strength * 2);
-            }
-            else if (model.ProwessType == "Agility")
-            {
-                entity.BaseProwess = 10 + (model.Agility * 2);
-            }
-            else
-            {
-                entity.BaseProwess = 10;
-            }
-            if (model.MagicType == "Intelligence")
-            {
-                entity.Magic = 10 + (model.Intelligence * 2);
-            }
-            else if (model.MagicType == "Charisma")
-            {
-                entity.Magic = 10 + (model.Charisma * 2);
-            }
-            else if (model.MagicType == "Instinct")
-            {
-                entity.Magic = 10 + (model.Instinct * 2);
-            }
-            else
-            {
-                entity.Magic = 0;
             }
 
             _ctx.Characters.Add(entity);
@@ -153,8 +124,95 @@ namespace HomebrewRPG.Services
                 _ctx
                     .Characters
                     .Single(e => e.CharacterId == id && e.OwnerId == _userId);
-            return
+            CharacterDetail detail =
                 new CharacterDetail
+                {
+                    CharacterId = entity.CharacterId,
+                    CharacterName = entity.CharacterName,
+                    Race = entity.Race,
+                    CharacterLevel = entity.CharacterLevel,
+                    Age = entity.Age,
+                    Gender = entity.Gender,
+                    Allignment = entity.Allignment,
+                    Health = entity.Health,
+                    Strength = entity.Strength,
+                    Instinct = entity.Instinct,
+                    Agility = entity.Agility,
+                    Intelligence = entity.Intelligence,
+                    Charisma = entity.Charisma,
+                    MagicType = entity.MagicType,
+                    ProwessType = entity.ProwessType,
+                    Proficiency = entity.Proficiency,
+
+                    HitPoints = 10 + (entity.Health * 2),
+                    Sanity = 10 + (entity.Intelligence * 2),
+                    Dodge = entity.Dodge + (entity.Agility * 2),
+                    Reaction = entity.Reaction + (entity.Instinct * 2),
+                    Fate = 1 + entity.Charisma,
+                    Speed = 6 + entity.Agility,
+
+                    Endurance = entity.Endurance + entity.Proficiency + (entity.Health * 3),
+                    Constitution = entity.Constitution + entity.Proficiency + (entity.Health * 3),
+                    Athletics = entity.Athletics + entity.Proficiency + (entity.Strength * 3),
+                    Tenacity = entity.Tenacity + entity.Proficiency + (entity.Strength * 3),
+                    Acrobatics = entity.Acrobatics + entity.Proficiency + (entity.Agility * 3),
+                    SleightOfHand = entity.SleightOfHand + entity.Proficiency + (entity.Agility * 3),
+                    Sneak = entity.Sneak + entity.Proficiency + (entity.Agility * 3),
+                    Willpower = entity.Willpower + entity.Proficiency + (entity.Intelligence * 3),
+                    Investigation = entity.Investigation + entity.Proficiency + (entity.Intelligence * 3),
+                    Knowledge = entity.Knowledge + entity.Proficiency + (entity.Intelligence * 3),
+                    Bravery = entity.Bravery + entity.Proficiency + (entity.Instinct * 3),
+                    Pilotry = entity.Pilotry + entity.Proficiency + (entity.Instinct * 3),
+                    Insight = entity.Insight + entity.Proficiency + (entity.Instinct * 3),
+                    Perception = entity.Perception + entity.Proficiency + (entity.Instinct * 3),
+                    Survival = entity.Survival + entity.Proficiency + (entity.Instinct * 3),
+                    Faith = entity.Faith + entity.Proficiency + (entity.Charisma * 3),
+                    Deception = entity.Deception + entity.Proficiency + (entity.Charisma * 3),
+                    Diplomacy = entity.Diplomacy + entity.Proficiency + (entity.Charisma * 3),
+                    Intimidation = entity.Intimidation + entity.Proficiency + (entity.Charisma * 3),
+                    Performance = entity.Performance + entity.Proficiency + (entity.Charisma * 3),
+                    Seduction = entity.Seduction + entity.Proficiency + (entity.Charisma * 3)
+                };
+            if (entity.ProwessType == "strength")
+            {
+                detail.BaseProwess = 10 + (detail.Strength * 2);
+            }
+            else if (entity.ProwessType == "agility")
+            {
+                detail.BaseProwess = 10 + (detail.Agility * 2);
+            }
+            else
+            {
+                detail.BaseProwess = 10;
+            }
+            if (entity.MagicType == "intelligence")
+            {
+                detail.Magic = 10 + (detail.Intelligence * 2);
+            }
+            else if (entity.MagicType == "charisma")
+            {
+                detail.Magic = 10 + (detail.Charisma * 2);
+            }
+            else if (entity.MagicType == "instinct")
+            {
+                detail.Magic = 10 + (detail.Instinct * 2);
+            }
+            else
+            {
+                detail.Magic = 0;
+            }
+            return detail;
+
+        }
+
+        public CharacterEdit GetEditCharacterById(int id)
+        {
+            var entity =
+                _ctx
+                    .Characters
+                    .Single(e => e.CharacterId == id && e.OwnerId == _userId);
+            return
+                new CharacterEdit
                 {
                     CharacterId = entity.CharacterId,
                     CharacterName = entity.CharacterName,
@@ -229,34 +287,32 @@ namespace HomebrewRPG.Services
             entity.MagicType = model.MagicType;
             entity.ProwessType = model.ProwessType;
 
-            entity.HitPoints = 10 + (model.Health * 2);
-            entity.Sanity = 10 + (model.Intelligence * 2);
-            entity.Dodge = 10 + model.Dodge + (model.Agility * 2);
-            entity.Reaction = 10 + model.Reaction + (model.Instinct * 2);
-            entity.Fate = 1 + model.Charisma;
-            entity.Speed = 6 + model.Agility;
 
-            entity.Endurance = model.Endurance + model.Proficiency + (model.Health * 3);
-            entity.Constitution = model.Constitution + model.Proficiency + (model.Health * 3);
-            entity.Athletics = model.Athletics + model.Proficiency + (model.Strength * 3);
-            entity.Tenacity = model.Tenacity + model.Proficiency + (model.Strength * 3);
-            entity.Acrobatics = model.Acrobatics + model.Proficiency + (model.Agility * 3);
-            entity.SleightOfHand = model.SleightOfHand + model.Proficiency + (model.Agility * 3);
-            entity.Sneak = model.Sneak + model.Proficiency + (model.Agility * 3);
-            entity.Willpower = model.Willpower + model.Proficiency + (model.Intelligence * 3);
-            entity.Investigation = model.Investigation + model.Proficiency + (model.Intelligence * 3);
-            entity.Knowledge = model.Knowledge + model.Proficiency + (model.Intelligence * 3);
-            entity.Bravery = model.Bravery + model.Proficiency + (model.Instinct * 3);
-            entity.Pilotry = model.Pilotry + model.Proficiency + (model.Instinct * 3);
-            entity.Insight = model.Insight + model.Proficiency + (model.Instinct * 3);
-            entity.Perception = model.Perception + model.Proficiency + (model.Instinct * 3);
-            entity.Survival = model.Survival + model.Proficiency + (model.Instinct * 3);
-            entity.Faith = model.Faith + model.Proficiency + (model.Charisma * 3);
-            entity.Deception = model.Deception + model.Proficiency + (model.Charisma * 3);
-            entity.Diplomacy = model.Diplomacy + model.Proficiency + (model.Charisma * 3);
-            entity.Intimidation = model.Intimidation + model.Proficiency + (model.Charisma * 3);
-            entity.Performance = model.Performance + model.Proficiency + (model.Charisma * 3);
-            entity.Seduction = model.Seduction + model.Proficiency + (model.Charisma * 3);
+            entity.Dodge = model.Dodge;
+            entity.Reaction = model.Reaction;
+
+
+            entity.Endurance = model.Endurance;
+            entity.Constitution = model.Constitution;
+            entity.Athletics = model.Athletics;
+            entity.Tenacity = model.Tenacity;
+            entity.Acrobatics = model.Acrobatics;
+            entity.SleightOfHand = model.SleightOfHand;
+            entity.Sneak = model.Sneak;
+            entity.Willpower = model.Willpower;
+            entity.Investigation = model.Investigation;
+            entity.Knowledge = model.Knowledge;
+            entity.Bravery = model.Bravery;
+            entity.Pilotry = model.Pilotry;
+            entity.Insight = model.Insight;
+            entity.Perception = model.Perception;
+            entity.Survival = model.Survival;
+            entity.Faith = model.Faith;
+            entity.Deception = model.Deception;
+            entity.Diplomacy = model.Diplomacy;
+            entity.Intimidation = model.Intimidation;
+            entity.Performance = model.Performance;
+            entity.Seduction = model.Seduction;
 
             if (model.CharacterLevel < 3)
             {
@@ -283,34 +339,7 @@ namespace HomebrewRPG.Services
                 entity.Proficiency = 7;
             }
 
-            if (model.ProwessType == "Strength")
-            {
-                entity.BaseProwess = 10 + (model.Strength * 2);
-            }
-            else if (model.ProwessType == "Agility")
-            {
-                entity.BaseProwess = 10 + (model.Agility * 2);
-            }
-            else
-            {
-                entity.BaseProwess = 10;
-            }
-            if (model.MagicType == "Intelligence")
-            {
-                entity.Magic = 10 + (model.Intelligence * 2);
-            }
-            else if (model.MagicType == "Charisma")
-            {
-                entity.Magic = 10 + (model.Charisma * 2);
-            }
-            else if (model.MagicType == "Instinct")
-            {
-                entity.Magic = 10 + (model.Instinct * 2);
-            }
-            else
-            {
-                entity.Magic = 0;
-            }
+
 
             return _ctx.SaveChanges() == 1;
         }
