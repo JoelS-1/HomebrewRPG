@@ -23,6 +23,22 @@ namespace HomebrewRPG.WebMVC.Controllers
 
         public ActionResult Create()
         {
+            ViewBag.Title = "New Weapon";
+
+            List<string> weaponTypes = new List<string>()
+            {
+                "strength",
+                "agility",
+                "magic"
+            };
+            var query = from o in weaponTypes
+                             select new SelectListItem()
+                             {
+                                 Value = o,
+                                 Text = o
+                             };
+            ViewBag.WeaponType = query.ToList();
+
             return View();
         }
 
@@ -61,6 +77,22 @@ namespace HomebrewRPG.WebMVC.Controllers
 
         public ActionResult Edit(int id)
         {
+            ViewBag.Title = "Edit Weapon";
+
+            List<string> weaponTypes = new List<string>()
+            {
+                "strength",
+                "agility",
+                "magic"
+            };
+            var query = from o in weaponTypes
+                             select new SelectListItem()
+                             {
+                                 Value = o,
+                                 Text = o
+                             };
+            ViewBag.WeaponType = query.ToList();
+
             var svc = CreateWeaponService();
             var detail = svc.GetWeaponById(id);
             var model =

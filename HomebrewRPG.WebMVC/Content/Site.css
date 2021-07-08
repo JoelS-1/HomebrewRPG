@@ -24,6 +24,12 @@ textarea {
     max-width: 280px;
 }
 
+.footer{
+    position: absolute;
+    bottom: 0;
+    padding: 1em;
+}
+
 .tab {
     display: none;
 }
@@ -69,6 +75,7 @@ textarea {
     background-color: floralwhite;
     width: 70em;
     position: absolute;
+    padding: 1em;
 }
 
 .character-info {
