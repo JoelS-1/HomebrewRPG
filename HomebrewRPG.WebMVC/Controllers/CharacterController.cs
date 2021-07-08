@@ -24,7 +24,69 @@ namespace HomebrewRPG.WebMVC.Controllers
         //GET
         public ActionResult Create()
         {
-            return View();
+            ViewBag.Title = "New Character";
+
+            List<string> magicTypes = new List<string>()
+            {
+                "charisma",
+                "intelligence",
+                "instinct"
+            };
+            var magicQuery = from o in magicTypes
+                        select new SelectListItem()
+                        {
+                            Value = o,
+                            Text = o
+                        };
+            ViewBag.MagicType = magicQuery.ToList();
+
+            List<string> prowessTypes = new List<string>()
+            {
+                "agility",
+                "strength"
+            };
+            var prowessQuery = from o in prowessTypes
+                        select new SelectListItem()
+                        {
+                            Value = o,
+                            Text = o
+                        };
+            ViewBag.ProwessType = prowessQuery.ToList();
+
+            var model =
+                new CharacterCreate
+                {
+                    CharacterLevel = 1,
+                    Health = 0,
+                    Strength = 0,
+                    Instinct = 0,
+                    Agility = 0,
+                    Intelligence = 0,
+                    Charisma = 0,
+
+                    Endurance = 0,
+                    Constitution = 0,
+                    Athletics = 0,
+                    Tenacity = 0,
+                    Acrobatics = 0,
+                    SleightOfHand = 0,
+                    Sneak = 0,
+                    Willpower = 0,
+                    Investigation = 0,
+                    Knowledge = 0,
+                    Bravery = 0,
+                    Pilotry = 0,
+                    Insight = 0,
+                    Perception = 0,
+                    Survival = 0,
+                    Faith = 0,
+                    Deception = 0,
+                    Diplomacy = 0,
+                    Intimidation = 0,
+                    Performance = 0,
+                    Seduction = 0,
+                };
+            return View(model);
         }
 
         [HttpPost]
@@ -62,6 +124,35 @@ namespace HomebrewRPG.WebMVC.Controllers
 
         public ActionResult Edit(int id)
         {
+            ViewBag.Title = "New Character";
+
+            List<string> magicTypes = new List<string>()
+            {
+                "charisma",
+                "intelligence",
+                "instinct"
+            };
+            var magicQuery = from o in magicTypes
+                             select new SelectListItem()
+                             {
+                                 Value = o,
+                                 Text = o
+                             };
+            ViewBag.MagicType = magicQuery.ToList();
+
+            List<string> prowessTypes = new List<string>()
+            {
+                "agility",
+                "strength"
+            };
+            var prowessQuery = from o in prowessTypes
+                               select new SelectListItem()
+                               {
+                                   Value = o,
+                                   Text = o
+                               };
+            ViewBag.ProwessType = prowessQuery.ToList();
+
             var service = CreateCharacterService();
             var detail = service.GetCharacterById(id);
             var model =

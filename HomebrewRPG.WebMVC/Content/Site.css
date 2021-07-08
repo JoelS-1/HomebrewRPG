@@ -1,6 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-color: antiquewhite;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -21,4 +22,183 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+.footer{
+    position: absolute;
+    bottom: 0;
+    padding: 1em;
+}
+
+.tab {
+    display: none;
+}
+
+.step {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbbbbb;
+    border: none;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+}
+
+.step-active {
+    opacity: 1;
+}
+
+.step-finish {
+    background-color: darkslategrey;
+}
+
+.button-color {
+    color: whitesmoke;
+    background-color: dimgray;
+    border-color: darkslategrey;
+}
+
+    .button-color:hover,
+    .button-color:focus {
+        background-color: gray;
+        background-position: 0 -15px;
+    }
+
+.div-color {
+    background-color: antiquewhite;
+}
+
+.character-sheet {
+    border: solid;
+    border-radius: 5px;
+    background-color: floralwhite;
+    width: 70em;
+    position: absolute;
+    padding: 1em;
+}
+
+.character-info {
+    display: flex;
+    margin: 0.5em;
+    padding: 0.5em;
+}
+
+.character-name {
+    border: 1px solid black;
+    border-radius: 10px 0 0 10px;
+    padding: 10px;
+    height: 10%;
+    width: 25%;
+    display: flex;
+    flex-direction: column-reverse;
+    background-color: antiquewhite;
+}
+
+.character-info-list {
+    width: 50%;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 1em;
+    display: flex;
+    background-color: antiquewhite;
+}
+
+.character-heroics {
+    border: 1px solid black;
+    border-radius: 0px 10px 10px 0px;
+    padding: 10px;
+    height: 10%;
+    width: 25%;
+    display: flex;
+    flex-direction: column-reverse;
+    background-color: antiquewhite;
+}
+
+.character-info-list-items {
+    overflow: hidden;
+}
+
+    .character-info-list-items dd {
+        width: 10%;
+        padding: 0.5em;
+    }
+
+    .character-info-list-items dt {
+        text-align: center;
+        width: 10%;
+        padding: 0.5em;
+    }
+
+.stats-section {
+    border-radius: 10px;
+    background-color: #bbb;
+    display: flex;
+    width: 12%;
+    padding: 0.5em;
+    margin: 1em;
+    height: 380px;
+}
+
+.stats-core {
+    width: 100%;
+}
+
+.stat {
+    text-align: center;
+    border: solid 1px black;
+    border-radius: 10px;
+    padding: 0.5em;
+    margin: 0.25em;
+    background-color: antiquewhite;
+}
+
+.stats-essential {
+    border-radius: 10px;
+    background-color: floralwhite;
+    display: flex;
+    width: 25%;
+    padding: 0.5em;
+    margin: 1em;
+}
+
+.essential-stat {
+    text-align: center;
+    border: solid 1px black;
+    border-radius: 10px;
+    padding: 0.5em;
+    margin: 0.25em;
+    background-color: antiquewhite;
+    width: 100px;
+    height: 67px;
+}
+
+
+
+.stats-div {
+    display: flex;
+    margin: 0.5em;
+    padding: 0.5em;
+}
+
+.skills-div {
+    display: flex;
+    width: 50%;
+    padding: 0.5em;
+    margin: 1em;
+}
+
+.skills-row{
+    padding: 1em;
+    margin: 1em;
+}
+
+.bottom-row {
+    display: flex;
+    width: 50%;
+    padding: 0.5em;
+    margin: 1em;
+}
+.link-divs {
+margin: 1em;
 }
