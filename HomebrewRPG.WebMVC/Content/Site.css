@@ -130,6 +130,7 @@ textarea {
     width: 12%;
     padding: 0.5em;
     margin: 1em;
+    height: 380px;
 }
 
 .stats-core {
@@ -147,7 +148,7 @@ textarea {
 
 .stats-essential {
     border-radius: 10px;
-    background-color: #bbb;
+    background-color: floralwhite;
     display: flex;
     width: 25%;
     padding: 0.5em;
@@ -171,4 +172,23 @@ textarea {
     display: flex;
     margin: 0.5em;
     padding: 0.5em;
+}
+
+.skills-div {
+    display: flex;
+    width: 50%;
+    padding: 0.5em;
+    margin: 1em;
+}
+
+.skills-row{
+    padding: 1em;
+    margin: 1em;
+}
+
+.bottom-row {
+    display: flex;
+    width: 50%;
+    padding: 0.5em;
+    margin: 1em;
 }
