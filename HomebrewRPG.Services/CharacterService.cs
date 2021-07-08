@@ -44,6 +44,9 @@ namespace HomebrewRPG.Services
                     Sanity = 0,
                     Dodge = model.Dodge,
                     Reaction = model.Reaction,
+                    Magic = model.Magic,
+                    BaseProwess = model.BaseProwess,
+                       
                     Fate = 0,
                     Speed = 0,
 
@@ -175,27 +178,27 @@ namespace HomebrewRPG.Services
                 };
             if (entity.ProwessType == "strength")
             {
-                detail.BaseProwess = 10 + (detail.Strength * 2);
+                detail.BaseProwess = entity.BaseProwess + (detail.Strength * 2);
             }
             else if (entity.ProwessType == "agility")
             {
-                detail.BaseProwess = 10 + (detail.Agility * 2);
+                detail.BaseProwess = entity.BaseProwess + (detail.Agility * 2);
             }
             else
             {
-                detail.BaseProwess = 10;
+                detail.BaseProwess = 0;
             }
             if (entity.MagicType == "intelligence")
             {
-                detail.Magic = 10 + (detail.Intelligence * 2);
+                detail.Magic = entity.Magic + (detail.Intelligence * 2);
             }
             else if (entity.MagicType == "charisma")
             {
-                detail.Magic = 10 + (detail.Charisma * 2);
+                detail.Magic = entity.Magic + (detail.Charisma * 2);
             }
             else if (entity.MagicType == "instinct")
             {
-                detail.Magic = 10 + (detail.Instinct * 2);
+                detail.Magic = entity.Magic + (detail.Instinct * 2);
             }
             else
             {
@@ -287,10 +290,10 @@ namespace HomebrewRPG.Services
             entity.MagicType = model.MagicType;
             entity.ProwessType = model.ProwessType;
 
-
             entity.Dodge = model.Dodge;
             entity.Reaction = model.Reaction;
-
+            entity.Magic = model.Magic;
+            entity.BaseProwess = model.BaseProwess;
 
             entity.Endurance = model.Endurance;
             entity.Constitution = model.Constitution;
