@@ -22,6 +22,27 @@ namespace HomebrewRPG.WebMVC.Controllers
 
         public ActionResult Create()
         {
+            ViewBag.Title = "New Wardrobe Item";
+
+            List<string> armorTypes = new List<string>()
+            {
+                "head",
+                "chest",
+                "legs",
+                "gloves",
+                "ring",
+                "amulet",
+                "cloak",
+                "feet",
+                "misc"
+            };
+            var query = from o in armorTypes
+                        select new SelectListItem()
+                        {
+                            Value = o,
+                            Text = o
+                        };
+            ViewBag.ArmorType = query.ToList();
             return View();
         }
 
@@ -60,6 +81,29 @@ namespace HomebrewRPG.WebMVC.Controllers
 
         public ActionResult Edit(int id)
         {
+            ViewBag.Title = "Edit Wardrobe Item";
+
+            List<string> armorTypes = new List<string>()
+            {
+                "head",
+                "chest",
+                "legs",
+                "gloves",
+                "ring",
+                "amulet",
+                "cloak",
+                "feet",
+                "misc"
+            };
+            var query = from o in armorTypes
+                        select new SelectListItem()
+                        {
+                            Value = o,
+                            Text = o
+                        };
+            ViewBag.ArmorType = query.ToList();
+            return View();
+
             var svc = CreateWardrobeItemService();
             var detail = svc.GetWardrobeItemById(id);
             var model =
