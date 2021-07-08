@@ -471,29 +471,37 @@
 
             <div class="stat">
 
-            <dt>
-                @Html.DisplayNameFor(model => model.DamageResistance)
-            </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.DamageResistance)
+                </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.DamageResistance)
-            </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.DamageResistance)
+                </dd>
             </div>
 
             <div class="stat">
 
-            <dt>
-                @Html.DisplayNameFor(model => model.MagicResistance)
-            </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.MagicResistance)
+                </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.MagicResistance)
-            </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.MagicResistance)
+                </dd>
 
             </div>
-        </div>
+
+                <a href="#" class="btn btn-primary btn-lg button-color link-divs">Weapons</a>
+
+                <a href="#" class="btn btn-primary btn-lg button-color link-divs">Items</a>
+
+
+                <a href="#" class="btn btn-primary btn-lg button-color link-divs">Wardrobe</a>
 
     </dl>
+</div>
+
 <p>
     @Html.ActionLink("Edit Character", "Edit", new { id = Model.CharacterId })
 </p>
