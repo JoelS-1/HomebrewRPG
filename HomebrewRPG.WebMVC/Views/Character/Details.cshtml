@@ -10,7 +10,7 @@
     <dl>
 
         <section class="character-info">
-            <section class="character-name">
+            <div class="character-name">
 
                 <dd>
                     @Html.DisplayFor(model => model.CharacterName)
@@ -18,7 +18,7 @@
                 <dt>
                     <p>Name</p>
                 </dt>
-            </section>
+            </div>
             <div class="character-info-list">
                 <div class="character-info-list-items">
                     <dt>
@@ -66,149 +66,212 @@
                     </dd>
                 </div>
             </div>
+            <section class="character-heroics">
+                <dl>foobar</dl>
+                <dt>Heroics</dt>
+            </section>
         </section>
 
-        <div class="">
+        <div class="stats-div">
+            <div class="stats-section">
+                <div class="stats-core">
+                    <div class="stat">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Health)
+                        </dt>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.Health)
-            </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Health)
+                        </dd>
+                    </div>
 
-            <dd>
-                @Html.DisplayFor(model => model.Health)
-            </dd>
+                    <div class="stat">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Strength)
+                        </dt>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.Strength)
-            </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Strength)
+                        </dd>
+                    </div>
 
-            <dd>
-                @Html.DisplayFor(model => model.Strength)
-            </dd>
+                    <div class="stat">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Agility)
+                        </dt>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.Instinct)
-            </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Agility)
+                        </dd>
+                    </div>
 
-            <dd>
-                @Html.DisplayFor(model => model.Instinct)
-            </dd>
+                    <div class="stat">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Instinct)
+                        </dt>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.Agility)
-            </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Instinct)
+                        </dd>
+                    </div>
 
-            <dd>
-                @Html.DisplayFor(model => model.Agility)
-            </dd>
+                    <div class="stat">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Intelligence)
+                        </dt>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.Intelligence)
-            </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Intelligence)
+                        </dd>
+                    </div>
 
-            <dd>
-                @Html.DisplayFor(model => model.Intelligence)
-            </dd>
+                    <div class="stat">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Charisma)
+                        </dt>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.Charisma)
-            </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Charisma)
+                        </dd>
+                    </div>
+                </div>
+            </div>
 
-            <dd>
-                @Html.DisplayFor(model => model.Charisma)
-            </dd>
+
+
+            <div class="stats-essential">
+                <div>
+
+
+                    <div class="essential-stat">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.HitPoints)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.HitPoints)
+                        </dd>
+                    </div>
+
+                    <div class="essential-stat">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Sanity)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Sanity)
+                        </dd>
+                    </div>
+
+                    <div class="essential-stat">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Dodge)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Dodge)
+                        </dd>
+                    </div>
+
+                    <div class="essential-stat">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Reaction)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Reaction)
+                        </dd>
+                    </div>
+
+
+                    <div class="essential-stat">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Speed)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Speed)
+                        </dd>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="essential-stat">
+                        <dd>
+                            <p>Current</p>
+                        </dd>
+
+                        <dd>
+                            <input type="number" style="width:50px"/>
+                        </dd>
+                    </div>
+
+                    <div class="essential-stat">
+                        <dd>
+                            <p>Current</p>
+                        </dd>
+
+                        <dd>
+                            <input type="number" style="width:50px" />
+                        </dd>
+                    </div>
+
+                    <div class="essential-stat">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Fate)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Fate)
+                        </dd>
+                    </div>
+
+                    <div class="essential-stat">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.BaseProwess)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.BaseProwess)
+                        </dd>
+                    </div>
+
+                    <div class="essential-stat">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Magic)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Magic)
+                        </dd>
+                    </div>
+
+                </div>
+            </div>
         </div>
 
-        <div class="">
+        <dt>
+            @Html.DisplayNameFor(model => model.Proficiency)
+        </dt>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.MagicType)
-            </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Proficiency)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MagicType)
+        </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.MagicType)
-            </dd>
+        <dd>
+            @Html.DisplayFor(model => model.MagicType)
+        </dd>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.ProwessType)
-            </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProwessType)
+        </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.ProwessType)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Proficiency)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Proficiency)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.HitPoints)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.HitPoints)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Sanity)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Sanity)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Dodge)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Dodge)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Reaction)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Reaction)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.BaseProwess)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.BaseProwess)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Magic)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Magic)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Fate)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Fate)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Speed)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Speed)
-            </dd>
-        </div>
+        <dd>
+            @Html.DisplayFor(model => model.ProwessType)
+        </dd>
 
         <div class="">
 

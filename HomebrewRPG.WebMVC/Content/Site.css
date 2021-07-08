@@ -58,9 +58,11 @@ textarea {
         background-color: gray;
         background-position: 0 -15px;
     }
-    .div-color{
-        background-color:antiquewhite;
-    }
+
+.div-color {
+    background-color: antiquewhite;
+}
+
 .character-sheet {
     border: solid;
     border-radius: 5px;
@@ -68,22 +70,24 @@ textarea {
     width: 70em;
     position: absolute;
 }
+
 .character-info {
     display: flex;
-    margin: 5px;
-    padding: 5px;
-    background-repeat: no-repeat;
+    margin: 0.5em;
+    padding: 0.5em;
 }
+
 .character-name {
     border: 1px solid black;
     border-radius: 10px 0 0 10px;
     padding: 10px;
     height: 10%;
-    width: 20%;
+    width: 25%;
     display: flex;
     flex-direction: column-reverse;
     background-color: antiquewhite;
 }
+
 .character-info-list {
     width: 50%;
     border: 1px solid black;
@@ -92,17 +96,79 @@ textarea {
     display: flex;
     background-color: antiquewhite;
 }
-    .character-info-list-items {
 
-        overflow: hidden;
-    }
-    .character-info-list-items dd{
+.character-heroics {
+    border: 1px solid black;
+    border-radius: 0px 10px 10px 0px;
+    padding: 10px;
+    height: 10%;
+    width: 25%;
+    display: flex;
+    flex-direction: column-reverse;
+    background-color: antiquewhite;
+}
 
+.character-info-list-items {
+    overflow: hidden;
+}
+
+    .character-info-list-items dd {
         width: 10%;
-        padding: 1em;
+        padding: 0.5em;
     }
-        .character-info-list-items dt {
-            text-align: center;
-            width: 10%;
-            padding: 1em;
-        }
+
+    .character-info-list-items dt {
+        text-align: center;
+        width: 10%;
+        padding: 0.5em;
+    }
+
+.stats-section {
+    border-radius: 10px;
+    background-color: #bbb;
+    display: flex;
+    width: 12%;
+    padding: 0.5em;
+    margin: 1em;
+}
+
+.stats-core {
+    width: 100%;
+}
+
+.stat {
+    text-align: center;
+    border: solid 1px black;
+    border-radius: 10px;
+    padding: 0.5em;
+    margin: 0.25em;
+    background-color: antiquewhite;
+}
+
+.stats-essential {
+    border-radius: 10px;
+    background-color: #bbb;
+    display: flex;
+    width: 25%;
+    padding: 0.5em;
+    margin: 1em;
+}
+
+.essential-stat {
+    text-align: center;
+    border: solid 1px black;
+    border-radius: 10px;
+    padding: 0.5em;
+    margin: 0.25em;
+    background-color: antiquewhite;
+    width: 100px;
+    height: 67px;
+}
+
+
+
+.stats-div {
+    display: flex;
+    margin: 0.5em;
+    padding: 0.5em;
+}
