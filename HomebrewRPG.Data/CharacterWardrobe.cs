@@ -11,7 +11,7 @@ namespace HomebrewRPG.Data
     public class CharacterWardrobe
     {
         [Key]
-        public int CharacterItemId { get; set; }
+        public int CharacterWardobeId { get; set; }
 
 
         [ForeignKey(nameof(WardrobeItem))]
