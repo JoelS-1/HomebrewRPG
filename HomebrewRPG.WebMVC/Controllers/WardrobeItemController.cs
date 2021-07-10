@@ -119,6 +119,7 @@ namespace HomebrewRPG.WebMVC.Controllers
                     Special = detail.Special,
                     PhysicalResistance = detail.PhysicalResistance,
                     MagicalResistance = detail.MagicalResistance,
+                    BlockModifier = detail.BlockModifier,
 
                     HitPoints = detail.HitPoints,
                     Sanity = detail.Sanity,

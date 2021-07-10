@@ -260,20 +260,12 @@
     <Content Include="Views\Character\Edit.cshtml" />
     <Content Include="Views\Character\Delete.cshtml" />
     <Content Include="Views\Weapon\Index.cshtml" />
-    <Content Include="Views\Weapon\Create.cshtml" />
-    <Content Include="Views\Weapon\Edit.cshtml" />
-    <Content Include="Views\Weapon\Delete.cshtml" />
-    <Content Include="Views\Weapon\Details.cshtml" />
     <Content Include="Views\Item\Index.cshtml" />
     <Content Include="Views\Item\Create.cshtml" />
     <Content Include="Views\Item\Details.cshtml" />
     <Content Include="Views\Item\Edit.cshtml" />
     <Content Include="Views\Item\Delete.cshtml" />
     <Content Include="Views\WardrobeItem\Index.cshtml" />
-    <Content Include="Views\WardrobeItem\Create.cshtml" />
-    <Content Include="Views\WardrobeItem\Details.cshtml" />
-    <Content Include="Views\WardrobeItem\Edit.cshtml" />
-    <Content Include="Views\WardrobeItem\Delete.cshtml" />
     <Content Include="Views\Spell\Index.cshtml" />
     <Content Include="Views\Spell\Create.cshtml" />
     <Content Include="Views\Spell\Details.cshtml" />
@@ -288,6 +280,12 @@
     <Content Include="Views\CharacterItem\Create.cshtml" />
     <Content Include="Views\CharacterWeapon\Create.cshtml" />
     <Content Include="Views\CharacterWardrobe\Create.cshtml" />
+    <Content Include="Views\Weapon\Create.cshtml" />
+    <Content Include="Views\Weapon\Details.cshtml" />
+    <Content Include="Views\Weapon\Edit.cshtml" />
+    <Content Include="Views\WardrobeItem\Create.cshtml" />
+    <Content Include="Views\WardrobeItem\Details.cshtml" />
+    <Content Include="Views\WardrobeItem\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -34,6 +34,7 @@ namespace HomebrewRPG.Services
                     Special = model.Special,
                     PhysicalResistance = model.PhysicalResistance,
                     MagicalResistance = model.MagicalResistance,
+                    BlockModifier = model.BlockModifier,
 
                     HitPoints = model.HitPoints,
                     Sanity = model.Sanity,
@@ -109,6 +110,7 @@ namespace HomebrewRPG.Services
                     Special = entity.Special,
                     PhysicalResistance = entity.PhysicalResistance,
                     MagicalResistance = entity.MagicalResistance,
+                    BlockModifier = entity.BlockModifier,
 
                     Health = entity.Health,
                     Strength = entity.Strength,
@@ -167,6 +169,7 @@ namespace HomebrewRPG.Services
             entity.Special = model.Special;
             entity.PhysicalResistance = model.PhysicalResistance;
             entity.MagicalResistance = model.MagicalResistance;
+            entity.BlockModifier = model.BlockModifier;
 
             entity.Dodge = model.Dodge;
             entity.Reaction = model.Reaction;
