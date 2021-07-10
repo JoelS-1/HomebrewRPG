@@ -1,6 +1,7 @@
 ﻿using HomebrewRPG.Data;
 using HomebrewRPG.Models;
 using HomebrewRPG.Models.CharacterItemModels;
+using HomebrewRPG.Models.CharacterWeaponModels;
 using HomebrewRPG.Services;
 using Microsoft.AspNet.Identity;
 using System;
@@ -129,7 +130,7 @@ namespace HomebrewRPG.WebMVC.Controllers
             var userId = Guid.Parse(User.Identity.GetUserId());
             var characterService = new CharacterService(userId);
             var characterItemService = new CharacterItemService(userId);
-            //var characterWeaponService = new CharacterWeaponService(userId);
+            var characterWeaponService = new CharacterWeaponService(userId);
             //var characterWardrobeItemService = new CharacterWardrobeService(userId);
 
 
@@ -137,21 +138,43 @@ namespace HomebrewRPG.WebMVC.Controllers
             model.CharacterDetail = characterService.GetCharacterById(id);
             //model.items = characterItemService.GetCharacterItemsByCharacterId(id);
 
-            var x = characterItemService.GetCharacterItemsByCharacterId(id);
-            foreach(var y in x)
+            var itemList = characterItemService.GetCharacterItemsByCharacterId(id);
+            foreach(var x in itemList)
             {
-                CharacterItemDetail z = new CharacterItemDetail();
+                CharacterItemDetail y = new CharacterItemDetail();
                 {
 
-                    z.CharacterId = y.CharacterId;
-                    z.ItemId = y.ItemId;
-                    z.Quantity = y.Quantity;
-                    z.ItemName = y.ItemName;
-                    z.ItemDescription = y.ItemDescription;
+                    y.CharacterId = x.CharacterId;
+                    y.ItemId = x.ItemId;
+                    y.Quantity = x.Quantity;
+                    y.ItemName = x.ItemName;
+                    y.ItemDescription = x.ItemDescription;
                 };
-                model.Items.Add(z);
+                model.Items.Add(y);
             }
-            //model.weapons = characterWeaponService.GetCharacterWeaponById(id);
+            var weaponList = characterWeaponService.GetCharacterWeaponsByCharacterId(id);
+            foreach (var x in weaponList)
+            {
+                CharacterWeaponDetail y = new CharacterWeaponDetail();
+                {
+
+                    y.CharacterId = x.CharacterId;
+                    y.CharacterWeaponId = x.CharacterWeaponId;
+                    y.WeaponId = x.WeaponId;
+                    y.IsEquipped = x.IsEquipped;
+
+                    y.WeaponName = x.WeaponName;
+                    y.Description = x.Description;
+                    y.WeaponType = x.WeaponType;
+                    y.DamageDice = x.DamageDice;
+                    y.DamageModifier = x.DamageModifier;
+                    y.ProwessBonus = x.ProwessBonus;
+                    y.Range = x.Range;
+                    y.CriticalRange = x.CriticalRange;
+                    y.Special = x.Special;
+                };
+                model.Weapons.Add(y);
+            }
             //model.wardrobeItems = characterWardrobeItemService.GetCharacterWardrobeById(id);
 
             return View(model);

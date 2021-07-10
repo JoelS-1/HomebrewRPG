@@ -32,12 +32,41 @@ namespace HomebrewRPG.Services
             return _ctx.SaveChanges() == 1;
         }
 
+        public IEnumerable<CharacterWeaponDetail> GetCharacterWeaponsByCharacterId(int id)
+        {
+            var query =
+                _ctx
+                    .CharacterWeapons
+                    .Where(e => e.CharacterId == id && e.OwnerId == _userId)
+                    .Select(
+                        e =>
+                            new CharacterWeaponDetail
+                            {
+                                CharacterId = e.CharacterId,
+                                CharacterWeaponId = e.CharacterWeaponId,
+                                WeaponId = e.WeaponId,
+                                IsEquipped = e.IsEquipped,
+
+                                WeaponName = e.Weapon.WeaponName,
+                                Description = e.Weapon.Description,
+                                WeaponType = e.Weapon.WeaponType,
+                                DamageDice = e.Weapon.DamageDice,
+                                DamageModifier = e.Weapon.DamageModifier,
+                                ProwessBonus = e.Weapon.ProwessBonus,
+                                Range = e.Weapon.Range,
+                                CriticalRange = e.Weapon.CriticalRange,
+                                Special = e.Weapon.Special,
+                            }
+                    );
+            return query.ToArray();
+        }
+
         public CharacterWeaponEdit GetCharacterWeaponById(int id)
         {
             var entity =
                 _ctx
                     .CharacterWeapons
-                    .Single(e => e.CharacterItemId == id && e.OwnerId == _userId);
+                    .Single(e => e.CharacterWeaponId == id && e.OwnerId == _userId);
             CharacterWeaponEdit detail =
                 new CharacterWeaponEdit
                 {
@@ -53,7 +82,7 @@ namespace HomebrewRPG.Services
             var entity =
                 _ctx
                     .CharacterWeapons
-                    .Single(e => e.CharacterItemId == model.CharacterWeaponId && e.OwnerId == _userId);
+                    .Single(e => e.CharacterWeaponId == model.CharacterWeaponId && e.OwnerId == _userId);
 
             entity.CharacterId = model.CharacterId;
             entity.WeaponId = model.WeaponId;
@@ -67,7 +96,7 @@ namespace HomebrewRPG.Services
             var entity =
                 _ctx
                     .CharacterWeapons
-                    .Single(e => e.CharacterItemId == characterWeaponId && e.OwnerId == _userId);
+                    .Single(e => e.CharacterWeaponId == characterWeaponId && e.OwnerId == _userId);
             _ctx.CharacterWeapons.Remove(entity);
 
             return _ctx.SaveChanges() == 1;

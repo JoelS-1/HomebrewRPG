@@ -66,6 +66,7 @@
     <Compile Include="CharacterWardrobeModels\CharacterWardrobeCreate.cs" />
     <Compile Include="CharacterWardrobeModels\CharacterWardrobeEdit.cs" />
     <Compile Include="CharacterWeaponModels\CharacterWeaponCreate.cs" />
+    <Compile Include="CharacterWeaponModels\CharacterWeaponDetail.cs" />
     <Compile Include="CharacterWeaponModels\CharacterWeaponEdit.cs" />
     <Compile Include="HeroicModels\HeroicDetail.cs" />
     <Compile Include="HeroicModels\HeroicCreate.cs" />
