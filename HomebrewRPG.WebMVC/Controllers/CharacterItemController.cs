@@ -14,10 +14,7 @@ namespace HomebrewRPG.WebMVC.Controllers
         // GET: CharacterItem
         public ActionResult Index()
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new CharacterItemService(userId);
-            var model = service.GetCharacterItems();
-            return View(model);
+            return View();
         }
 
         public ActionResult Create()
@@ -34,11 +31,11 @@ namespace HomebrewRPG.WebMVC.Controllers
             var service = CreateCharacterItemService();
             if (service.CreateCharacterItem(model))
             {
-                TempData["SaveResult"] = "Your item was created.";
+                TempData["SaveResult"] = "Your item was added.";
                 return RedirectToAction("Index");
             };
 
-            ModelState.AddModelError("", "Item could not be created.");
+            ModelState.AddModelError("", "Item could not be added.");
 
             return View("Index");
         }

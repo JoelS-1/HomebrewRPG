@@ -122,6 +122,24 @@ namespace HomebrewRPG.WebMVC.Controllers
             return View(model);
         }
 
+        public ActionResult CharacterSheet(int id)
+        {
+                var userId = Guid.Parse(User.Identity.GetUserId());
+                var characterItemService = new CharacterItemService(userId);
+                var characterWeaponService = new CharacterWeaponService(userId);
+                var characterWardrobeItemService = new CharacterWardrobeService(userId);
+                var characterService = new CharacterService(userId);
+
+
+            CharacterSheetModel model = new CharacterSheetModel();
+            model.items = (List<Data.CharacterItem>)characterItemService.GetCharacterItemsByCharacterId(id);
+            model.characterDetail = characterService.GetCharacterById(id);
+            //model.weapons = characterWeaponService.GetCharacterWeaponById(id);
+            //model.wardrobeItems = characterWardrobeItemService.GetCharacterWardrobeById(id);
+
+            return View(model);
+        }
+
         public ActionResult Edit(int id)
         {
             ViewBag.Title = "New Character";

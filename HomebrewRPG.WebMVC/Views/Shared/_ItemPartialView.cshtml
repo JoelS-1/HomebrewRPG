@@ -1,0 +1,22 @@
+﻿@model HomebrewRPG.Data.Item
+
+
+    <tr>
+        <td>
+            @Html.DisplayFor(m => m.ItemId)
+        </td>
+        <td>
+            @Html.DisplayFor(m => m.ItemName)
+        </td>
+        <td>
+            @Html.DisplayFor(m => m.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(m => m.Uses)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.ItemId }) |
+            @Html.ActionLink("Details", "Details", new { id = Model.ItemId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = Model.ItemId })
+        </td>
+    </tr>

@@ -62,6 +62,7 @@
     <Compile Include="CharacterItemModels\CharacterItemEdit.cs" />
     <Compile Include="CharacterItemModels\CharacterItemList.cs" />
     <Compile Include="CharacterListItem.cs" />
+    <Compile Include="CharacterSheetModel.cs" />
     <Compile Include="CharacterWardrobeModels\CharacterWardrobeCreate.cs" />
     <Compile Include="CharacterWardrobeModels\CharacterWardrobeEdit.cs" />
     <Compile Include="CharacterWeaponModels\CharacterWeaponCreate.cs" />

@@ -33,12 +33,12 @@ namespace HomebrewRPG.Services
             return _ctx.SaveChanges() == 1;
         }
 
-        public IEnumerable<CharacterItemList> GetCharacterItems()
+        public IEnumerable<CharacterItemList> GetCharacterItemsByCharacterId(int id)
         {
             var query =
                 _ctx
                     .CharacterItems
-                    .Where(e => e.OwnerId == _userId)
+                    .Where(e => e.CharacterId == id && e.OwnerId == _userId)
                     .Select(
                         e =>
                             new CharacterItemList
