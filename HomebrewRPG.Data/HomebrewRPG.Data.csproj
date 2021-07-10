@@ -89,6 +89,10 @@
     <Compile Include="Migrations\202107061928054_inventoryRework.Designer.cs">
       <DependentUpon>202107061928054_inventoryRework.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107100056213_join tables for inventory.cs" />
+    <Compile Include="Migrations\202107100056213_join tables for inventory.Designer.cs">
+      <DependentUpon>202107100056213_join tables for inventory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Money.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -121,6 +125,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107061928054_inventoryRework.resx">
       <DependentUpon>202107061928054_inventoryRework.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107100056213_join tables for inventory.resx">
+      <DependentUpon>202107100056213_join tables for inventory.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

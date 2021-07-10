@@ -285,10 +285,11 @@
     <Content Include="Views\Heroic\Edit.cshtml" />
     <Content Include="Views\Heroic\Delete.cshtml" />
     <Content Include="Views\Shared\_ItemPartialView.cshtml" />
+    <Content Include="Views\Character\CharacterSheet.cshtml" />
+    <Content Include="Views\CharacterItem\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\CharacterItem\" />
     <Folder Include="Views\CharacterWardrobe\" />
     <Folder Include="Views\CharacterWeapon\" />
   </ItemGroup>

@@ -1,0 +1,72 @@
+﻿@model HomebrewRPG.Models.CharacterSheetModel
+
+@{
+    ViewBag.Title = "CharacterSheet";
+}
+
+<h2>CharacterSheet</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@if (TempData.ContainsKey("SaveResult"))
+{
+    <div class="alert" alert-success fade in" role="alert">
+        @ViewBag.SaveResult
+        <button type="button" class="close" data-dismiss="alert">
+            <span>&times;</span>
+        </button>
+    </div>
+}
+<div>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CharacterDetail.CharacterId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CharacterDetail.CharacterName)
+            </th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => modelItem.CharacterDetail.CharacterId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => modelItem.CharacterDetail.CharacterName)
+            </td>
+        </tr>
+    </table>
+
+</div>
+
+@if (Model.Items != null)
+{
+    <div>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Items)
+                </th>
+                <th>
+                    <p>Description</p>
+                </th>
+                <th></th>
+            </tr>
+            @foreach (var item in Model.Items)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ItemName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ItemDescription)
+                    </td>
+                </tr>
+            }
+        </table>
+
+    </div>
+
+}

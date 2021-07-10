@@ -1,4 +1,5 @@
 ﻿using HomebrewRPG.Data;
+using HomebrewRPG.Models.CharacterItemModels;
 using HomebrewRPG.Models.ItemModels;
 using HomebrewRPG.Models.WardrobeItemModels;
 using HomebrewRPG.Models.WeaponModels;
@@ -12,10 +13,10 @@ namespace HomebrewRPG.Models
 {
     public class CharacterSheetModel
     {
-        public List<CharacterItem> items { get; set; }
-        public List<WeaponDetail> weapons { get; set; }
-        public List<WardrobeItemDetail> wardrobeItems { get; set; }
-        public CharacterDetail characterDetail { get; set; }
+        public List<CharacterItemDetail> Items { get; set; } = new List<CharacterItemDetail>();
+        public List<WeaponDetail> Weapons { get; set; } = new List<WeaponDetail>();
+        public List<WardrobeItemDetail> WardrobeItems { get; set; } = new List<WardrobeItemDetail>();
+        public CharacterDetail CharacterDetail { get; set; }
 
     }
 }

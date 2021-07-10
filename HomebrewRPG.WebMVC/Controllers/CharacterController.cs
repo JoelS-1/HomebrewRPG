@@ -1,4 +1,6 @@
-﻿using HomebrewRPG.Models;
+﻿using HomebrewRPG.Data;
+using HomebrewRPG.Models;
+using HomebrewRPG.Models.CharacterItemModels;
 using HomebrewRPG.Services;
 using Microsoft.AspNet.Identity;
 using System;
@@ -33,11 +35,11 @@ namespace HomebrewRPG.WebMVC.Controllers
                 "instinct"
             };
             var magicQuery = from o in magicTypes
-                        select new SelectListItem()
-                        {
-                            Value = o,
-                            Text = o
-                        };
+                             select new SelectListItem()
+                             {
+                                 Value = o,
+                                 Text = o
+                             };
             ViewBag.MagicType = magicQuery.ToList();
 
             List<string> prowessTypes = new List<string>()
@@ -46,11 +48,11 @@ namespace HomebrewRPG.WebMVC.Controllers
                 "strength"
             };
             var prowessQuery = from o in prowessTypes
-                        select new SelectListItem()
-                        {
-                            Value = o,
-                            Text = o
-                        };
+                               select new SelectListItem()
+                               {
+                                   Value = o,
+                                   Text = o
+                               };
             ViewBag.ProwessType = prowessQuery.ToList();
 
             var model =
@@ -124,16 +126,31 @@ namespace HomebrewRPG.WebMVC.Controllers
 
         public ActionResult CharacterSheet(int id)
         {
-                var userId = Guid.Parse(User.Identity.GetUserId());
-                var characterItemService = new CharacterItemService(userId);
-                var characterWeaponService = new CharacterWeaponService(userId);
-                var characterWardrobeItemService = new CharacterWardrobeService(userId);
-                var characterService = new CharacterService(userId);
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var characterService = new CharacterService(userId);
+            var characterItemService = new CharacterItemService(userId);
+            //var characterWeaponService = new CharacterWeaponService(userId);
+            //var characterWardrobeItemService = new CharacterWardrobeService(userId);
 
 
             CharacterSheetModel model = new CharacterSheetModel();
-            model.items = (List<Data.CharacterItem>)characterItemService.GetCharacterItemsByCharacterId(id);
-            model.characterDetail = characterService.GetCharacterById(id);
+            model.CharacterDetail = characterService.GetCharacterById(id);
+            //model.items = characterItemService.GetCharacterItemsByCharacterId(id);
+
+            var x = characterItemService.GetCharacterItemsByCharacterId(id);
+            foreach(var y in x)
+            {
+                CharacterItemDetail z = new CharacterItemDetail();
+                {
+
+                    z.CharacterId = y.CharacterId;
+                    z.ItemId = y.ItemId;
+                    z.Quantity = y.Quantity;
+                    z.ItemName = y.ItemName;
+                    z.ItemDescription = y.ItemDescription;
+                };
+                model.Items.Add(z);
+            }
             //model.weapons = characterWeaponService.GetCharacterWeaponById(id);
             //model.wardrobeItems = characterWardrobeItemService.GetCharacterWardrobeById(id);
 
@@ -200,7 +217,7 @@ namespace HomebrewRPG.WebMVC.Controllers
                     Magic = detail.Magic,
                     Fate = detail.Fate,
                     Speed = detail.Speed,
-                    
+
 
                     Endurance = detail.Endurance,
                     Constitution = detail.Constitution,
@@ -224,11 +241,11 @@ namespace HomebrewRPG.WebMVC.Controllers
                     Performance = detail.Performance,
                     Seduction = detail.Seduction,
                 };
-            if(detail.CharacterLevel < 3)
+            if (detail.CharacterLevel < 3)
             {
                 model.Proficiency = 2;
             }
-            else if(detail.CharacterLevel < 8)
+            else if (detail.CharacterLevel < 8)
             {
                 model.Proficiency = 3;
             }
@@ -257,13 +274,13 @@ namespace HomebrewRPG.WebMVC.Controllers
         {
             if (!ModelState.IsValid) return View(model);
 
-            if(model.CharacterId != id)
+            if (model.CharacterId != id)
             {
                 ModelState.AddModelError("", "Id Mismatch");
                 return View(model);
             }
             var service = CreateCharacterService();
-            if(service.UpdateCharacter(model))
+            if (service.UpdateCharacter(model))
             {
                 TempData["SaveResult"] = "Your character was updated.";
                 return RedirectToAction("Index");
