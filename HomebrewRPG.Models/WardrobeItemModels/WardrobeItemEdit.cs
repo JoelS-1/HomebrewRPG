@@ -19,9 +19,6 @@ namespace HomebrewRPG.Models.WardrobeItemModels
         public int MagicRequired { get; set; }
         public string Special { get; set; }
 
-        public int PhysicalBlocking { get; set; }
-        public int MagicalBlocking { get; set; }
-
         public int PhysicalResistance { get; set; }
         public int MagicalResistance { get; set; }
     }

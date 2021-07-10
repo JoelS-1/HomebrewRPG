@@ -36,7 +36,6 @@ namespace HomebrewRPG.Services
                     Parrying = model.Parrying,
                     PhysicalBlocking = model.PhysicalBlocking,
                     MagicalBlocking = model.MagicalBlocking,
-                    StatBonuses = model.StatBonuses
                 };
             _ctx.Weapons.Add(entity);
             return _ctx.SaveChanges() == 1;

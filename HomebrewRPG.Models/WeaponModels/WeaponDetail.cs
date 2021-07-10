@@ -23,7 +23,5 @@ namespace HomebrewRPG.Models.WeaponModels
         public int Parrying { get; set; }
         public int PhysicalBlocking { get; set; }
         public int MagicalBlocking { get; set; }
-
-        public Dictionary<string, int> StatBonuses { get; set; }
     }
 }

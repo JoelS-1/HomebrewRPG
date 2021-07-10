@@ -65,6 +65,10 @@
     <Compile Include="Migrations\202107100618410_initial migration.Designer.cs">
       <DependentUpon>202107100618410_initial migration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107101732058_added stats to weapon and wardrobe.cs" />
+    <Compile Include="Migrations\202107101732058_added stats to weapon and wardrobe.Designer.cs">
+      <DependentUpon>202107101732058_added stats to weapon and wardrobe.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Money.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -79,6 +83,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202107100618410_initial migration.resx">
       <DependentUpon>202107100618410_initial migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107101732058_added stats to weapon and wardrobe.resx">
+      <DependentUpon>202107101732058_added stats to weapon and wardrobe.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

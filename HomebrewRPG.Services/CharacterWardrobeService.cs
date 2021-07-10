@@ -55,9 +55,7 @@ namespace HomebrewRPG.Services
                                 AgilityRequired = e.WardrobeItem.AgilityRequired,
                                 MagicRequired = e.WardrobeItem.MagicRequired,
                                 Special = e.WardrobeItem.Special,
-                                PhysicalBlocking = e.WardrobeItem.PhysicalBlocking,
                                 PhysicalResistance = e.WardrobeItem.PhysicalResistance,
-                                MagicalBlocking = e.WardrobeItem.MagicalBlocking,
                                 MagicalResistance = e.WardrobeItem.MagicalResistance,
                             }
                     );

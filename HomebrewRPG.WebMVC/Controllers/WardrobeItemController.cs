@@ -117,8 +117,6 @@ namespace HomebrewRPG.WebMVC.Controllers
                     AgilityRequired = detail.AgilityRequired,
                     MagicRequired = detail.MagicRequired,
                     Special = detail.Special,
-                    PhysicalBlocking = detail.PhysicalBlocking,
-                    MagicalBlocking = detail.MagicalBlocking,
                     PhysicalResistance = detail.PhysicalResistance,
                     MagicalResistance = detail.MagicalResistance
                 };

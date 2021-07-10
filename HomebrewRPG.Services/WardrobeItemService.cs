@@ -32,8 +32,6 @@ namespace HomebrewRPG.Services
                     AgilityRequired = model.AgilityRequired,
                     MagicRequired = model.MagicRequired,
                     Special = model.Special,
-                    PhysicalBlocking = model.PhysicalBlocking,
-                    MagicalBlocking = model.MagicalBlocking,
                     PhysicalResistance = model.PhysicalResistance,
                     MagicalResistance = model.MagicalResistance
                 };
@@ -78,8 +76,6 @@ namespace HomebrewRPG.Services
                     AgilityRequired = entity.AgilityRequired,
                     MagicRequired = entity.MagicRequired,
                     Special = entity.Special,
-                    PhysicalBlocking = entity.PhysicalBlocking,
-                    MagicalBlocking = entity.MagicalBlocking,
                     PhysicalResistance = entity.PhysicalResistance,
                     MagicalResistance = entity.MagicalResistance
                 };
@@ -100,8 +96,6 @@ namespace HomebrewRPG.Services
             entity.AgilityRequired = model.AgilityRequired;
             entity.MagicRequired = model.MagicRequired;
             entity.Special = model.Special;
-            entity.PhysicalBlocking = model.PhysicalBlocking;
-            entity.MagicalBlocking = model.MagicalBlocking;
             entity.PhysicalResistance = model.PhysicalResistance;
             entity.MagicalResistance = model.MagicalResistance;
 
