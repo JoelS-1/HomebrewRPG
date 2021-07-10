@@ -44,7 +44,6 @@ namespace HomebrewRPG.Models.WardrobeItemModels
         public int Athletics { get; set; }
         public int Tenacity { get; set; }
         public int Acrobatics { get; set; }
-        [Display(Name = "Sleight Of Hand")]
         public int SleightOfHand { get; set; }
         public int Sneak { get; set; }
         public int Willpower { get; set; }

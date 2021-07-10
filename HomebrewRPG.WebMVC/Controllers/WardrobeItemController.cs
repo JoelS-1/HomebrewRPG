@@ -118,7 +118,39 @@ namespace HomebrewRPG.WebMVC.Controllers
                     MagicRequired = detail.MagicRequired,
                     Special = detail.Special,
                     PhysicalResistance = detail.PhysicalResistance,
-                    MagicalResistance = detail.MagicalResistance
+                    MagicalResistance = detail.MagicalResistance,
+
+                    HitPoints = detail.HitPoints,
+                    Sanity = detail.Sanity,
+                    Dodge = detail.Dodge,
+                    Reaction = detail.Reaction,
+                    BaseProwess = detail.BaseProwess,
+                    Magic = detail.Magic,
+                    Fate = detail.Fate,
+                    Speed = detail.Speed,
+
+
+                    Endurance = detail.Endurance,
+                    Constitution = detail.Constitution,
+                    Athletics = detail.Athletics,
+                    Tenacity = detail.Tenacity,
+                    Acrobatics = detail.Acrobatics,
+                    SleightOfHand = detail.SleightOfHand,
+                    Sneak = detail.Sneak,
+                    Willpower = detail.Willpower,
+                    Investigation = detail.Investigation,
+                    Knowledge = detail.Knowledge,
+                    Bravery = detail.Bravery,
+                    Pilotry = detail.Pilotry,
+                    Insight = detail.Insight,
+                    Perception = detail.Perception,
+                    Survival = detail.Survival,
+                    Faith = detail.Faith,
+                    Deception = detail.Deception,
+                    Diplomacy = detail.Diplomacy,
+                    Intimidation = detail.Intimidation,
+                    Performance = detail.Performance,
+                    Seduction = detail.Seduction,
                 };
             return View(model);
         }
