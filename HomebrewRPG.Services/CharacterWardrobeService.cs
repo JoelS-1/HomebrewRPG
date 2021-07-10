@@ -32,25 +32,37 @@ namespace HomebrewRPG.Services
             return _ctx.SaveChanges() == 1;
         }
 
-        //public IEnumerable<CharacterWardrobeListItem> GetCharacterItemsByCharacterId(int id)
-        //{
-        //    var query =
-        //        _ctx
-        //            .CharacterItems
-        //            .Where(e => e.CharacterId == id && e.OwnerId == _userId)
-        //            .Select(
-        //                e =>
-        //                    new CharacterWardrobeListItem
-        //                    {
-        //                        CharacterId = e.CharacterId,
-        //                        ItemId = e.ItemId,
-        //                        ItemName = e.Item.ItemName,
-        //                        ItemDescription = e.Item.Description,
-        //                        Quantity = e.Quantity
-        //                    }
-        //            );
-        //    return query.ToArray();
-        //}
+        public IEnumerable<CharacterWardrobeDetail> GetCharacterWardrobeListByCharacterId(int id)
+        {
+            var query =
+                _ctx
+                    .CharacterWardrobes
+                    .Where(e => e.CharacterId == id && e.OwnerId == _userId)
+                    .Select(
+                        e =>
+                            new CharacterWardrobeDetail
+                            {
+                                CharacterId = e.CharacterId,
+                                CharacterWardrobeId = e.CharacterWardobeId,
+                                WardrobeItemId = e.WardrobeItemId,
+                                IsEquipped = e.IsEquipped,
+
+                                ArmorName = e.WardrobeItem.ArmorName,
+                                ArmorType = e.WardrobeItem.ArmorType,
+                                Description = e.WardrobeItem.Description,
+                                HealthRequired = e.WardrobeItem.HealthRequired,
+                                StrengthRequired = e.WardrobeItem.StrengthRequired,
+                                AgilityRequired = e.WardrobeItem.AgilityRequired,
+                                MagicRequired = e.WardrobeItem.MagicRequired,
+                                Special = e.WardrobeItem.Special,
+                                PhysicalBlocking = e.WardrobeItem.PhysicalBlocking,
+                                PhysicalResistance = e.WardrobeItem.PhysicalResistance,
+                                MagicalBlocking = e.WardrobeItem.MagicalBlocking,
+                                MagicalResistance = e.WardrobeItem.MagicalResistance,
+                            }
+                    );
+            return query.ToArray();
+        }
 
         public CharacterWardrobeEdit GetCharacterWardrobeById(int id)
         {

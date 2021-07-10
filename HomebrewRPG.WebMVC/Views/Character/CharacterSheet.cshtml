@@ -6,18 +6,6 @@
 
 <h2>CharacterSheet</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-@if (TempData.ContainsKey("SaveResult"))
-{
-    <div class="alert" alert-success fade in" role="alert">
-        @ViewBag.SaveResult
-        <button type="button" class="close" data-dismiss="alert">
-            <span>&times;</span>
-        </button>
-    </div>
-}
 <div>
     <table class="table">
         <tr>
@@ -41,32 +29,73 @@
 
 </div>
 
-@if (Model.Items != null)
-{
-    <div>
-        <table class="table">
+
+<div>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Items)
+            </th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model.Items)
+        {
             <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Items)
-                </th>
-                <th>
-                    <p>Description</p>
-                </th>
-                <th></th>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ItemName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ItemDescription)
+                </td>
             </tr>
-            @foreach (var item in Model.Items)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ItemName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ItemDescription)
-                    </td>
-                </tr>
-            }
-        </table>
+        }
+    </table>
 
-    </div>
+</div>
 
-}
+
+<div>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Weapons)
+            </th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model.Weapons)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WeaponName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+            </tr>
+        }
+    </table>
+
+</div>
+
+<div>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.WardrobeItems)
+            </th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model.WardrobeItems)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ArmorName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+            </tr>
+        }
+    </table>
+
+</div>

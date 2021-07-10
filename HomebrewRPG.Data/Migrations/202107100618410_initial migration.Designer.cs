@@ -7,13 +7,13 @@ namespace HomebrewRPG.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class RemovedNullableInts : IMigrationMetadata
+    public sealed partial class initialmigration : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(RemovedNullableInts));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(initialmigration));
         
         string IMigrationMetadata.Id
         {
-            get { return "202107021929571_RemovedNullableInts"; }
+            get { return "202107100618410_initial migration"; }
         }
         
         string IMigrationMetadata.Source

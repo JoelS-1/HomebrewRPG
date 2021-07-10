@@ -1,6 +1,7 @@
 ﻿using HomebrewRPG.Data;
 using HomebrewRPG.Models;
 using HomebrewRPG.Models.CharacterItemModels;
+using HomebrewRPG.Models.CharacterWardrobeModels;
 using HomebrewRPG.Models.CharacterWeaponModels;
 using HomebrewRPG.Services;
 using Microsoft.AspNet.Identity;
@@ -131,7 +132,7 @@ namespace HomebrewRPG.WebMVC.Controllers
             var characterService = new CharacterService(userId);
             var characterItemService = new CharacterItemService(userId);
             var characterWeaponService = new CharacterWeaponService(userId);
-            //var characterWardrobeItemService = new CharacterWardrobeService(userId);
+            var characterWardrobeItemService = new CharacterWardrobeService(userId);
 
 
             CharacterSheetModel model = new CharacterSheetModel();
@@ -175,7 +176,32 @@ namespace HomebrewRPG.WebMVC.Controllers
                 };
                 model.Weapons.Add(y);
             }
-            //model.wardrobeItems = characterWardrobeItemService.GetCharacterWardrobeById(id);
+            var wardrobeList = characterWardrobeItemService.GetCharacterWardrobeListByCharacterId(id);
+            foreach (var x in wardrobeList)
+            {
+                CharacterWardrobeDetail y = new CharacterWardrobeDetail();
+                {
+
+                    y.CharacterId = x.CharacterId;
+                    y.CharacterWardrobeId = x.CharacterWardrobeId;
+                    y.WardrobeItemId = x.WardrobeItemId;
+                    y.IsEquipped = x.IsEquipped;
+
+                    y.ArmorName = x.ArmorName;
+                    y.ArmorType = x.ArmorType;
+                    y.Description = x.Description;
+                    y.HealthRequired = x.HealthRequired;
+                    y.StrengthRequired = x.StrengthRequired;
+                    y.AgilityRequired = x.AgilityRequired;
+                    y.Special = x.Special;
+                    y.MagicRequired = x.MagicRequired;
+                    y.PhysicalBlocking = x.PhysicalBlocking;
+                    y.PhysicalResistance = x.PhysicalResistance;
+                    y.MagicalBlocking = x.MagicalBlocking;
+                    y.MagicalResistance = x.MagicalResistance;
+                };
+                model.WardrobeItems.Add(y);
+            }
 
             return View(model);
         }
