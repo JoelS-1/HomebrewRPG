@@ -102,7 +102,6 @@ namespace HomebrewRPG.WebMVC.Controllers
                             Text = o
                         };
             ViewBag.ArmorType = query.ToList();
-            return View();
 
             var svc = CreateWardrobeItemService();
             var detail = svc.GetWardrobeItemById(id);
@@ -118,10 +117,48 @@ namespace HomebrewRPG.WebMVC.Controllers
                     AgilityRequired = detail.AgilityRequired,
                     MagicRequired = detail.MagicRequired,
                     Special = detail.Special,
-                    PhysicalBlocking = detail.PhysicalBlocking,
-                    MagicalBlocking = detail.MagicalBlocking,
                     PhysicalResistance = detail.PhysicalResistance,
-                    MagicalResistance = detail.MagicalResistance
+                    MagicalResistance = detail.MagicalResistance,
+                    BlockModifier = detail.BlockModifier,
+
+                    Health = detail.Health,
+                    Strength = detail.Strength,
+                    Instinct = detail.Instinct,
+                    Agility = detail.Agility,
+                    Intelligence = detail.Intelligence,
+                    Charisma = detail.Charisma,
+
+                    HitPoints = detail.HitPoints,
+                    Sanity = detail.Sanity,
+                    Dodge = detail.Dodge,
+                    Reaction = detail.Reaction,
+                    BaseProwess = detail.BaseProwess,
+                    Magic = detail.Magic,
+                    Fate = detail.Fate,
+                    Speed = detail.Speed,
+
+
+                    Endurance = detail.Endurance,
+                    Constitution = detail.Constitution,
+                    Athletics = detail.Athletics,
+                    Tenacity = detail.Tenacity,
+                    Acrobatics = detail.Acrobatics,
+                    SleightOfHand = detail.SleightOfHand,
+                    Sneak = detail.Sneak,
+                    Willpower = detail.Willpower,
+                    Investigation = detail.Investigation,
+                    Knowledge = detail.Knowledge,
+                    Bravery = detail.Bravery,
+                    Pilotry = detail.Pilotry,
+                    Insight = detail.Insight,
+                    Perception = detail.Perception,
+                    Survival = detail.Survival,
+                    Faith = detail.Faith,
+                    Deception = detail.Deception,
+                    Diplomacy = detail.Diplomacy,
+                    Intimidation = detail.Intimidation,
+                    Performance = detail.Performance,
+                    Seduction = detail.Seduction,
                 };
             return View(model);
         }

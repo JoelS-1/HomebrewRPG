@@ -61,33 +61,13 @@
     <Compile Include="Heroic.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Item.cs" />
-    <Compile Include="Migrations\202107011414055_Initial.cs" />
-    <Compile Include="Migrations\202107011414055_Initial.Designer.cs">
-      <DependentUpon>202107011414055_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\202107100618410_initial migration.cs" />
+    <Compile Include="Migrations\202107100618410_initial migration.Designer.cs">
+      <DependentUpon>202107100618410_initial migration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202107011613205_ScaffoldDataLayer.cs" />
-    <Compile Include="Migrations\202107011613205_ScaffoldDataLayer.Designer.cs">
-      <DependentUpon>202107011613205_ScaffoldDataLayer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107011622274_EmptyMigration.cs" />
-    <Compile Include="Migrations\202107011622274_EmptyMigration.Designer.cs">
-      <DependentUpon>202107011622274_EmptyMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107011901345_Guids.cs" />
-    <Compile Include="Migrations\202107011901345_Guids.Designer.cs">
-      <DependentUpon>202107011901345_Guids.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107021929571_RemovedNullableInts.cs" />
-    <Compile Include="Migrations\202107021929571_RemovedNullableInts.Designer.cs">
-      <DependentUpon>202107021929571_RemovedNullableInts.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107022128087_HeroicChange.cs" />
-    <Compile Include="Migrations\202107022128087_HeroicChange.Designer.cs">
-      <DependentUpon>202107022128087_HeroicChange.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107061928054_inventoryRework.cs" />
-    <Compile Include="Migrations\202107061928054_inventoryRework.Designer.cs">
-      <DependentUpon>202107061928054_inventoryRework.cs</DependentUpon>
+    <Compile Include="Migrations\202107101732058_added stats to weapon and wardrobe.cs" />
+    <Compile Include="Migrations\202107101732058_added stats to weapon and wardrobe.Designer.cs">
+      <DependentUpon>202107101732058_added stats to weapon and wardrobe.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Money.cs" />
@@ -101,26 +81,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202107011414055_Initial.resx">
-      <DependentUpon>202107011414055_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202107100618410_initial migration.resx">
+      <DependentUpon>202107100618410_initial migration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107011613205_ScaffoldDataLayer.resx">
-      <DependentUpon>202107011613205_ScaffoldDataLayer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107011622274_EmptyMigration.resx">
-      <DependentUpon>202107011622274_EmptyMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107011901345_Guids.resx">
-      <DependentUpon>202107011901345_Guids.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107021929571_RemovedNullableInts.resx">
-      <DependentUpon>202107021929571_RemovedNullableInts.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107022128087_HeroicChange.resx">
-      <DependentUpon>202107022128087_HeroicChange.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107061928054_inventoryRework.resx">
-      <DependentUpon>202107061928054_inventoryRework.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202107101732058_added stats to weapon and wardrobe.resx">
+      <DependentUpon>202107101732058_added stats to weapon and wardrobe.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

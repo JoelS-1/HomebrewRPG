@@ -12,6 +12,7 @@ namespace HomebrewRPG.Data
         [Key]
         public int ItemId { get; set; }
         [Required]
+        [Display(Name = "Name")]
         public string ItemName { get; set; }
         [Required]
         public string Description { get; set; }

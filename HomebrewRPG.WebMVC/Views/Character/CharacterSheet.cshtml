@@ -1,0 +1,104 @@
+﻿@model HomebrewRPG.Models.CharacterSheetModel
+
+@{
+    ViewBag.Title = "CharacterSheet";
+}
+
+<h2>CharacterSheet</h2>
+
+<div>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CharacterDetail.CharacterId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CharacterDetail.CharacterName)
+            </th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => modelItem.CharacterDetail.CharacterId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => modelItem.CharacterDetail.CharacterName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Agility)
+            </td>
+        </tr>
+    </table>
+
+</div>
+
+
+<div>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Items)
+            </th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model.Items)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ItemName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ItemDescription)
+                </td>
+            </tr>
+        }
+    </table>
+
+</div>
+
+
+<div>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Weapons)
+            </th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model.Weapons)
+        {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.WeaponName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+    </tr>
+        }
+    </table>
+
+</div>
+
+<div>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.WardrobeItems)
+            </th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model.WardrobeItems)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ArmorName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+            </tr>
+        }
+    </table>
+
+</div>

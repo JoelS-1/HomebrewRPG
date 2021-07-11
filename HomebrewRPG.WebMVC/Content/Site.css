@@ -1,7 +1,52 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
-    background-color: antiquewhite;
+}
+
+.navbar {
+    padding: .5em;
+    background-color: #393E46;
+}
+
+.navbar-default .navbar-brand {
+    color: #eeeeee;
+}
+
+.navbar-default .navbar-nav li a {
+    color: #eeeeee;
+}
+
+    .navbar-default .navbar-nav li a:hover {
+        color: #53A2BE;
+    }
+.navbar-default .navbar-brand:hover {
+    color: #53A2BE;
+}
+.navbar-dropdown{
+    margin-top: .5em;
+}
+#navbar-dropdown-link li a{
+    color: #393e46;
+}
+#navbar-dropdown-link li a:hover {
+    color: #53a2be;
+}
+
+.btn-primary {
+    background-color: #53A2BE;
+    color: #eeeeee;
+    border-color: #53a2be;
+}
+    .btn-primary:hover {
+        background-color: #393e46;
+    }
+
+.padding {
+    padding-top: 2rem;
+}
+.img-fluid{
+    max-width: 100%;
+    height: auto;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -24,12 +69,11 @@ textarea {
     max-width: 280px;
 }
 
-.footer{
-    position: absolute;
-    bottom: 0;
-    padding: 1em;
+footer {
+font-size: 70%;
 }
 
+/*below is for create page*/
 .tab {
     display: none;
 }
@@ -53,21 +97,9 @@ textarea {
     background-color: darkslategrey;
 }
 
-.button-color {
-    color: whitesmoke;
-    background-color: dimgray;
-    border-color: darkslategrey;
-}
 
-    .button-color:hover,
-    .button-color:focus {
-        background-color: gray;
-        background-position: 0 -15px;
-    }
 
-.div-color {
-    background-color: antiquewhite;
-}
+
 
 .character-sheet {
     border: solid;
@@ -188,7 +220,7 @@ textarea {
     margin: 1em;
 }
 
-.skills-row{
+.skills-row {
     padding: 1em;
     margin: 1em;
 }
@@ -199,6 +231,7 @@ textarea {
     padding: 0.5em;
     margin: 1em;
 }
+
 .link-divs {
-margin: 1em;
+    margin: 1em;
 }
