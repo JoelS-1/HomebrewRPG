@@ -2,22 +2,36 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron div-color">
-    <h1>HomeBrewRPG</h1>
-    <p class="lead">Welcome, please log in to gain access to all the cool character management features for this homebrew RPG system! If you are already logged in feel free to click the link below to start a new character, or click any of the navigation links above.</p>
-    @if (User.Identity.IsAuthenticated)
-    {
-        <p><a href="/Character/Index" class="btn btn-primary btn-lg button-color">Your Characters &raquo;</a></p>
-        <p><a href="/Character/Create" class="btn btn-primary btn-lg button-color">Create A Character &raquo;</a></p>
-    }
+
+<div class="container-fluid padding">
+    <div class="row padding">
+        <div class="col-lg-6">
+            <h2>Welcome to HomeBrew!</h2>
+            <p class="lead">Welcome, please log in to gain access to all the cool character management features for this homebrew RPG system! If you are already logged in feel free to click the link below to start a new character, or click any of the navigation links above.</p>
+
+            <br>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <p><a href="/Character/Index" class="btn btn-primary btn-lg button-color">Your Characters &raquo;</a></p>
+                <p><a href="/Character/Create" class="btn btn-primary btn-lg button-color">Create A Character &raquo;</a></p>
+            }
+        </div>
+        <div class="col-lg-6">
+            <img src="~/Images/FairyTale/png/001-sword.png" class="img-fluid">
+        </div>
+    </div>
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
+
+<div class="container-fluid padding">
+    <div class="col-lg-6">
+        <h2>Want to know more?</h2>
         <p>
-            Curious about the system or need a refresher on the rules? Here is a link to the most recent system rules pdf:
+            Curious about the system or need a refresher on the rules? Here is a link to the most recent system rules pdf at the link!
         </p>
-        <p><a class="btn btn-default button-color" href="https://drive.google.com/file/d/1056rrcSorqj-yNZjr1V4umxc2A4zMwAN/view?usp=sharing">Learn more &raquo;</a></p>
     </div>
+        <br />
+        <div class="col-lg-6 padding">
+            <p><a class="btn btn-default" href="https://drive.google.com/file/d/1056rrcSorqj-yNZjr1V4umxc2A4zMwAN/view?usp=sharing">System Rules &raquo;</a></p>
+        </div>
 </div>
