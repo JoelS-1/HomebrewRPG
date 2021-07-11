@@ -178,6 +178,13 @@ namespace HomebrewRPG.Services
             entity.PhysicalBlocking = model.PhysicalBlocking;
             entity.PhysicalBlocking = model.MagicalBlocking;
 
+            entity.Health = model.Health;
+            entity.Strength = model.Strength;
+            entity.Instinct = model.Instinct;
+            entity.Agility = model.Agility;
+            entity.Intelligence = model.Intelligence;
+            entity.Charisma = model.Charisma;
+
             entity.Dodge = model.Dodge;
             entity.Reaction = model.Reaction;
             entity.Magic = model.Magic;

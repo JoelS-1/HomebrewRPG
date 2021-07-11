@@ -24,6 +24,9 @@
             <td>
                 @Html.DisplayFor(modelItem => modelItem.CharacterDetail.CharacterName)
             </td>
+            <td>
+                @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Agility)
+            </td>
         </tr>
     </table>
 
@@ -64,14 +67,14 @@
         </tr>
         @foreach (var item in Model.Weapons)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.WeaponName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Description)
-                </td>
-            </tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.WeaponName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+    </tr>
         }
     </table>
 

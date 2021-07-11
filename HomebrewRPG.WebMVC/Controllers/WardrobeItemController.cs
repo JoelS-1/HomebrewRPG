@@ -121,6 +121,13 @@ namespace HomebrewRPG.WebMVC.Controllers
                     MagicalResistance = detail.MagicalResistance,
                     BlockModifier = detail.BlockModifier,
 
+                    Health = detail.Health,
+                    Strength = detail.Strength,
+                    Instinct = detail.Instinct,
+                    Agility = detail.Agility,
+                    Intelligence = detail.Intelligence,
+                    Charisma = detail.Charisma,
+
                     HitPoints = detail.HitPoints,
                     Sanity = detail.Sanity,
                     Dodge = detail.Dodge,
