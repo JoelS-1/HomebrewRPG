@@ -1,8 +1,8 @@
 ﻿@model HomebrewRPG.Models.CharacterSheetModel
 
-<div class="row">
+<div class="row container">
 
-    <h2>Character Sheet</h2>
+    <h2 class="padding">Character Sheet</h2>
 
     <h3>
         @Html.DisplayFor(modelItem => modelItem.CharacterDetail.CharacterName)
@@ -63,73 +63,176 @@
 
 
     <div id="item-tab" class="tabcontent">
-        <table class="table">
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Items)
-                </th>
-                <th></th>
-            </tr>
-            @foreach (var item in Model.Items)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ItemName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ItemDescription)
-                    </td>
-                </tr>
-            }
-        </table>
+        <div class="row">
 
+            <div class="col-md-4 col-sm-6 col-xs-6 padding fancy-text">
+                @foreach (var item in Model.Items)
+                {
+                    <label>
+                        @Html.DisplayNameFor(modelItem => item.ItemName)
+                    </label>
+                    <p>
+                        @Html.DisplayFor(modelItem => item.ItemName)
+                    </p>
+                    <label>
+                        @Html.DisplayNameFor(modelItem => item.ItemDescription)
+                    </label>
+                    <p>
+                        @Html.DisplayFor(modelItem => item.ItemDescription)
+                    </p>
+                    <hr />
+                }
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-6 padding fancy-text">
+                @foreach (var item in Model.Items)
+                {
+                    <label>
+                        @Html.DisplayNameFor(modelItem => item.Quantity)
+                    </label>
+                    <p class="item-spacer">
+                        @Html.DisplayFor(modelItem => item.Quantity)
+                    </p>
+                    <hr />
+                }
+            </div>
+            <div class="col-md-4 col-sm-4">
+                <img src="~/Images/FairyTale/png/042-crystal.png" class="img-fluid hidden-xs  hidden-sm"/>
+            </div>
+        </div>
+        <div class="row">
+            <a href='@Url.Action("Create", "CharacterItem")' class="btn btn-primary btn-lg">Add Item</a>
+        </div>
     </div>
 
 
     <div id="weapon-tab" class="tabcontent">
-        <table class="table">
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Weapons)
-                </th>
-                <th></th>
-            </tr>
-            @foreach (var item in Model.Weapons)
-            {
-                <tr>
-                    <td>
+        <div class="row">
+            <div class="col-md-4 col-sm-6 col-xs-6 padding fancy-text">
+                @foreach (var item in Model.Weapons)
+                {
+                    <label>
+                        @Html.DisplayNameFor(modelItem => item.WeaponName)
+                    </label>
+                    <p>
                         @Html.DisplayFor(modelItem => item.WeaponName)
-                    </td>
-                    <td>
+                    </p>
+                    <label>
+                        @Html.DisplayNameFor(modelItem => item.DamageDice)
+                    </label>
+                    <p>
+                        @Html.DisplayFor(modelItem => item.DamageDice)
+                    </p>
+                    <label>
+                        @Html.DisplayNameFor(modelItem => item.Range)
+                    </label>
+                    <p>
+                        @Html.DisplayFor(modelItem => item.Range)
+                    </p>
+                    <label>
+                        @Html.DisplayNameFor(modelItem => item.Description)
+                    </label>
+                    <p>
                         @Html.DisplayFor(modelItem => item.Description)
-                    </td>
-                </tr>
-            }
-        </table>
-
+                    </p>
+                    <hr />
+                }
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-6 padding fancy-text">
+                @foreach (var item in Model.Weapons)
+                {
+                    <label>
+                        @Html.DisplayNameFor(modelItem => item.WeaponType)
+                    </label>
+                    <p>
+                        @Html.DisplayFor(modelItem => item.WeaponType)
+                    </p>
+                    <label>
+                        @Html.DisplayNameFor(modelItem => item.DamageModifier)
+                    </label>
+                    <p>
+                        @Html.DisplayFor(modelItem => item.DamageModifier)
+                    </p>
+                    <label>
+                        @Html.DisplayNameFor(modelItem => item.CriticalRange)
+                    </label>
+                    <p>
+                        @Html.DisplayFor(modelItem => item.CriticalRange)
+                    </p>
+                    <label>
+                        @Html.DisplayNameFor(modelItem => item.Special)
+                    </label>
+                    <p>
+                        @Html.DisplayFor(modelItem => item.Special)
+                    </p>
+                    <hr />
+                }
+            </div>
+            <div class="col-md-4 col-sm-4">
+                <img src="~/Images/FairyTale/png/031-axe.png" class="img-fluid hidden-xs hidden-sm" />
+            </div>
+        </div>
+        <div class="row">
+            <a href='@Url.Action("Create", "CharacterWeapon")' class="btn btn-primary btn-lg">Add Weapon</a>
+        </div>
     </div>
 
     <div id="wardrobe-tab" class="tabcontent">
-        <table class="table">
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.WardrobeItems)
-                </th>
-                <th></th>
-            </tr>
-            @foreach (var item in Model.WardrobeItems)
-            {
-                <tr>
-                    <td>
+        <div class="row">
+            <div class="col-md-4 col-sm-6 col-xs-6 padding fancy-text">
+                @foreach (var item in Model.WardrobeItems)
+                {
+                    <label>
+                        @Html.DisplayNameFor(modelItem => item.ArmorName)
+                    </label>
+                    <p>
                         @Html.DisplayFor(modelItem => item.ArmorName)
-                    </td>
-                    <td>
+                    </p>
+                    <label>
+                        @Html.DisplayNameFor(modelItem => item.ArmorType)
+                    </label>
+                    <p>
+                        @Html.DisplayFor(modelItem => item.ArmorType)
+                    </p>
+                    <label>
+                        @Html.DisplayNameFor(modelItem => item.Description)
+                    </label>
+                    <p>
                         @Html.DisplayFor(modelItem => item.Description)
-                    </td>
-                </tr>
-            }
-        </table>
-
+                    </p>
+                    <hr />
+                }
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-6 padding fancy-text">
+                @foreach (var item in Model.WardrobeItems)
+                {
+                    <label>
+                        @Html.DisplayNameFor(modelItem => item.PhysicalResistance)
+                    </label>
+                    <p>
+                        @Html.DisplayFor(modelItem => item.PhysicalResistance)
+                    </p>
+                    <label>
+                        @Html.DisplayNameFor(modelItem => item.MagicalResistance)
+                    </label>
+                    <p>
+                        @Html.DisplayFor(modelItem => item.MagicalResistance)
+                    </p>
+                    <label>
+                        @Html.DisplayNameFor(modelItem => item.Special)
+                    </label>
+                    <p>
+                        @Html.DisplayFor(modelItem => item.Special)
+                    </p>
+                    <hr />
+                }
+            </div>
+            <div class="col-md-4 col-sm-4">
+                <img src="~/Images/FairyTale/png/035-shoe.png" class="img-fluid hidden-xs hidden-sm" />
+            </div>
+        </div>
+        <div class="row">
+            <a href='@Url.Action("Create", "CharacterWardrobe")' class="btn btn-primary btn-lg">Add Apparel</a>
+        </div>
     </div>
 </div>
 <script>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,23 +13,35 @@ namespace HomebrewRPG.Models.CharacterWardrobeModels
 
         public int CharacterId { get; set; }
         public int WardrobeItemId { get; set; }
+        [Display(Name = "Item is Equipped")]
         public bool IsEquipped { get; set; }
 
+        [Display(Name = "Apparel Name")]
         public string ArmorName { get; set; }
+        [Display(Name = "Apparel Type")]
         public string ArmorType { get; set; }
         public string Description { get; set; }
 
+        [Display(Name = "Required Health")]
         public int HealthRequired { get; set; }
+        [Display(Name = "Required Strength")]
         public int StrengthRequired { get; set; }
+        [Display(Name = "Required Agility")]
         public int AgilityRequired { get; set; }
+        [Display(Name = "Required Magic")]
         public int MagicRequired { get; set; }
         public string Special { get; set; }
+        [Display(Name = "Prowess Bonus")]
         public int BaseProwess { get; set; }
 
+        [Display(Name = "Physical Block")]
         public int PhysicalBlocking { get; set; }
+        [Display(Name = "Magic Block")]
         public int MagicalBlocking { get; set; }
 
+        [Display(Name = "Armor")]
         public int PhysicalResistance { get; set; }
+        [Display(Name = "Magic Resist")]
         public int MagicalResistance { get; set; }
 
         public int Health { get; set; }
@@ -38,6 +51,7 @@ namespace HomebrewRPG.Models.CharacterWardrobeModels
         public int Intelligence { get; set; }
         public int Charisma { get; set; }
 
+        [Display(Name = "Hit Points")]
         public int HitPoints { get; set; }
         public int Sanity { get; set; }
         public int Dodge { get; set; }
