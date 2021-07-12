@@ -7,6 +7,10 @@
     font-family: IM Fell English SC, serif;
     font-weight: 400;
 }
+.fancy-text {
+    font-family: IM Fell English SC, serif;
+    font-size: 110%;
+}
 
 
     .navbar {
@@ -104,6 +108,18 @@ font-size: 70%;
     border: 1px solid rgba(0,0,0,.125);
     border-radius: .25rem;
     padding: .5em;
+}
+.fa-trash {
+    color: #393E46;
+    padding-top: 0.8em;
+}
+
+    .fa-trash:hover {
+        color: #dc3545;
+    }
+.bg-danger:hover{
+    color: white;
+    background-color: red;
 }
 
 /*create page*/

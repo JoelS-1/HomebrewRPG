@@ -198,6 +198,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Images\annie-spratt-4aVUigDCLV8-unsplash.jpg" />
     <Content Include="Images\annie-spratt-xTaOPMa6wAE-unsplash.jpg" />
+    <Content Include="Images\bin.png" />
     <Content Include="Images\dndBackground.jpeg" />
     <Content Include="Images\FairyTale\png\001-sword.png" />
     <Content Include="Images\FairyTale\png\002-magic potion.png" />

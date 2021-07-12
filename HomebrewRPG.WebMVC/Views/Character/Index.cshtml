@@ -9,31 +9,43 @@
     <div class="col-sm-12 col-md-6 col-md-offset-2 text-center">
 
         <h2>Your Characters</h2>
-        <p class="lead">Which character would you like to select?</p>
+        <h3>Which character would you like to select?</h3>
 
 
 
         @foreach (var item in Model)
         {
             <div class="container-fluid padding">
-                <div class="row padding">
+                <div class="row">
                     <div class="card">
-                        <h4>@Html.DisplayFor(modelItem => item.CharacterName)</h4>
-                        <div class="row padding">
-                            <div class="col-xs-6">
-                                <p>
-                                    @Html.DisplayNameFor(model => model.Race):
-                                    @Html.DisplayFor(modelItem => item.Race)
-                                </p>
-                            </div>
-                            <div class="col-xs-6">
-                                <p>
-                                    @Html.DisplayNameFor(model => model.CharacterLevel):
-                                    @Html.DisplayFor(modelItem => item.CharacterLevel)
-                                </p>
-                            </div>
+                        <div class="row">
 
-                        </div>
+                            <div class="col-xs-9">
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                    <h4>@Html.DisplayFor(modelItem => item.CharacterName)</h4>
+
+                                    </div>
+                                </div>
+                                    <div class="row padding">
+                                        <div class="col-xs-6">
+                                            <p class="fancy-text">
+                                                @Html.DisplayNameFor(model => model.Race):
+                                                @Html.DisplayFor(modelItem => item.Race)
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <p class="fancy-text">
+                                                @Html.DisplayNameFor(model => model.CharacterLevel):
+                                                @Html.DisplayFor(modelItem => item.CharacterLevel)
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            <div class="col-xs-3">
+                                <a href='@Url.Action("Delete", "Character", new { id = item.CharacterId })'><i class="fa fa-trash fa-lg"></i></a>
+                            </div>
+                            </div>
                         <a href='@Url.Action("CharacterSheet", "Character", new { id = item.CharacterId })' class="btn btn-primary btn-lg">Select</a>
                     </div>
                 </div>
@@ -46,7 +58,7 @@
 </div>
 @*
 
-        @Html.ActionLink("Details", "Details", new { id = item.CharacterId }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.CharacterId })
-        @Html.ActionLink("Character Sheet", "CharacterSheet", new { id = item.CharacterId })
+    @Html.ActionLink("Details", "Details", new { id = item.CharacterId }) |
+    @Html.ActionLink("Delete", "Delete", new { id = item.CharacterId })
+    @Html.ActionLink("Character Sheet", "CharacterSheet", new { id = item.CharacterId })
 *@
