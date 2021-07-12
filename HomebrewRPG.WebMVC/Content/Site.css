@@ -80,7 +80,7 @@
 input,
 select,
 textarea {
-    max-width: 280px;
+/*    max-width: 280px;*/
 }
 
 footer {
@@ -105,7 +105,8 @@ font-size: 70%;
     border-radius: .25rem;
     padding: .5em;
 }
-/*below is for create page*/
+
+/*create page*/
 .tab {
     display: none;
 }
@@ -121,14 +122,17 @@ font-size: 70%;
     opacity: 0.5;
 }
 
-.step-active {
-    opacity: 1;
-}
+    .step.active {
+        background-color: #04AA6D;
+    }
 
 .step-finish {
     background-color: darkslategrey;
 }
-
+.form-group {
+    padding: .5em;
+    margin: 0.2em;
+}
 
 
 

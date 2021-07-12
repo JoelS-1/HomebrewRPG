@@ -10,10 +10,12 @@ namespace HomebrewRPG.Models
     public class CharacterCreate
     {
         [Required]
+        [Display(Name="Name")]
         public string CharacterName { get; set; }
         [Required]
         public string Race { get; set; }
         [Required]
+        [Display(Name = "Level")]
         public int CharacterLevel { get; set; }
         public int Age { get; set; }
         public string Gender { get; set; }
@@ -33,8 +35,10 @@ namespace HomebrewRPG.Models
         public int Charisma { get; set; }
 
         [Required]
+        [Display(Name = "Magic Type")]
         public string MagicType { get; set; }
         [Required]
+        [Display(Name = "Prowess Type")]
         public string ProwessType { get; set; }
         public int Proficiency { get; set; }
 
@@ -52,6 +56,7 @@ namespace HomebrewRPG.Models
         public int Athletics { get; set; }
         public int Tenacity { get; set; }
         public int Acrobatics { get; set; }
+        [Display(Name = "Sleight Of Hand")]
         public int SleightOfHand { get; set; }
         public int Sneak { get; set; }
         public int Willpower { get; set; }
