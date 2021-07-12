@@ -10,6 +10,7 @@
 
     <div class="tab-sheet">
         <button class="tablinks" onclick="openCity(event, 'character-tab')" id="defaultOpen">Character</button>
+        <button class="tablinks" onclick="openCity(event, 'stats-tab')">Stats</button>
         <button class="tablinks" onclick="openCity(event, 'item-tab')">Items</button>
         <button class="tablinks" onclick="openCity(event, 'weapon-tab')">Weapons</button>
         <button class="tablinks" onclick="openCity(event, 'wardrobe-tab')">Wardobe</button>
@@ -61,42 +62,151 @@
         </div>
     </div>
 
+    <div id="stats-tab" class="tabcontent row">
+        <div class="col-md-4 col-sm-6 col-xs-6 padding fancy-text">
+            <h3><label>Essential Skills</label></h3>
+            <label>
+                @Html.DisplayNameFor(model => model.CharacterDetail.HitPoints)
+            </label>
+            <p>
+                @Html.DisplayFor(modelItem => modelItem.CharacterDetail.HitPoints)
+            </p>
+            <label>
+                @Html.DisplayNameFor(model => model.CharacterDetail.Sanity)
+            </label>
+            <p>
+                @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Sanity)
+            </p>
+            <label>
+                @Html.DisplayNameFor(model => model.CharacterDetail.Dodge)
+            </label>
+            <p>
+                @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Dodge)
+            </p>
+            <label>
+                @Html.DisplayNameFor(model => model.CharacterDetail.Reaction)
+            </label>
+            <p>
+                @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Reaction)
+            </p>
+            <label>
+                @Html.DisplayNameFor(model => model.CharacterDetail.BaseProwess)
+            </label>
+            <p>
+                @Html.DisplayFor(modelItem => modelItem.CharacterDetail.BaseProwess)
+            </p>
+            <label>
+                @Html.DisplayNameFor(model => model.CharacterDetail.Magic)
+            </label>
+            <p>
+                @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Magic)
+            </p>
+            <label>
+                @Html.DisplayNameFor(model => model.CharacterDetail.Fate)
+            </label>
+            <p>
+                @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Fate)
+            </p>
+            <label>
+                @Html.DisplayNameFor(model => model.CharacterDetail.Speed)
+            </label>
+            <p>
+                @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Speed)
+            </p>
+            <a href='@Url.Action("Edit", "Character", new { id = Model.CharacterDetail.CharacterId })' class="btn btn-primary btn-lg">Edit Stats</a>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-6 padding fancy-text">
+            <label class="padding">
+                Current Health:
+            </label>
+            <p>
+                <input />
+            </p>
+            <label>
+                Current Sanity:
+            </label>
+            <p>
+                <input />
+            </p>
+            <hr />
+            <h3><label>Core Stats</label></h3>
+            <label>
+                @Html.DisplayNameFor(model => model.CharacterDetail.Health)
+            </label>
+            <p>
+                @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Health)
+            </p>
+            <label>
+                @Html.DisplayNameFor(model => model.CharacterDetail.Strength)
+            </label>
+            <p>
+                @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Strength)
+            </p>
+            <label>
+                @Html.DisplayNameFor(model => model.CharacterDetail.Instinct)
+            </label>
+            <p>
+                @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Instinct)
+            </p>
+            <label>
+                @Html.DisplayNameFor(model => model.CharacterDetail.Agility)
+            </label>
+            <p>
+                @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Agility)
+            </p>
+            <label>
+                @Html.DisplayNameFor(model => model.CharacterDetail.Intelligence)
+            </label>
+            <p>
+                @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Intelligence)
+            </p>
+            <label>
+                @Html.DisplayNameFor(model => model.CharacterDetail.Charisma)
+            </label>
+            <p>
+                @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Charisma)
+            </p>
+        </div>
+        <div class="col-md-4 col-sm-4">
+            <img src="~/Images/FairyTale/png/009-standard.png" class="img-fluid hidden-xs hidden-sm" />
+        </div>
+    </div>
+
 
     <div id="item-tab" class="tabcontent">
         <div class="row">
-
-            <div class="col-md-4 col-sm-6 col-xs-6 padding fancy-text">
+            <div class="col-md-8 col-sm-8">
                 @foreach (var item in Model.Items)
                 {
-                    <label>
-                        @Html.DisplayNameFor(modelItem => item.ItemName)
-                    </label>
-                    <p>
-                        @Html.DisplayFor(modelItem => item.ItemName)
-                    </p>
-                    <label>
-                        @Html.DisplayNameFor(modelItem => item.ItemDescription)
-                    </label>
-                    <p>
-                        @Html.DisplayFor(modelItem => item.ItemDescription)
-                    </p>
-                    <hr />
-                }
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-6 padding fancy-text">
-                @foreach (var item in Model.Items)
-                {
-                    <label>
-                        @Html.DisplayNameFor(modelItem => item.Quantity)
-                    </label>
-                    <p class="item-spacer">
-                        @Html.DisplayFor(modelItem => item.Quantity)
-                    </p>
+                    <div class="row">
+                        <div class="col-md-6 padding fancy-text">
+                            <label>
+                                @Html.DisplayNameFor(modelItem => item.ItemName)
+                            </label>
+                            <p>
+                                @Html.DisplayFor(modelItem => item.ItemName)
+                            </p>
+                            <label>
+                                @Html.DisplayNameFor(modelItem => item.ItemDescription)
+                            </label>
+                            <p>
+                                @Html.DisplayFor(modelItem => item.ItemDescription)
+                            </p>
+                        </div>
+                        <div class="col-md-6 padding fancy-text">
+                            <label>
+                                @Html.DisplayNameFor(modelItem => item.Quantity)
+                            </label>
+                            <p>
+                                @Html.DisplayFor(modelItem => item.Quantity)
+                            </p>
+                        </div>
+                    </div>
                     <hr />
                 }
             </div>
             <div class="col-md-4 col-sm-4">
-                <img src="~/Images/FairyTale/png/042-crystal.png" class="img-fluid hidden-xs  hidden-sm"/>
+                <img src="~/Images/FairyTale/png/042-crystal.png" class="img-fluid hidden-xs  hidden-sm" />
             </div>
         </div>
         <div class="row">
@@ -107,63 +217,64 @@
 
     <div id="weapon-tab" class="tabcontent">
         <div class="row">
-            <div class="col-md-4 col-sm-6 col-xs-6 padding fancy-text">
+            <div class="col-md-8 col-sm-8">
                 @foreach (var item in Model.Weapons)
                 {
-                    <label>
-                        @Html.DisplayNameFor(modelItem => item.WeaponName)
-                    </label>
-                    <p>
-                        @Html.DisplayFor(modelItem => item.WeaponName)
-                    </p>
-                    <label>
-                        @Html.DisplayNameFor(modelItem => item.DamageDice)
-                    </label>
-                    <p>
-                        @Html.DisplayFor(modelItem => item.DamageDice)
-                    </p>
-                    <label>
-                        @Html.DisplayNameFor(modelItem => item.Range)
-                    </label>
-                    <p>
-                        @Html.DisplayFor(modelItem => item.Range)
-                    </p>
-                    <label>
-                        @Html.DisplayNameFor(modelItem => item.Description)
-                    </label>
-                    <p>
-                        @Html.DisplayFor(modelItem => item.Description)
-                    </p>
-                    <hr />
-                }
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-6 padding fancy-text">
-                @foreach (var item in Model.Weapons)
-                {
-                    <label>
-                        @Html.DisplayNameFor(modelItem => item.WeaponType)
-                    </label>
-                    <p>
-                        @Html.DisplayFor(modelItem => item.WeaponType)
-                    </p>
-                    <label>
-                        @Html.DisplayNameFor(modelItem => item.DamageModifier)
-                    </label>
-                    <p>
-                        @Html.DisplayFor(modelItem => item.DamageModifier)
-                    </p>
-                    <label>
-                        @Html.DisplayNameFor(modelItem => item.CriticalRange)
-                    </label>
-                    <p>
-                        @Html.DisplayFor(modelItem => item.CriticalRange)
-                    </p>
-                    <label>
-                        @Html.DisplayNameFor(modelItem => item.Special)
-                    </label>
-                    <p>
-                        @Html.DisplayFor(modelItem => item.Special)
-                    </p>
+                    <div class="row">
+                        <div class="col-md-6 padding fancy-text">
+                            <label>
+                                @Html.DisplayNameFor(modelItem => item.WeaponName)
+                            </label>
+                            <p>
+                                @Html.DisplayFor(modelItem => item.WeaponName)
+                            </p>
+                            <label>
+                                @Html.DisplayNameFor(modelItem => item.DamageDice)
+                            </label>
+                            <p>
+                                @Html.DisplayFor(modelItem => item.DamageDice)
+                            </p>
+                            <label>
+                                @Html.DisplayNameFor(modelItem => item.Range)
+                            </label>
+                            <p>
+                                @Html.DisplayFor(modelItem => item.Range)
+                            </p>
+                            <label>
+                                @Html.DisplayNameFor(modelItem => item.Description)
+                            </label>
+                            <p>
+                                @Html.DisplayFor(modelItem => item.Description)
+                            </p>
+                        </div>
+                        <div class="col-md-6 padding fancy-text">
+
+                            <label>
+                                @Html.DisplayNameFor(modelItem => item.WeaponType)
+                            </label>
+                            <p>
+                                @Html.DisplayFor(modelItem => item.WeaponType)
+                            </p>
+                            <label>
+                                @Html.DisplayNameFor(modelItem => item.DamageModifier)
+                            </label>
+                            <p>
+                                @Html.DisplayFor(modelItem => item.DamageModifier)
+                            </p>
+                            <label>
+                                @Html.DisplayNameFor(modelItem => item.CriticalRange)
+                            </label>
+                            <p>
+                                @Html.DisplayFor(modelItem => item.CriticalRange)
+                            </p>
+                            <label>
+                                @Html.DisplayNameFor(modelItem => item.Special)
+                            </label>
+                            <p>
+                                @Html.DisplayFor(modelItem => item.Special)
+                            </p>
+                        </div>
+                    </div>
                     <hr />
                 }
             </div>
@@ -178,56 +289,57 @@
 
     <div id="wardrobe-tab" class="tabcontent">
         <div class="row">
-            <div class="col-md-4 col-sm-6 col-xs-6 padding fancy-text">
+            <div class="col-md-8 col-sm-8">
                 @foreach (var item in Model.WardrobeItems)
                 {
-                    <label>
-                        @Html.DisplayNameFor(modelItem => item.ArmorName)
-                    </label>
-                    <p>
-                        @Html.DisplayFor(modelItem => item.ArmorName)
-                    </p>
-                    <label>
-                        @Html.DisplayNameFor(modelItem => item.ArmorType)
-                    </label>
-                    <p>
-                        @Html.DisplayFor(modelItem => item.ArmorType)
-                    </p>
-                    <label>
-                        @Html.DisplayNameFor(modelItem => item.Description)
-                    </label>
-                    <p>
-                        @Html.DisplayFor(modelItem => item.Description)
-                    </p>
-                    <hr />
-                }
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-6 padding fancy-text">
-                @foreach (var item in Model.WardrobeItems)
-                {
-                    <label>
-                        @Html.DisplayNameFor(modelItem => item.PhysicalResistance)
-                    </label>
-                    <p>
-                        @Html.DisplayFor(modelItem => item.PhysicalResistance)
-                    </p>
-                    <label>
-                        @Html.DisplayNameFor(modelItem => item.MagicalResistance)
-                    </label>
-                    <p>
-                        @Html.DisplayFor(modelItem => item.MagicalResistance)
-                    </p>
-                    <label>
-                        @Html.DisplayNameFor(modelItem => item.Special)
-                    </label>
-                    <p>
-                        @Html.DisplayFor(modelItem => item.Special)
-                    </p>
+                    <div class="row">
+                        <div class="col-md-6 padding fancy-text">
+                            <label>
+                                @Html.DisplayNameFor(modelItem => item.ArmorName)
+                            </label>
+                            <p>
+                                @Html.DisplayFor(modelItem => item.ArmorName)
+                            </p>
+                            <label>
+                                @Html.DisplayNameFor(modelItem => item.ArmorType)
+                            </label>
+                            <p>
+                                @Html.DisplayFor(modelItem => item.ArmorType)
+                            </p>
+                            <label>
+                                @Html.DisplayNameFor(modelItem => item.Description)
+                            </label>
+                            <p>
+                                @Html.DisplayFor(modelItem => item.Description)
+                            </p>
+                        </div>
+                        <div class="col-md-6 padding fancy-text">
+
+                            <label>
+                                @Html.DisplayNameFor(modelItem => item.PhysicalResistance)
+                            </label>
+                            <p>
+                                @Html.DisplayFor(modelItem => item.PhysicalResistance)
+                            </p>
+                            <label>
+                                @Html.DisplayNameFor(modelItem => item.MagicalResistance)
+                            </label>
+                            <p>
+                                @Html.DisplayFor(modelItem => item.MagicalResistance)
+                            </p>
+                            <label>
+                                @Html.DisplayNameFor(modelItem => item.Special)
+                            </label>
+                            <p>
+                                @Html.DisplayFor(modelItem => item.Special)
+                            </p>
+                        </div>
+                    </div>
                     <hr />
                 }
             </div>
             <div class="col-md-4 col-sm-4">
-                <img src="~/Images/FairyTale/png/035-shoe.png" class="img-fluid hidden-xs hidden-sm" />
+                <img src="~/Images/FairyTale/png/045-armor.png" class="img-fluid hidden-xs hidden-sm" />
             </div>
         </div>
         <div class="row">

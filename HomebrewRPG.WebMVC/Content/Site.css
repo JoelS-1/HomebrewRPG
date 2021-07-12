@@ -153,17 +153,15 @@ font-size: 70%;
 /*character sheet*/
 .tab-sheet {
     overflow: hidden;
-    border: 1px solid #ccc;
-    background-color: #f1f1f1;
+
 }
 .item-spacer{
-    padding-bottom: 3.8em;
+    padding-bottom: 5.5em;
 }
 
 
 /* Style the buttons that are used to open the tab content */
-.tab button {
-    background-color: inherit;
+.tab-sheet button {
     float: left;
     border: none;
     outline: none;
@@ -178,7 +176,7 @@ font-size: 70%;
     }
 
     /* Create an active/current tablink class */
-    .tab button.active {
+    .tab-sheet button.active {
         background-color: #ccc;
     }
 
