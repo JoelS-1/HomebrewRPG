@@ -792,6 +792,7 @@
                         <p>
                             @Html.DisplayFor(modelItem => item.Description)
                         </p>
+
                     </div>
                     <div class="col-md-6 padding fancy-text">
 
@@ -819,6 +820,7 @@
                         <p>
                             @Html.DisplayFor(modelItem => item.Special)
                         </p>
+                        <a href='@Url.Action("Edit", "CharacterWeapon", new { id = item.CharacterWeaponId })' class="btn btn-default">Select</a>
                     </div>
                 </div>
                 <hr />

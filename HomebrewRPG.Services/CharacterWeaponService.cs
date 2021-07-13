@@ -99,18 +99,21 @@ namespace HomebrewRPG.Services
             return query.ToArray();
         }
 
-        public CharacterWeaponEdit GetCharacterWeaponById(int id)
+        public CharacterWeaponDetail GetCharacterWeaponById(int id)
         {
             var entity =
                 _ctx
                     .CharacterWeapons
                     .Single(e => e.CharacterWeaponId == id && e.OwnerId == _userId);
-            CharacterWeaponEdit detail =
-                new CharacterWeaponEdit
+            CharacterWeaponDetail detail =
+                new CharacterWeaponDetail
                 {
+                    CharacterWeaponId = entity.CharacterWeaponId,
                     CharacterId = entity.CharacterId,
                     WeaponId = entity.WeaponId,
                     IsEquipped = entity.IsEquipped,
+                    WeaponName = entity.Weapon.WeaponName,
+                    Description = entity.Weapon.Description,
                 };
             return detail;
         }
@@ -122,6 +125,7 @@ namespace HomebrewRPG.Services
                     .CharacterWeapons
                     .Single(e => e.CharacterWeaponId == model.CharacterWeaponId && e.OwnerId == _userId);
 
+            entity.CharacterWeaponId = model.CharacterWeaponId;
             entity.CharacterId = model.CharacterId;
             entity.WeaponId = model.WeaponId;
             entity.IsEquipped = model.IsEquipped;

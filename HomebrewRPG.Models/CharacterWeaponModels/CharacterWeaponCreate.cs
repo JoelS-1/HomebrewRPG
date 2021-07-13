@@ -8,6 +8,7 @@ namespace HomebrewRPG.Models.CharacterWeaponModels
 {
     public class CharacterWeaponCreate
     {
+        public int CharacterWeapon { get; set; }
         public int WeaponId { get; set; }
         public int CharacterId { get; set; }
         public bool IsEquipped { get; set; }
