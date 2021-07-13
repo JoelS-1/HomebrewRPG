@@ -129,6 +129,7 @@
     <button class="tablinks" onclick="openCity(event, 'item-tab')">Items</button>
     <button class="tablinks" onclick="openCity(event, 'weapon-tab')">Weapons</button>
     <button class="tablinks" onclick="openCity(event, 'wardrobe-tab')">Wardobe</button>
+    <button class="tablinks" onclick="openCity(event, 'spell-tab')">Spells</button>
 </div>
 
 <div id="character-tab" class="tabcontent row">
@@ -793,7 +794,7 @@
                             @Html.DisplayFor(modelItem => item.Special)
                         </p>
                         <a href='@Url.Action("Edit", "CharacterWeapon", new { id = item.CharacterWeaponId })' class="btn btn-default">Equip</a>
-  
+
 
                     </div>
                     <div class="col-md-6 padding fancy-text">
@@ -886,6 +887,38 @@
                     </div>
                 </div>
                 <hr />
+                <div class="col-md-6 hidden">
+                    <table class="table table-responsive">
+                        <thead>
+                            <tr>
+                                <th class="col-md-6 col-sm-6">
+                                    Skill
+                                </th>
+                                <th class="col-md-3 col-sm-3">
+                                    Bonuses
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (item.Endurance > 0)
+                            {
+                                <tr>
+                                    <td class="col-md-6 col-sm-6">
+                                        @Html.DisplayNameFor(model => model.CharacterDetail.Endurance)
+
+                                    </td>
+                                    <td class="col-md-3">
+                                        @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Endurance)
+
+                                    </td>
+                                    <td class="col-md-3">
+                                        @Html.DisplayFor(modelItem => modelItem.BonusesDetail.Endurance)
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
             }
         </div>
         <div class="col-md-4 col-sm-4">
@@ -896,6 +929,70 @@
         <a href='@Url.Action("Create", "CharacterWardrobe")' class="btn btn-primary btn-lg">Add Apparel</a>
     </div>
 </div>
+
+<div id="spell-tab" class="tabcontent">
+    <div class="row">
+        <div class="col-md-8 col-sm-8">
+            @foreach (var item in Model.Spells)
+            {
+                <div class="row">
+                    <div class="col-md-6 padding fancy-text">
+                        <label>
+                            @Html.DisplayNameFor(modelItem => item.SpellName)
+                        </label>
+                        <p>
+                            @Html.DisplayFor(modelItem => item.SpellName)
+                        </p>
+                        <label>
+                            @Html.DisplayNameFor(modelItem => item.SpellEffect)
+                        </label>
+                        <p>
+                            @Html.DisplayFor(modelItem => item.SpellEffect)
+                        </p>
+                        <label>
+                            @Html.DisplayNameFor(modelItem => item.SpellType)
+                        </label>
+                        <p>
+                            @Html.DisplayFor(modelItem => item.SpellType)
+                        </p>
+                        <label>
+                            @Html.DisplayNameFor(modelItem => item.SpellDescription)
+                        </label>
+                        <p>
+                            @Html.DisplayFor(modelItem => item.SpellDescription)
+                        </p>
+                    </div>
+                    <div class="col-md-6 padding fancy-text">
+
+                        <label>
+                            @Html.DisplayNameFor(modelItem => item.SpellDC)
+                        </label>
+                        <p>
+                            @Html.DisplayFor(modelItem => item.SpellDC)
+                        </p>
+                        <label>
+                            @Html.DisplayNameFor(modelItem => item.Range)
+                        </label>
+                        <p>
+                            @Html.DisplayFor(modelItem => item.Range)
+                        </p>
+                        <p>
+                            <a href='@Url.Action("Edit", "CharacterSpell", new { id = item.CharacterSpellId })' class="btn btn-default">Select</a>
+                        </p>
+                    </div>
+                </div>
+                <hr />
+            }
+        </div>
+        <div class="col-md-4 col-sm-4">
+            <img src="~/Images/FairyTale/png/015-magic broom.png" class="img-fluid hidden-xs  hidden-sm" />
+        </div>
+    </div>
+    <div class="row">
+        <a href='@Url.Action("Create", "CharacterSpell")' class="btn btn-primary btn-lg">Add Spell</a>
+    </div>
+</div>
+
 <script>
     document.getElementById("defaultOpen").click();
     function openCity(evt, cityName) {

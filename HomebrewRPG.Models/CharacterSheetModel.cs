@@ -1,5 +1,6 @@
 ﻿using HomebrewRPG.Data;
 using HomebrewRPG.Models.CharacterItemModels;
+using HomebrewRPG.Models.CharacterSpell;
 using HomebrewRPG.Models.CharacterWardrobeModels;
 using HomebrewRPG.Models.CharacterWeaponModels;
 using HomebrewRPG.Models.ItemModels;
@@ -19,6 +20,7 @@ namespace HomebrewRPG.Models
         public List<CharacterItemDetail> Items { get; set; } = new List<CharacterItemDetail>();
         public List<CharacterWeaponDetail> Weapons { get; set; } = new List<CharacterWeaponDetail>();
         public List<CharacterWardrobeDetail> WardrobeItems { get; set; } = new List<CharacterWardrobeDetail>();
+        public List<CharacterSpellDetail> Spells { get; set; } = new List<CharacterSpellDetail>();
         public CharacterEdit CharacterDetail { get; set; }
 
         public CharacterDetail BonusesDetail { get; set; }

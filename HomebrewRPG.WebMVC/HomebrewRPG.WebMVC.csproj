@@ -170,6 +170,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CharacterController.cs" />
     <Compile Include="Controllers\CharacterItemController.cs" />
+    <Compile Include="Controllers\CharacterSpellController.cs" />
     <Compile Include="Controllers\CharacterWardrobeController.cs" />
     <Compile Include="Controllers\CharacterWeaponController.cs" />
     <Compile Include="Controllers\HeroicController.cs" />
@@ -350,6 +351,13 @@
     <Content Include="Views\CharacterWeapon\Delete.cshtml" />
     <Content Include="Views\CharacterWardrobe\Edit.cshtml" />
     <Content Include="Views\CharacterWardrobe\Delete.cshtml" />
+    <Content Include="Views\CharacterWardrobe\Index.cshtml" />
+    <Content Include="Views\CharacterWeapon\Index.cshtml" />
+    <Content Include="Views\CharacterItem\Index.cshtml" />
+    <Content Include="Views\CharacterSpell\Index.cshtml" />
+    <Content Include="Views\CharacterSpell\Create.cshtml" />
+    <Content Include="Views\CharacterSpell\Edit.cshtml" />
+    <Content Include="Views\CharacterSpell\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

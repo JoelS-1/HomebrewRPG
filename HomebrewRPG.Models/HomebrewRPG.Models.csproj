@@ -64,6 +64,8 @@
     <Compile Include="CharacterListItem.cs" />
     <Compile Include="CharacterSheetModel.cs" />
     <Compile Include="CharacterSpell\CharacterSpellCreate.cs" />
+    <Compile Include="CharacterSpell\CharacterSpellDetail.cs" />
+    <Compile Include="CharacterSpell\CharacterSpellEdit.cs" />
     <Compile Include="CharacterWardrobeModels\CharacterWardrobeCreate.cs" />
     <Compile Include="CharacterWardrobeModels\CharacterWardrobeDetail.cs" />
     <Compile Include="CharacterWardrobeModels\CharacterWardrobeEdit.cs" />

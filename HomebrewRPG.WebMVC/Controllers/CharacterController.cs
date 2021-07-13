@@ -1,6 +1,7 @@
 ﻿using HomebrewRPG.Data;
 using HomebrewRPG.Models;
 using HomebrewRPG.Models.CharacterItemModels;
+using HomebrewRPG.Models.CharacterSpell;
 using HomebrewRPG.Models.CharacterWardrobeModels;
 using HomebrewRPG.Models.CharacterWeaponModels;
 using HomebrewRPG.Services;
@@ -134,6 +135,7 @@ namespace HomebrewRPG.WebMVC.Controllers
             var characterItemService = new CharacterItemService(userId);
             var characterWeaponService = new CharacterWeaponService(userId);
             var characterWardrobeItemService = new CharacterWardrobeService(userId);
+            var characterSpellService = new CharacterSpellService(userId);
 
 
             CharacterSheetModel model = new CharacterSheetModel();
@@ -162,7 +164,27 @@ namespace HomebrewRPG.WebMVC.Controllers
                 };
                 model.Items.Add(y);
             }
-            var weaponList = characterWeaponService.GetCharacterWeaponsByCharacterId(id);
+
+            var spellList = characterSpellService.GetCharacterSpellsByCharacterId(id);
+            foreach (var x in spellList)
+            {
+                CharacterSpellDetail y = new CharacterSpellDetail();
+                {
+                    y.CharacterSpellId = x.CharacterSpellId;
+                    y.CharacterId = x.CharacterId;
+                    y.SpellId = x.SpellId;
+
+                    y.SpellName = x.SpellName;
+                    y.SpellDescription = x.SpellDescription;
+                    y.SpellEffect = x.SpellEffect;
+                    y.SpellType = x.SpellType;
+                    y.Range = x.Range;
+                    y.SpellDC = x.SpellDC;
+                };
+                model.Spells.Add(y);
+            }
+
+                var weaponList = characterWeaponService.GetCharacterWeaponsByCharacterId(id);
             foreach (var x in weaponList)
             {
                 CharacterWeaponDetail y = new CharacterWeaponDetail();

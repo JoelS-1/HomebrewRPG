@@ -56,6 +56,7 @@
   <ItemGroup>
     <Compile Include="CharacterItemService.cs" />
     <Compile Include="CharacterService.cs" />
+    <Compile Include="CharacterSpellService.cs" />
     <Compile Include="CharacterWardrobeService.cs" />
     <Compile Include="CharacterWeaponService.cs" />
     <Compile Include="HeroicService.cs" />
