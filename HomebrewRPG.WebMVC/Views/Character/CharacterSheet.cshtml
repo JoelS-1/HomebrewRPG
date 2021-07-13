@@ -787,11 +787,13 @@
                             @Html.DisplayFor(modelItem => item.Range)
                         </p>
                         <label>
-                            @Html.DisplayNameFor(modelItem => item.Description)
+                            @Html.DisplayNameFor(modelItem => item.Special)
                         </label>
                         <p>
-                            @Html.DisplayFor(modelItem => item.Description)
+                            @Html.DisplayFor(modelItem => item.Special)
                         </p>
+                        <a href='@Url.Action("Edit", "CharacterWeapon", new { id = item.CharacterWeaponId })' class="btn btn-default">Equip</a>
+  
 
                     </div>
                     <div class="col-md-6 padding fancy-text">
@@ -815,12 +817,11 @@
                             @Html.DisplayFor(modelItem => item.CriticalRange)
                         </p>
                         <label>
-                            @Html.DisplayNameFor(modelItem => item.Special)
+                            @Html.DisplayNameFor(modelItem => item.Description)
                         </label>
                         <p>
-                            @Html.DisplayFor(modelItem => item.Special)
+                            @Html.DisplayFor(modelItem => item.Description)
                         </p>
-                        <a href='@Url.Action("Edit", "CharacterWeapon", new { id = item.CharacterWeaponId })' class="btn btn-default">Select</a>
                     </div>
                 </div>
                 <hr />
@@ -855,11 +856,12 @@
                             @Html.DisplayFor(modelItem => item.ArmorType)
                         </p>
                         <label>
-                            @Html.DisplayNameFor(modelItem => item.Description)
+                            @Html.DisplayNameFor(modelItem => item.Special)
                         </label>
                         <p>
-                            @Html.DisplayFor(modelItem => item.Description)
+                            @Html.DisplayFor(modelItem => item.Special)
                         </p>
+                        <a href='@Url.Action("Edit", "CharacterWardrobe", new { id = item.CharacterWardrobeId })' class="btn btn-default">Equip</a>
                     </div>
                     <div class="col-md-6 padding fancy-text">
 
@@ -876,10 +878,10 @@
                             @Html.DisplayFor(modelItem => item.MagicalResistance)
                         </p>
                         <label>
-                            @Html.DisplayNameFor(modelItem => item.Special)
+                            @Html.DisplayNameFor(modelItem => item.Description)
                         </label>
                         <p>
-                            @Html.DisplayFor(modelItem => item.Special)
+                            @Html.DisplayFor(modelItem => item.Description)
                         </p>
                     </div>
                 </div>

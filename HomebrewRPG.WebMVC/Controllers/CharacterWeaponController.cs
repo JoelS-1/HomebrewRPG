@@ -43,7 +43,7 @@ namespace HomebrewRPG.WebMVC.Controllers
                                 Value = o.WeaponId.ToString(),
                                 Text = o.WeaponName
                             };
-            ViewBag.ItemId = queryItem.ToList();
+            ViewBag.WeaponId = queryItem.ToList();
             return View();
         }
 

@@ -348,6 +348,8 @@
     <Content Include="Views\CharacterItem\Create.cshtml" />
     <Content Include="Views\CharacterWeapon\Edit.cshtml" />
     <Content Include="Views\CharacterWeapon\Delete.cshtml" />
+    <Content Include="Views\CharacterWardrobe\Edit.cshtml" />
+    <Content Include="Views\CharacterWardrobe\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
