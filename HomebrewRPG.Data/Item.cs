@@ -17,6 +17,7 @@ namespace HomebrewRPG.Data
         [Required]
         public string Description { get; set; }
         public int Uses { get; set; }
+        public bool IsConsumable { get; set; }
 
         public Dictionary<string, int> StatBonuses { get; set; }
         public Guid OwnerId { get; set; }

@@ -27,7 +27,7 @@ namespace HomebrewRPG.Services
                     OwnerId = _userId,
                     ItemName = model.ItemName,
                     Description = model.Description,
-                    Uses = model.Uses
+                    IsConsumable = model.IsConsumable
                 };
             _ctx.Items.Add(entity);
             return _ctx.SaveChanges() == 1;
@@ -46,7 +46,7 @@ namespace HomebrewRPG.Services
                                 ItemId = e.ItemId,
                                 ItemName = e.ItemName,
                                 Description = e.Description,
-                                Uses = e.Uses
+                                IsConsumable = e.IsConsumable
                             }
                     );
             return query.ToArray();
@@ -64,7 +64,7 @@ namespace HomebrewRPG.Services
                     ItemId = entity.ItemId,
                     ItemName = entity.ItemName,
                     Description = entity.Description,
-                    Uses = entity.Uses
+                    IsConsumable = entity.IsConsumable
                 };
         }
 
@@ -77,7 +77,7 @@ namespace HomebrewRPG.Services
             entity.ItemId = model.ItemId;
             entity.ItemName = model.ItemName;
             entity.Description = model.Description;
-            entity.Uses = model.Uses;
+            entity.IsConsumable = model.IsConsumable;
 
             return _ctx.SaveChanges() == 1;
         }

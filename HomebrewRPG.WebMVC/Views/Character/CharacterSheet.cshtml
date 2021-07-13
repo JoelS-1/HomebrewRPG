@@ -293,6 +293,18 @@
                 </tr>
             </thead>
             <tbody>
+                <tr>
+                    <td class="col-md-6 col-sm-6">
+                        @Html.DisplayNameFor(model => model.CharacterDetail.Proficiency)
+                    </td>
+                    <td class="col-md-3">
+                        @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Proficiency)
+
+                    </td>
+                    <td class="col-md-3">
+                        @Html.DisplayFor(modelItem => modelItem.BonusesDetail.Proficiency)
+                    </td>
+                </tr>
                 @if (Model.CharacterDetail.Endurance > 0)
                 {
                     <tr>

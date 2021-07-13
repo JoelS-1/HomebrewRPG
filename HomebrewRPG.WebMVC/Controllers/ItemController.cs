@@ -68,7 +68,7 @@ namespace HomebrewRPG.WebMVC.Controllers
                     ItemId = detail.ItemId,
                     ItemName = detail.ItemName,
                     Description = detail.Description,
-                    Uses = detail.Uses
+                    IsConsumable = detail.IsConsumable
                 };
             return View(model);
         }

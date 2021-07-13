@@ -69,6 +69,10 @@
     <Compile Include="Migrations\202107101732058_added stats to weapon and wardrobe.Designer.cs">
       <DependentUpon>202107101732058_added stats to weapon and wardrobe.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107130312154_item change.cs" />
+    <Compile Include="Migrations\202107130312154_item change.Designer.cs">
+      <DependentUpon>202107130312154_item change.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Money.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -86,6 +90,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107101732058_added stats to weapon and wardrobe.resx">
       <DependentUpon>202107101732058_added stats to weapon and wardrobe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107130312154_item change.resx">
+      <DependentUpon>202107130312154_item change.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
