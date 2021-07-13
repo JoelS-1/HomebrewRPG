@@ -339,6 +339,7 @@
     <Content Include="Views\WardrobeItem\Create.cshtml" />
     <Content Include="Views\WardrobeItem\Details.cshtml" />
     <Content Include="Views\WardrobeItem\Edit.cshtml" />
+    <Content Include="Views\Weapon\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
