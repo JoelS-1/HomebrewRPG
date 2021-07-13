@@ -1,15 +1,16 @@
 ﻿@model HomebrewRPG.Models.CharacterEdit
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "EditSkills";
 }
+
 
 <div class="row padding">
     <div class="col-sm-12 col-md-6 col-md-offset-2 text-center">
 
-@Html.Partial("_CharacterEditPartialView", Model)
-            <script>
-                var currentTab = 0; // Current tab is set to be the first tab (0)
+        @Html.Partial("_CharacterEditPartialView", Model)
+        <script>
+                var currentTab = 2; // Current tab is set to be the first tab (0)
                 showTab(currentTab); // Display the current tab
 
                 function showTab(n) {
@@ -81,7 +82,7 @@
                     //... and adds the "active" class to the current step:
                     x[n].className += " active";
                 }
-            </script>
+        </script>
     </div>
 </div>
 <div class="row padding">

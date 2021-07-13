@@ -175,6 +175,7 @@
     <div class="col-md-4 col-sm-4">
         <img src="~/Images/FairyTale/png/039-orc.png" class="img-fluid hidden-xs" />
     </div>
+    <a href='@Url.Action("Edit", "Character", new { id = Model.CharacterDetail.CharacterId })' class="btn btn-default btn-lg spacing">Edit Character / Level Up!</a>
 </div>
 
 <div id="stats-tab" class="tabcontent row">
@@ -268,7 +269,7 @@
         <p>
             @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Charisma)
         </p>
-        <a href='@Url.Action("Edit", "Character", new { id = Model.CharacterDetail.CharacterId })' class="btn btn-default btn-lg spacing">Edit Stats</a>
+        <a href='@Url.Action("EditStats", "Character", new { id = Model.CharacterDetail.CharacterId })' class="btn btn-default btn-lg spacing">Edit Stats</a>
     </div>
     <div class="col-md-4 col-sm-4">
         <img src="~/Images/FairyTale/png/009-standard.png" class="img-fluid hidden-xs hidden-sm" />
@@ -711,7 +712,7 @@
         </table>
     </div>
     <div class="col-md-4 col-sm-8 col-xs-12">
-        <a href='@Url.Action("Edit", "Character", new { id = Model.CharacterDetail.CharacterId })' class="btn btn-default btn-lg spacing">Edit Stats</a>
+        <a href='@Url.Action("EditSkills", "Character", new { id = Model.CharacterDetail.CharacterId })' class="btn btn-default btn-lg spacing">Edit Stats</a>
     </div>
 </div>
 

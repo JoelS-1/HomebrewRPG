@@ -341,6 +341,9 @@
     <Content Include="Views\WardrobeItem\Edit.cshtml" />
     <Content Include="Views\Weapon\Delete.cshtml" />
     <Content Include="Views\WardrobeItem\Delete.cshtml" />
+    <Content Include="Views\Shared\_CharacterEditPartialView.cshtml" />
+    <Content Include="Views\Character\EditStats.cshtml" />
+    <Content Include="Views\Character\EditSkills.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
