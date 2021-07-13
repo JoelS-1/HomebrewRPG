@@ -7,6 +7,7 @@ using HomebrewRPG.Models.WardrobeItemModels;
 using HomebrewRPG.Models.WeaponModels;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,7 +19,25 @@ namespace HomebrewRPG.Models
         public List<CharacterItemDetail> Items { get; set; } = new List<CharacterItemDetail>();
         public List<CharacterWeaponDetail> Weapons { get; set; } = new List<CharacterWeaponDetail>();
         public List<CharacterWardrobeDetail> WardrobeItems { get; set; } = new List<CharacterWardrobeDetail>();
-        public CharacterDetail CharacterDetail { get; set; }
+        public CharacterEdit CharacterDetail { get; set; }
+
+        public CharacterDetail BonusesDetail { get; set; }
+        public List<WeaponListItem> WeaponShop { get; set; } = new List<WeaponListItem>();
+        public List<WardrobeListItem> WardrobeShop { get; set; } = new List<WardrobeListItem>();
+        public List<ItemListItem> ItemShop { get; set; } = new List<ItemListItem>();
+
+        [Display(Name="Health")]
+        public int UntrainedHealth { get; set; }
+        [Display(Name = "Strength")]
+        public int UntrainedStrength { get; set; }
+        [Display(Name = "Instinct")]
+        public int UntrainedInstinct { get; set; }
+        [Display(Name = "Agility")]
+        public int UntrainedAgility { get; set; }
+        [Display(Name = "Intelligence")]
+        public int UntrainedIntelligence { get; set; }
+        [Display(Name = "Charisma")]
+        public int UntrainedCharisma { get; set; }
 
     }
 }

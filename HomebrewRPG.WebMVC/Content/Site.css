@@ -62,6 +62,9 @@
 .padding {
     padding-top: 2rem;
 }
+.spacing{
+    margin-top: 2rem;
+}
 .img-fluid{
     max-width: 100%;
     height: auto;
@@ -158,6 +161,20 @@ font-size: 70%;
 .item-spacer{
     padding-bottom: 5.5em;
 }
+.progress-bar {
+    background-color: #204d74;
+}
+.progress{
+    background-color: darkred;
+    margin-bottom: 0.1em;
+}
+.click{
+    padding: 0;
+    margin: 0;
+}
+.bg-success:hover{
+    background-color: forestgreen;
+}
 
 
 /* Style the buttons that are used to open the tab content */
@@ -171,7 +188,7 @@ font-size: 70%;
 }
 
     /* Change background color of buttons on hover */
-    .tab button:hover {
+    .tab-sheet button:hover {
         background-color: #ddd;
     }
 
