@@ -4,10 +4,28 @@
 
     <h2 class="padding">Character Sheet</h2>
     <div class="row">
-        <div class="col-md-3 col-sm-3 col-xs-3">
+        <div class="col-md-3 col-sm-3 col-xs-3 text-center">
             <h3>
                 @Html.DisplayFor(modelItem => modelItem.CharacterDetail.CharacterName)
             </h3>
+            <div col-md-9>
+                <div class="col-md-6 padding">
+                    <div class="shield">
+                        @Html.DisplayFor(modelItem => modelItem.PhysicalResistance)
+                    </div>
+                    <div>
+                        <h4>Armor</h4>
+                    </div>
+                </div>
+                <div class="col-md-6 padding">
+                    <div class="circle">
+                        @Html.DisplayFor(modelItem => modelItem.MagicResistance)
+                    </div>
+                    <div>
+                        <h4>Magic Resist</h4>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="col-md-8 col-xs-9">
 
@@ -50,29 +68,30 @@
         </div>
     </div>
 </div>
-<script>
-        let widthHp = @Model.CharacterDetail.HitPoints;
-        let baseHp = @Model.CharacterDetail.HitPoints;
 
-        function addHp() {
-            let addHealth = document.getElementById('health')
-            widthHp += 1;
+<script type="text/javascript">
+    let widthHp = '@Model.CharacterDetail.Sanity';
+    var baseHp = '@Model.CharacterDetail.Sanity';
 
-            if (addHealth) {
-                addHealth.style.width = ((widthHp / baseHp) * 100) + '%';
-                addHealth.innerHTML = widthHp * 1;
-            }
+    function addHp() {
+        let addHealth = document.getElementById('health')
+        widthHp += 1;
+
+        if (addHealth) {
+            addHealth.style.width = ((widthHp / baseHp) * 100) + '%';
+            addHealth.innerHTML = widthHp * 1;
         }
+    }
 
-        function removeHp() {
-            let damage = document.getElementById('health')
-            widthHp -= 1;
+    function removeHp() {
+        let damage = document.getElementById('health')
+        widthHp -= 1;
 
-            if (damage) {
-                damage.style.width = ((widthHp / baseHp) * 100) + '%';
-                damage.innerHTML = widthHp - 1;
-            }
+        if (damage) {
+            damage.style.width = ((widthHp / baseHp) * 100) + '%';
+            damage.innerHTML = widthHp - 0;
         }
+    }
 </script>
 
 <script>
@@ -92,14 +111,14 @@
         tempHp -= 1;
 
         if (damage) {
-            damage.innerHTML = tempHp - 1;
+            damage.innerHTML = tempHp - 0;
         }
     }
 </script>
 
 <script>
-        let widthSanity = @Model.CharacterDetail.Sanity;
-        let baseSanity = @Model.CharacterDetail.Sanity;
+        let widthSanity = '@Model.CharacterDetail.Sanity' + 0;
+        let baseSanity = '@Model.CharacterDetail.Sanity' + 0;
 
         function addSanity() {
             let addHealth = document.getElementById('sanity')
@@ -117,7 +136,7 @@
 
             if (damage) {
                 damage.style.width = ((widthSanity / baseSanity) * 100) + '%';
-                damage.innerHTML = widthSanity - 1;
+     Sanity          damage.innerHTML = widthSanity - 0;
             }
         }
 </script>
@@ -182,95 +201,212 @@
 <div id="stats-tab" class="tabcontent row">
     <div class="col-md-4 col-sm-6 col-xs-6 padding fancy-text">
         <h3><label>Essential Skills</label></h3>
-        <label>
-            @Html.DisplayNameFor(model => model.CharacterDetail.HitPoints)
-        </label>
-        <p>
-            @Html.DisplayFor(modelItem => modelItem.CharacterDetail.HitPoints)
-        </p>
-        <label>
-            @Html.DisplayNameFor(model => model.CharacterDetail.Sanity)
-        </label>
-        <p>
-            @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Sanity)
-        </p>
-        <label>
-            @Html.DisplayNameFor(model => model.CharacterDetail.Dodge)
-        </label>
-        <p>
-            @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Dodge)
-        </p>
-        <label>
-            @Html.DisplayNameFor(model => model.CharacterDetail.Reaction)
-        </label>
-        <p>
-            @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Reaction)
-        </p>
-        <label>
-            @Html.DisplayNameFor(model => model.CharacterDetail.BaseProwess)
-        </label>
-        <p>
-            @Html.DisplayFor(modelItem => modelItem.CharacterDetail.BaseProwess)
-        </p>
-        <label>
-            @Html.DisplayNameFor(model => model.CharacterDetail.Magic)
-        </label>
-        <p>
-            @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Magic)
-        </p>
-        <label>
-            @Html.DisplayNameFor(model => model.CharacterDetail.Fate)
-        </label>
-        <p>
-            @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Fate)
-        </p>
-        <label>
-            @Html.DisplayNameFor(model => model.CharacterDetail.Speed)
-        </label>
-        <p>
-            @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Speed)
-        </p>
+        <table class="table table-responsive">
+            <thead>
+                <tr>
+                    <th class="col-md-6 col-sm-6">
+                        Skill
+                    </th>
+                    <th>
+                        Added
+                    </th>
+                    <th class="col-md-3 col-sm-3">
+                        Total
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="col-md-6 col-sm-6">
+                        @Html.DisplayNameFor(model => model.CharacterDetail.HitPoints)
 
+                    </td>
+                    <td class="col-md-3 col-sm-3">
+                        @Html.DisplayFor(modelItem => modelItem.CharacterDetail.HitPoints)
+                    </td>
+                    <td class="col-md-3 col-sm-3">
+                        @Html.DisplayFor(modelItem => modelItem.BonusesDetail.HitPoints)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-6 col-sm-6">
+                        @Html.DisplayNameFor(model => model.CharacterDetail.Sanity)
+
+                    </td>
+                    <td class="col-md-3 col-sm-3">
+                        @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Sanity)
+                    </td>
+                    <td class="col-md-3 col-sm-3">
+                        @Html.DisplayFor(modelItem => modelItem.BonusesDetail.Sanity)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-6 col-sm-6">
+                        @Html.DisplayNameFor(model => model.CharacterDetail.Dodge)
+
+                    </td>
+                    <td class="col-md-3 col-sm-3">
+                        @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Dodge)
+                    </td>
+                    <td class="col-md-3 col-sm-3">
+                        @Html.DisplayFor(modelItem => modelItem.BonusesDetail.Dodge)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-6 col-sm-6">
+                        @Html.DisplayNameFor(model => model.CharacterDetail.Reaction)
+
+                    </td>
+                    <td class="col-md-3 col-sm-3">
+                        @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Reaction)
+                    </td>
+                    <td class="col-md-3 col-sm-3">
+                        @Html.DisplayFor(modelItem => modelItem.BonusesDetail.Reaction)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-6 col-sm-6">
+                        @Html.DisplayNameFor(model => model.CharacterDetail.BaseProwess)
+
+                    </td>
+                    <td class="col-md-3 col-sm-3">
+                        @Html.DisplayFor(modelItem => modelItem.CharacterDetail.BaseProwess)
+                    </td>
+                    <td class="col-md-3 col-sm-3">
+                        @Html.DisplayFor(modelItem => modelItem.BonusesDetail.BaseProwess)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-6 col-sm-6">
+                        @Html.DisplayNameFor(model => model.CharacterDetail.Magic)
+
+                    </td>
+                    <td class="col-md-3 col-sm-3">
+                        @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Magic)
+                    </td>
+                    <td class="col-md-3 col-sm-3">
+                        @Html.DisplayFor(modelItem => modelItem.BonusesDetail.Magic)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-6 col-sm-6">
+                        @Html.DisplayNameFor(model => model.CharacterDetail.Fate)
+
+                    </td>
+                    <td class="col-md-3 col-sm-3">
+                        @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Fate)
+                    </td>
+                    <td class="col-md-3 col-sm-3">
+                        @Html.DisplayFor(modelItem => modelItem.BonusesDetail.Fate)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-6 col-sm-6">
+                        @Html.DisplayNameFor(model => model.CharacterDetail.Speed)
+
+                    </td>
+                    <td class="col-md-3 col-sm-3">
+                        @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Speed)
+                    </td>
+                    <td class="col-md-3 col-sm-3">
+                        @Html.DisplayFor(modelItem => modelItem.BonusesDetail.Speed)
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
     <div class="col-md-4 col-sm-6 col-xs-6 padding fancy-text">
         <h3><label>Core Stats</label></h3>
-        <label>
-            @Html.DisplayNameFor(model => model.CharacterDetail.Health)
-        </label>
-        <p>
-            @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Health)
-        </p>
-        <label>
-            @Html.DisplayNameFor(model => model.CharacterDetail.Strength)
-        </label>
-        <p>
-            @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Strength)
-        </p>
-        <label>
-            @Html.DisplayNameFor(model => model.CharacterDetail.Instinct)
-        </label>
-        <p>
-            @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Instinct)
-        </p>
-        <label>
-            @Html.DisplayNameFor(model => model.CharacterDetail.Agility)
-        </label>
-        <p>
-            @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Agility)
-        </p>
-        <label>
-            @Html.DisplayNameFor(model => model.CharacterDetail.Intelligence)
-        </label>
-        <p>
-            @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Intelligence)
-        </p>
-        <label>
-            @Html.DisplayNameFor(model => model.CharacterDetail.Charisma)
-        </label>
-        <p>
-            @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Charisma)
-        </p>
-        <a href='@Url.Action("EditStats", "Character", new { id = Model.CharacterDetail.CharacterId })' class="btn btn-default btn-lg spacing">Edit Stats</a>
+        <table class="table table-responsive">
+            <thead>
+                <tr>
+                    <th class="col-md-6 col-sm-6">
+                        Stat
+                    </th>
+                    <th>
+                        Added
+                    </th>
+                    <th class="col-md-3 col-sm-3">
+                        Total
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="col-md-6 col-sm-6">
+                        @Html.DisplayNameFor(model => model.CharacterDetail.Health)
+
+                    </td>
+                    <td class="col-md-3 col-sm-3">
+                        @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Health)
+                    </td>
+                    <td class="col-md-3 col-sm-3">
+                        @Html.DisplayFor(modelItem => modelItem.BonusesDetail.Health)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-6 col-sm-6">
+                        @Html.DisplayNameFor(model => model.CharacterDetail.Strength)
+
+                    </td>
+                    <td class="col-md-3 col-sm-3">
+                        @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Strength)
+                    </td>
+                    <td class="col-md-3 col-sm-3">
+                        @Html.DisplayFor(modelItem => modelItem.BonusesDetail.Strength)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-6 col-sm-6">
+                        @Html.DisplayNameFor(model => model.CharacterDetail.Instinct)
+
+                    </td>
+                    <td class="col-md-3 col-sm-3">
+                        @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Instinct)
+                    </td>
+                    <td class="col-md-3 col-sm-3">
+                        @Html.DisplayFor(modelItem => modelItem.BonusesDetail.Instinct)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-6 col-sm-6">
+                        @Html.DisplayNameFor(model => model.CharacterDetail.Agility)
+
+                    </td>
+                    <td class="col-md-3 col-sm-3">
+                        @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Agility)
+                    </td>
+                    <td class="col-md-3 col-sm-3">
+                        @Html.DisplayFor(modelItem => modelItem.BonusesDetail.Agility)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-6 col-sm-6">
+                        @Html.DisplayNameFor(model => model.CharacterDetail.Intelligence)
+
+                    </td>
+                    <td class="col-md-3 col-sm-3">
+                        @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Intelligence)
+                    </td>
+                    <td class="col-md-3 col-sm-3">
+                        @Html.DisplayFor(modelItem => modelItem.BonusesDetail.Intelligence)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-6 col-sm-6">
+                        @Html.DisplayNameFor(model => model.CharacterDetail.Charisma)
+
+                    </td>
+                    <td class="col-md-3 col-sm-3">
+                        @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Charisma)
+                    </td>
+                    <td class="col-md-3 col-sm-3">
+                        @Html.DisplayFor(modelItem => modelItem.BonusesDetail.Charisma)
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <a href='@Url.Action("Edit", "Character", new { id = Model.CharacterDetail.CharacterId })' class="btn btn-default btn-lg spacing">Edit Stats</a>
     </div>
     <div class="col-md-4 col-sm-4">
         <img src="~/Images/FairyTale/png/009-standard.png" class="img-fluid hidden-xs hidden-sm" />
@@ -278,444 +414,450 @@
 </div>
 
 <div id="skills-tab" class="tabcontent row">
-    <div class="col-md-4 col-sm-6 col-xs-6 padding fancy-text">
-        <h3><label>Trained Skills</label></h3>
-        <table class="table table-responsive">
-            <thead>
-                <tr>
-                    <th class="col-md-6 col-sm-6">
-                        Skill
-                    </th>
-                    <th class="col-md-3">
-                        Base
-                    </th>
-                    <th class="col-md-3">
-                        Total
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="col-md-6 col-sm-6">
-                        @Html.DisplayNameFor(model => model.CharacterDetail.Proficiency)
-                    </td>
-                    <td class="col-md-3">
-                        @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Proficiency)
-
-                    </td>
-                    <td class="col-md-3">
-                        @Html.DisplayFor(modelItem => modelItem.BonusesDetail.Proficiency)
-                    </td>
-                </tr>
-                @if (Model.CharacterDetail.Endurance > 0)
-                {
+    <div class="row">
+        <div class="col-md-4 col-sm-6 col-xs-6 padding fancy-text">
+            <h3><label>Trained Skills</label></h3>
+            <table class="table table-responsive">
+                <thead>
+                    <tr>
+                        <th class="col-md-6 col-sm-6">
+                            Skill
+                        </th>
+                        <th class="col-md-3">
+                            Base
+                        </th>
+                        <th class="col-md-3">
+                            Total
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
                     <tr>
                         <td class="col-md-6 col-sm-6">
-                            @Html.DisplayNameFor(model => model.CharacterDetail.Endurance)
+                            @Html.DisplayNameFor(model => model.CharacterDetail.Proficiency)
+                        </td>
+                        <td class="col-md-3">
+                            @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Proficiency)
 
                         </td>
                         <td class="col-md-3">
-                            @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Endurance)
-
-                        </td>
-                        <td class="col-md-3">
-                            @Html.DisplayFor(modelItem => modelItem.BonusesDetail.Endurance)
+                            @Html.DisplayFor(modelItem => modelItem.BonusesDetail.Proficiency)
                         </td>
                     </tr>
-                }
-                @if (Model.CharacterDetail.Constitution > 0)
-                {
+                    @if (Model.CharacterDetail.Endurance > 0)
+                    {
+                        <tr>
+                            <td class="col-md-6 col-sm-6">
+                                @Html.DisplayNameFor(model => model.CharacterDetail.Endurance)
+
+                            </td>
+                            <td class="col-md-3">
+                                @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Endurance)
+
+                            </td>
+                            <td class="col-md-3">
+                                @Html.DisplayFor(modelItem => modelItem.BonusesDetail.Endurance)
+                            </td>
+                        </tr>
+                    }
+                    @if (Model.CharacterDetail.Constitution > 0)
+                    {
+                        <tr>
+                            <td class="col-md-6 col-sm-6">
+                                @Html.DisplayNameFor(model => model.CharacterDetail.Constitution)
+
+                            </td>
+                            <td class="col-md-3">
+                                @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Constitution)
+
+                            </td>
+                            <td class="col-md-3">
+                                @Html.DisplayFor(modelItem => modelItem.BonusesDetail.Constitution)
+                            </td>
+                        </tr>
+                    }
+                    @if (Model.CharacterDetail.Athletics > 0)
+                    {
+                        <tr>
+                            <td class="col-md-6 col-sm-6">
+                                @Html.DisplayNameFor(model => model.CharacterDetail.Athletics)
+
+                            </td>
+                            <td class="col-md-3">
+                                @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Athletics)
+
+                            </td>
+                            <td class="col-md-3">
+                                @Html.DisplayFor(modelItem => modelItem.BonusesDetail.Athletics)
+                            </td>
+                        </tr>
+                    }
+                    @if (Model.CharacterDetail.Tenacity > 0)
+                    {
+                        <tr>
+                            <td class="col-md-6 col-sm-6">
+                                @Html.DisplayNameFor(model => model.CharacterDetail.Tenacity)
+                            </td>
+                            <td class="col-md-3">
+                                @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Tenacity)
+                            </td>
+                            <td class="col-md-3">
+                                @Html.DisplayFor(modelItem => modelItem.BonusesDetail.Endurance)
+                            </td>
+                        </tr>
+                    }
+                    @if (Model.CharacterDetail.Acrobatics > 0)
+                    {
+                        <tr>
+                            <td class="col-md-6 col-sm-6">
+                                @Html.DisplayNameFor(model => model.CharacterDetail.Acrobatics)
+
+                            </td>
+                            <td class="col-md-3">
+                                @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Acrobatics)
+
+                            </td>
+                            <td class="col-md-3">
+                                @Html.DisplayFor(modelItem => modelItem.BonusesDetail.Acrobatics)
+                            </td>
+                        </tr>
+                    }
+                    @if (Model.CharacterDetail.SleightOfHand > 0)
+                    {
+                        <tr>
+                            <td class="col-md-6 col-sm-6">
+                                @Html.DisplayNameFor(model => model.CharacterDetail.SleightOfHand)
+
+                            </td>
+                            <td class="col-md-3">
+                                @Html.DisplayFor(modelItem => modelItem.CharacterDetail.SleightOfHand)
+
+                            </td>
+                            <td class="col-md-3">
+                                @Html.DisplayFor(modelItem => modelItem.BonusesDetail.SleightOfHand)
+                            </td>
+                        </tr>
+                    }
+                    @if (Model.CharacterDetail.Sneak > 0)
+                    {
+                        <tr>
+                            <td class="col-md-6 col-sm-6">
+                                @Html.DisplayNameFor(model => model.CharacterDetail.Sneak)
+
+                            </td>
+                            <td class="col-md-3">
+                                @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Sneak)
+
+                            </td>
+                            <td class="col-md-3">
+                                @Html.DisplayFor(modelItem => modelItem.BonusesDetail.Sneak)
+                            </td>
+                        </tr>
+                    }
+                    @if (Model.CharacterDetail.Willpower > 0)
+                    {
+                        <tr>
+                            <td class="col-md-6 col-sm-6">
+                                @Html.DisplayNameFor(model => model.CharacterDetail.Willpower)
+
+                            </td>
+                            <td class="col-md-3">
+                                @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Willpower)
+
+                            </td>
+                            <td class="col-md-3">
+                                @Html.DisplayFor(modelItem => modelItem.BonusesDetail.Willpower)
+                            </td>
+                        </tr>
+                    }
+                    @if (Model.CharacterDetail.Investigation > 0)
+                    {
+                        <tr>
+                            <td class="col-md-6 col-sm-6">
+                                @Html.DisplayNameFor(model => model.CharacterDetail.Investigation)
+
+                            </td>
+                            <td class="col-md-3">
+                                @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Investigation)
+
+                            </td>
+                            <td class="col-md-3">
+                                @Html.DisplayFor(modelItem => modelItem.BonusesDetail.Investigation)
+                            </td>
+                        </tr>
+                    }
+                    @if (Model.CharacterDetail.Knowledge > 0)
+                    {
+                        <tr>
+                            <td class="col-md-6 col-sm-6">
+                                @Html.DisplayNameFor(model => model.CharacterDetail.Knowledge)
+
+                            </td>
+                            <td class="col-md-3">
+                                @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Knowledge)
+
+                            </td>
+                            <td class="col-md-3">
+                                @Html.DisplayFor(modelItem => modelItem.BonusesDetail.Knowledge)
+                            </td>
+                        </tr>
+                    }
+                    @if (Model.CharacterDetail.Bravery > 0)
+                    {
+                        <tr>
+                            <td class="col-md-6 col-sm-6">
+                                @Html.DisplayNameFor(model => model.CharacterDetail.Bravery)
+
+                            </td>
+                            <td class="col-md-3">
+                                @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Bravery)
+
+                            </td>
+                            <td class="col-md-3">
+                                @Html.DisplayFor(modelItem => modelItem.BonusesDetail.Bravery)
+                            </td>
+                        </tr>
+                    }
+                    @if (Model.CharacterDetail.Pilotry > 0)
+                    {
+                        <tr>
+                            <td class="col-md-6 col-sm-6">
+                                @Html.DisplayNameFor(model => model.CharacterDetail.Pilotry)
+
+                            </td>
+                            <td class="col-md-3">
+                                @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Pilotry)
+
+                            </td>
+                            <td class="col-md-3">
+                                @Html.DisplayFor(modelItem => modelItem.BonusesDetail.Pilotry)
+                            </td>
+                        </tr>
+                    }
+                    @if (Model.CharacterDetail.Insight > 0)
+                    {
+                        <tr>
+                            <td class="col-md-6 col-sm-6">
+                                @Html.DisplayNameFor(model => model.CharacterDetail.Insight)
+
+                            </td>
+                            <td class="col-md-3">
+                                @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Insight)
+
+                            </td>
+                            <td class="col-md-3">
+                                @Html.DisplayFor(modelItem => modelItem.BonusesDetail.Insight)
+                            </td>
+                        </tr>
+                    }
+                    @if (Model.CharacterDetail.Perception > 0)
+                    {
+                        <tr>
+                            <td class="col-md-6 col-sm-6">
+                                @Html.DisplayNameFor(model => model.CharacterDetail.Perception)
+
+                            </td>
+                            <td class="col-md-3">
+                                @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Perception)
+
+                            </td>
+                            <td class="col-md-3">
+                                @Html.DisplayFor(modelItem => modelItem.BonusesDetail.Perception)
+                            </td>
+                        </tr>
+                    }
+                    @if (Model.CharacterDetail.Survival > 0)
+                    {
+                        <tr>
+                            <td class="col-md-6 col-sm-6">
+                                @Html.DisplayNameFor(model => model.CharacterDetail.Survival)
+
+                            </td>
+                            <td class="col-md-3">
+                                @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Survival)
+
+                            </td>
+                            <td class="col-md-3">
+                                @Html.DisplayFor(modelItem => modelItem.BonusesDetail.Survival)
+                            </td>
+                        </tr>
+                    }
+                    @if (Model.CharacterDetail.Faith > 0)
+                    {
+                        <tr>
+                            <td class="col-md-6 col-sm-6">
+                                @Html.DisplayNameFor(model => model.CharacterDetail.Faith)
+
+                            </td>
+                            <td class="col-md-3">
+                                @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Faith)
+
+                            </td>
+                            <td class="col-md-3">
+                                @Html.DisplayFor(modelItem => modelItem.BonusesDetail.Faith)
+                            </td>
+                        </tr>
+                    }
+                    @if (Model.CharacterDetail.Deception > 0)
+                    {
+                        <tr>
+                            <td class="col-md-6 col-sm-6">
+                                @Html.DisplayNameFor(model => model.CharacterDetail.Deception)
+
+                            </td>
+                            <td class="col-md-3">
+                                @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Deception)
+
+                            </td>
+                            <td class="col-md-3">
+                                @Html.DisplayFor(modelItem => modelItem.BonusesDetail.Deception)
+                            </td>
+                        </tr>
+                    }
+                    @if (Model.CharacterDetail.Diplomacy > 0)
+                    {
+                        <tr>
+                            <td class="col-md-6 col-sm-6">
+                                @Html.DisplayNameFor(model => model.CharacterDetail.Diplomacy)
+
+                            </td>
+                            <td class="col-md-3">
+                                @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Diplomacy)
+
+                            </td>
+                            <td class="col-md-3">
+                                @Html.DisplayFor(modelItem => modelItem.BonusesDetail.Diplomacy)
+                            </td>
+                        </tr>
+                    }
+                    @if (Model.CharacterDetail.Intimidation > 0)
+                    {
+                        <tr>
+                            <td class="col-md-6 col-sm-6">
+                                @Html.DisplayNameFor(model => model.CharacterDetail.Intimidation)
+
+                            </td>
+                            <td class="col-md-3">
+                                @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Intimidation)
+
+                            </td>
+                            <td class="col-md-3">
+                                @Html.DisplayFor(modelItem => modelItem.BonusesDetail.Intimidation)
+                            </td>
+                        </tr>
+                    }
+                    @if (Model.CharacterDetail.Perception > 0)
+                    {
+                        <tr>
+                            <td class="col-md-6 col-sm-6">
+                                @Html.DisplayNameFor(model => model.CharacterDetail.Perception)
+
+                            </td>
+                            <td class="col-md-3">
+                                @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Perception)
+
+                            </td>
+                            <td class="col-md-3">
+                                @Html.DisplayFor(modelItem => modelItem.BonusesDetail.Perception)
+                            </td>
+                        </tr>
+                    }
+                    @if (Model.CharacterDetail.Seduction > 0)
+                    {
+                        <tr>
+                            <td class="col-md-6 col-sm-6">
+                                @Html.DisplayNameFor(model => model.CharacterDetail.Seduction)
+
+                            </td>
+                            <td class="col-md-3">
+                                @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Seduction)
+
+                            </td>
+                            <td class="col-md-3">
+                                @Html.DisplayFor(modelItem => modelItem.BonusesDetail.Seduction)
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-6 padding fancy-text">
+            <h3><label>Untrained Checks</label></h3>
+            <table class="table table-responsive">
+                <thead>
+                    <tr>
+                        <th class="col-md-6 col-sm-6">
+                            Skill
+                        </th>
+                        <th class="col-md-3 col-sm-3">
+                            Total
+                        </th>
+                    </tr>
                     <tr>
                         <td class="col-md-6 col-sm-6">
-                            @Html.DisplayNameFor(model => model.CharacterDetail.Constitution)
+                            @Html.DisplayNameFor(model => model.UntrainedHealth)
 
                         </td>
-                        <td class="col-md-3">
-                            @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Constitution)
-
-                        </td>
-                        <td class="col-md-3">
-                            @Html.DisplayFor(modelItem => modelItem.BonusesDetail.Constitution)
+                        <td class="col-md-3 col-sm-3">
+                            @Html.DisplayFor(modelItem => modelItem.UntrainedHealth)
                         </td>
                     </tr>
-                }
-                @if (Model.CharacterDetail.Athletics > 0)
-                {
                     <tr>
                         <td class="col-md-6 col-sm-6">
-                            @Html.DisplayNameFor(model => model.CharacterDetail.Athletics)
+                            @Html.DisplayNameFor(model => model.UntrainedStrength)
 
                         </td>
-                        <td class="col-md-3">
-                            @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Athletics)
-
-                        </td>
-                        <td class="col-md-3">
-                            @Html.DisplayFor(modelItem => modelItem.BonusesDetail.Athletics)
+                        <td class="col-md-3 col-sm-3">
+                            @Html.DisplayFor(modelItem => modelItem.UntrainedStrength)
                         </td>
                     </tr>
-                }
-                @if (Model.CharacterDetail.Tenacity > 0)
-                {
                     <tr>
                         <td class="col-md-6 col-sm-6">
-                            @Html.DisplayNameFor(model => model.CharacterDetail.Tenacity)
+                            @Html.DisplayNameFor(model => model.UntrainedInstinct)
+
                         </td>
-                        <td class="col-md-3">
-                            @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Tenacity)
+                        <td class="col-md-3 col-sm-3">
+                            @Html.DisplayFor(modelItem => modelItem.UntrainedInstinct)
                         </td>
-                        <td class="col-md-3">
-                            @Html.DisplayFor(modelItem => modelItem.BonusesDetail.Endurance)
-                        </td>
-                    </tr>
-                }
-                @if (Model.CharacterDetail.Acrobatics > 0)
-                {
                     <tr>
                         <td class="col-md-6 col-sm-6">
-                            @Html.DisplayNameFor(model => model.CharacterDetail.Acrobatics)
-
+                            @Html.DisplayNameFor(model => model.UntrainedAgility)
                         </td>
-                        <td class="col-md-3">
-                            @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Acrobatics)
-
-                        </td>
-                        <td class="col-md-3">
-                            @Html.DisplayFor(modelItem => modelItem.BonusesDetail.Acrobatics)
+                        <td class="col-md-3 col-sm-3">
+                            @Html.DisplayFor(modelItem => modelItem.UntrainedAgility)
                         </td>
                     </tr>
-                }
-                @if (Model.CharacterDetail.SleightOfHand > 0)
-                {
                     <tr>
                         <td class="col-md-6 col-sm-6">
-                            @Html.DisplayNameFor(model => model.CharacterDetail.SleightOfHand)
-
+                            @Html.DisplayNameFor(model => model.UntrainedIntelligence)
                         </td>
-                        <td class="col-md-3">
-                            @Html.DisplayFor(modelItem => modelItem.CharacterDetail.SleightOfHand)
-
-                        </td>
-                        <td class="col-md-3">
-                            @Html.DisplayFor(modelItem => modelItem.BonusesDetail.SleightOfHand)
+                        <td class="col-md-3 col-sm-3">
+                            @Html.DisplayFor(modelItem => modelItem.UntrainedIntelligence)
                         </td>
                     </tr>
-                }
-                @if (Model.CharacterDetail.Sneak > 0)
-                {
                     <tr>
                         <td class="col-md-6 col-sm-6">
-                            @Html.DisplayNameFor(model => model.CharacterDetail.Sneak)
-
+                            @Html.DisplayNameFor(model => model.UntrainedCharisma)
                         </td>
-                        <td class="col-md-3">
-                            @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Sneak)
-
-                        </td>
-                        <td class="col-md-3">
-                            @Html.DisplayFor(modelItem => modelItem.BonusesDetail.Sneak)
+                        <td class="col-md-3 col-sm-3">
+                            @Html.DisplayFor(modelItem => modelItem.UntrainedCharisma)
                         </td>
                     </tr>
-                }
-                @if (Model.CharacterDetail.Willpower > 0)
-                {
-                    <tr>
-                        <td class="col-md-6 col-sm-6">
-                            @Html.DisplayNameFor(model => model.CharacterDetail.Willpower)
-
-                        </td>
-                        <td class="col-md-3">
-                            @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Willpower)
-
-                        </td>
-                        <td class="col-md-3">
-                            @Html.DisplayFor(modelItem => modelItem.BonusesDetail.Willpower)
-                        </td>
-                    </tr>
-                }
-                @if (Model.CharacterDetail.Investigation > 0)
-                {
-                    <tr>
-                        <td class="col-md-6 col-sm-6">
-                            @Html.DisplayNameFor(model => model.CharacterDetail.Investigation)
-
-                        </td>
-                        <td class="col-md-3">
-                            @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Investigation)
-
-                        </td>
-                        <td class="col-md-3">
-                            @Html.DisplayFor(modelItem => modelItem.BonusesDetail.Investigation)
-                        </td>
-                    </tr>
-                }
-                @if (Model.CharacterDetail.Knowledge > 0)
-                {
-                    <tr>
-                        <td class="col-md-6 col-sm-6">
-                            @Html.DisplayNameFor(model => model.CharacterDetail.Knowledge)
-
-                        </td>
-                        <td class="col-md-3">
-                            @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Knowledge)
-
-                        </td>
-                        <td class="col-md-3">
-                            @Html.DisplayFor(modelItem => modelItem.BonusesDetail.Knowledge)
-                        </td>
-                    </tr>
-                }
-                @if (Model.CharacterDetail.Bravery > 0)
-                {
-                    <tr>
-                        <td class="col-md-6 col-sm-6">
-                            @Html.DisplayNameFor(model => model.CharacterDetail.Bravery)
-
-                        </td>
-                        <td class="col-md-3">
-                            @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Bravery)
-
-                        </td>
-                        <td class="col-md-3">
-                            @Html.DisplayFor(modelItem => modelItem.BonusesDetail.Bravery)
-                        </td>
-                    </tr>
-                }
-                @if (Model.CharacterDetail.Pilotry > 0)
-                {
-                    <tr>
-                        <td class="col-md-6 col-sm-6">
-                            @Html.DisplayNameFor(model => model.CharacterDetail.Pilotry)
-
-                        </td>
-                        <td class="col-md-3">
-                            @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Pilotry)
-
-                        </td>
-                        <td class="col-md-3">
-                            @Html.DisplayFor(modelItem => modelItem.BonusesDetail.Pilotry)
-                        </td>
-                    </tr>
-                }
-                @if (Model.CharacterDetail.Insight > 0)
-                {
-                    <tr>
-                        <td class="col-md-6 col-sm-6">
-                            @Html.DisplayNameFor(model => model.CharacterDetail.Insight)
-
-                        </td>
-                        <td class="col-md-3">
-                            @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Insight)
-
-                        </td>
-                        <td class="col-md-3">
-                            @Html.DisplayFor(modelItem => modelItem.BonusesDetail.Insight)
-                        </td>
-                    </tr>
-                }
-                @if (Model.CharacterDetail.Perception > 0)
-                {
-                    <tr>
-                        <td class="col-md-6 col-sm-6">
-                            @Html.DisplayNameFor(model => model.CharacterDetail.Perception)
-
-                        </td>
-                        <td class="col-md-3">
-                            @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Perception)
-
-                        </td>
-                        <td class="col-md-3">
-                            @Html.DisplayFor(modelItem => modelItem.BonusesDetail.Perception)
-                        </td>
-                    </tr>
-                }
-                @if (Model.CharacterDetail.Survival > 0)
-                {
-                    <tr>
-                        <td class="col-md-6 col-sm-6">
-                            @Html.DisplayNameFor(model => model.CharacterDetail.Survival)
-
-                        </td>
-                        <td class="col-md-3">
-                            @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Survival)
-
-                        </td>
-                        <td class="col-md-3">
-                            @Html.DisplayFor(modelItem => modelItem.BonusesDetail.Survival)
-                        </td>
-                    </tr>
-                }
-                @if (Model.CharacterDetail.Faith > 0)
-                {
-                    <tr>
-                        <td class="col-md-6 col-sm-6">
-                            @Html.DisplayNameFor(model => model.CharacterDetail.Faith)
-
-                        </td>
-                        <td class="col-md-3">
-                            @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Faith)
-
-                        </td>
-                        <td class="col-md-3">
-                            @Html.DisplayFor(modelItem => modelItem.BonusesDetail.Faith)
-                        </td>
-                    </tr>
-                }
-                @if (Model.CharacterDetail.Deception > 0)
-                {
-                    <tr>
-                        <td class="col-md-6 col-sm-6">
-                            @Html.DisplayNameFor(model => model.CharacterDetail.Deception)
-
-                        </td>
-                        <td class="col-md-3">
-                            @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Deception)
-
-                        </td>
-                        <td class="col-md-3">
-                            @Html.DisplayFor(modelItem => modelItem.BonusesDetail.Deception)
-                        </td>
-                    </tr>
-                }
-                @if (Model.CharacterDetail.Diplomacy > 0)
-                {
-                    <tr>
-                        <td class="col-md-6 col-sm-6">
-                            @Html.DisplayNameFor(model => model.CharacterDetail.Diplomacy)
-
-                        </td>
-                        <td class="col-md-3">
-                            @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Diplomacy)
-
-                        </td>
-                        <td class="col-md-3">
-                            @Html.DisplayFor(modelItem => modelItem.BonusesDetail.Diplomacy)
-                        </td>
-                    </tr>
-                }
-                @if (Model.CharacterDetail.Intimidation > 0)
-                {
-                    <tr>
-                        <td class="col-md-6 col-sm-6">
-                            @Html.DisplayNameFor(model => model.CharacterDetail.Intimidation)
-
-                        </td>
-                        <td class="col-md-3">
-                            @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Intimidation)
-
-                        </td>
-                        <td class="col-md-3">
-                            @Html.DisplayFor(modelItem => modelItem.BonusesDetail.Intimidation)
-                        </td>
-                    </tr>
-                }
-                @if (Model.CharacterDetail.Perception > 0)
-                {
-                    <tr>
-                        <td class="col-md-6 col-sm-6">
-                            @Html.DisplayNameFor(model => model.CharacterDetail.Perception)
-
-                        </td>
-                        <td class="col-md-3">
-                            @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Perception)
-
-                        </td>
-                        <td class="col-md-3">
-                            @Html.DisplayFor(modelItem => modelItem.BonusesDetail.Perception)
-                        </td>
-                    </tr>
-                }
-                @if (Model.CharacterDetail.Seduction > 0)
-                {
-                    <tr>
-                        <td class="col-md-6 col-sm-6">
-                            @Html.DisplayNameFor(model => model.CharacterDetail.Seduction)
-
-                        </td>
-                        <td class="col-md-3">
-                            @Html.DisplayFor(modelItem => modelItem.CharacterDetail.Seduction)
-
-                        </td>
-                        <td class="col-md-3">
-                            @Html.DisplayFor(modelItem => modelItem.BonusesDetail.Seduction)
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-4 col-sm-4">
+            <img src="~/Images/FairyTale/png/027-shield.png" class="img-fluid hidden-xs hidden-sm" />
+        </div>
     </div>
-    <div class="col-md-4 col-sm-6 col-xs-6 padding fancy-text">
-        <h3><label>Untrained Checks</label></h3>
-        <table class="table table-responsive">
-            <thead>
-                <tr>
-                    <th class="col-md-6 col-sm-6">
-                        Skill
-                    </th>
-                    <th class="col-md-3 col-sm-3">
-                        Total
-                    </th>
-                </tr>
-                <tr>
-                    <td class="col-md-6 col-sm-6">
-                        @Html.DisplayNameFor(model => model.UntrainedHealth)
-
-                    </td>
-                    <td class="col-md-3 col-sm-3">
-                        @Html.DisplayFor(modelItem => modelItem.UntrainedHealth)
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-6 col-sm-6">
-                        @Html.DisplayNameFor(model => model.UntrainedStrength)
-
-                    </td>
-                    <td class="col-md-3 col-sm-3">
-                        @Html.DisplayFor(modelItem => modelItem.UntrainedStrength)
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-6 col-sm-6">
-                        @Html.DisplayNameFor(model => model.UntrainedInstinct)
-
-                    </td>
-                    <td class="col-md-3 col-sm-3">
-                        @Html.DisplayFor(modelItem => modelItem.UntrainedInstinct)
-                    </td>
-                <tr>
-                    <td class="col-md-6 col-sm-6">
-                        @Html.DisplayNameFor(model => model.UntrainedAgility)
-                    </td>
-                    <td class="col-md-3 col-sm-3">
-                        @Html.DisplayFor(modelItem => modelItem.UntrainedAgility)
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-6 col-sm-6">
-                        @Html.DisplayNameFor(model => model.UntrainedIntelligence)
-                    </td>
-                    <td class="col-md-3 col-sm-3">
-                        @Html.DisplayFor(modelItem => modelItem.UntrainedIntelligence)
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-6 col-sm-6">
-                        @Html.DisplayNameFor(model => model.UntrainedCharisma)
-                    </td>
-                    <td class="col-md-3 col-sm-3">
-                        @Html.DisplayFor(modelItem => modelItem.UntrainedCharisma)
-                    </td>
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
-    </div>
-    <div class="col-md-4 col-sm-8 col-xs-12">
-        <a href='@Url.Action("EditSkills", "Character", new { id = Model.CharacterDetail.CharacterId })' class="btn btn-default btn-lg spacing">Edit Stats</a>
+    <div class="row">
+        <a href='@Url.Action("Edit", "Character", new { id = Model.CharacterDetail.CharacterId })' class="btn btn-default btn-lg spacing">Edit Skills</a>
     </div>
 </div>
+
 
 <div id="item-tab" class="tabcontent">
     <div class="row">
@@ -793,10 +935,14 @@
                         <p>
                             @Html.DisplayFor(modelItem => item.Special)
                         </p>
-                        <a href='@Url.Action("Edit", "CharacterWeapon", new { id = item.CharacterWeaponId })' class="btn btn-default">Equip</a>
-
-
+                        <label>
+                            @Html.DisplayNameFor(modelItem => item.IsEquipped)
+                        </label>
+                        <p>
+                            @Html.DisplayFor(modelItem => item.IsEquipped)
+                        </p>
                     </div>
+
                     <div class="col-md-6 padding fancy-text">
 
                         <label>
@@ -823,6 +969,7 @@
                         <p>
                             @Html.DisplayFor(modelItem => item.Description)
                         </p>
+                        <a href='@Url.Action("Edit", "CharacterWeapon", new { id = item.CharacterWeaponId })' class="btn btn-default">Equip/Unequip</a>
                     </div>
                 </div>
                 <hr />
@@ -862,7 +1009,12 @@
                         <p>
                             @Html.DisplayFor(modelItem => item.Special)
                         </p>
-                        <a href='@Url.Action("Edit", "CharacterWardrobe", new { id = item.CharacterWardrobeId })' class="btn btn-default">Equip</a>
+                        <label>
+                            @Html.DisplayNameFor(modelItem => item.IsEquipped)
+                        </label>
+                        <p>
+                            @Html.DisplayFor(modelItem => item.IsEquipped)
+                        </p>
                     </div>
                     <div class="col-md-6 padding fancy-text">
 
@@ -884,6 +1036,7 @@
                         <p>
                             @Html.DisplayFor(modelItem => item.Description)
                         </p>
+                        <a href='@Url.Action("Edit", "CharacterWardrobe", new { id = item.CharacterWardrobeId })' class="btn btn-default">Equip/Unequip</a>
                     </div>
                 </div>
                 <hr />
@@ -1016,3 +1169,7 @@
         evt.currentTarget.className += " active";
     }
 </script>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

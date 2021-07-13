@@ -38,5 +38,10 @@ namespace HomebrewRPG.Models
         [Display(Name = "Charisma")]
         public int UntrainedCharisma { get; set; }
 
+        [Display(Name = "Armor")]
+        public int PhysicalResistance { get; set; }
+        [Display(Name = "Magic Resist")]
+        public int MagicResistance { get; set; }
+
     }
 }

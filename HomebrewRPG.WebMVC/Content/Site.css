@@ -175,6 +175,27 @@ font-size: 70%;
 .bg-success:hover{
     background-color: forestgreen;
 }
+.shield {
+    height: 40px;
+    width: 40px;
+    border: 2px solid;
+    border-radius: 50% 50% 50% 50% / 12% 12% 88% 88%;
+    display: inline-block;
+    background-color: dimgrey;
+    color: white;
+    text-align: center;
+    padding: 0.65em;
+}
+.circle {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: rebeccapurple;
+    color: white;
+    text-align: center;
+    padding: 0.7em;
+}
 
 
 /* Style the buttons that are used to open the tab content */

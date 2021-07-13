@@ -76,7 +76,6 @@
     <Compile Include="HeroicModels\HeroicCreate.cs" />
     <Compile Include="HeroicModels\HeroicEdit.cs" />
     <Compile Include="HeroicModels\HeroicListItem.cs" />
-    <Compile Include="InventoryModels\InventoryCreate.cs" />
     <Compile Include="ItemModels\ItemListItem.cs" />
     <Compile Include="ItemModels\ItemCreate.cs" />
     <Compile Include="ItemModels\ItemDetail.cs" />
