@@ -22,9 +22,6 @@ namespace HomebrewRPG.Models
         public CharacterEdit CharacterDetail { get; set; }
 
         public CharacterDetail BonusesDetail { get; set; }
-        public List<WeaponListItem> WeaponShop { get; set; } = new List<WeaponListItem>();
-        public List<WardrobeListItem> WardrobeShop { get; set; } = new List<WardrobeListItem>();
-        public List<ItemListItem> ItemShop { get; set; } = new List<ItemListItem>();
 
         [Display(Name="Health")]
         public int UntrainedHealth { get; set; }

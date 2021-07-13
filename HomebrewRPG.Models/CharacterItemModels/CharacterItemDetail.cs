@@ -9,6 +9,7 @@ namespace HomebrewRPG.Models.CharacterItemModels
 {
     public class CharacterItemDetail
     {
+        public int CharacterItemId { get; set; }
         public int ItemId { get; set; }
         public int CharacterId { get; set; }
         public int Quantity { get; set; }

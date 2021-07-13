@@ -330,7 +330,6 @@
     <Content Include="Views\Heroic\Edit.cshtml" />
     <Content Include="Views\Heroic\Delete.cshtml" />
     <Content Include="Views\Character\CharacterSheet.cshtml" />
-    <Content Include="Views\CharacterItem\Create.cshtml" />
     <Content Include="Views\CharacterWeapon\Create.cshtml" />
     <Content Include="Views\CharacterWardrobe\Create.cshtml" />
     <Content Include="Views\Weapon\Create.cshtml" />
@@ -344,6 +343,9 @@
     <Content Include="Views\Shared\_CharacterEditPartialView.cshtml" />
     <Content Include="Views\Character\EditStats.cshtml" />
     <Content Include="Views\Character\EditSkills.cshtml" />
+    <Content Include="Views\CharacterItem\Edit.cshtml" />
+    <Content Include="Views\CharacterItem\Delete.cshtml" />
+    <Content Include="Views\CharacterItem\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

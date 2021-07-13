@@ -25,9 +25,9 @@ namespace HomebrewRPG.Services
                 new CharacterItem()
                 {
                     OwnerId = _userId,
-                    CharacterId = model.CharacterId,
+                    CharacterId = Convert.ToInt32(model.CharacterId),
                     ItemId = model.ItemId,
-                    Quantity = model.Quantity
+                    Quantity = Convert.ToInt32(model.Quantity)
                 };
             _ctx.CharacterItems.Add(entity);
             return _ctx.SaveChanges() == 1;
@@ -43,6 +43,7 @@ namespace HomebrewRPG.Services
                         e =>
                             new CharacterItemDetail
                             {
+                                CharacterItemId = e.CharacterItemId,
                                 CharacterId = e.CharacterId,
                                 ItemId = e.ItemId,
                                 ItemName = e.Item.ItemName,
@@ -62,6 +63,7 @@ namespace HomebrewRPG.Services
             CharacterItemDetail detail =
                 new CharacterItemDetail
                 {
+                    CharacterItemId = entity.CharacterItemId,
                     CharacterId = entity.CharacterId,
                     ItemId = entity.ItemId,
                     ItemName = entity.Item.ItemName,
@@ -78,6 +80,7 @@ namespace HomebrewRPG.Services
                     .CharacterItems
                     .Single(e => e.CharacterItemId == model.CharacterItemId && e.OwnerId == _userId);
 
+            entity.CharacterItemId = model.CharacterItemId;
             entity.CharacterId = model.CharacterId;
             entity.ItemId = model.ItemId;
             entity.Quantity = model.Quantity;

@@ -131,9 +131,6 @@ namespace HomebrewRPG.WebMVC.Controllers
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var characterService = new CharacterService(userId);
-            var itemService = new ItemService(userId);
-            var weaponService = new WeaponService(userId);
-            var wardrobeItemService = new WardrobeItemService(userId);
             var characterItemService = new CharacterItemService(userId);
             var characterWeaponService = new CharacterWeaponService(userId);
             var characterWardrobeItemService = new CharacterWardrobeService(userId);
@@ -142,9 +139,7 @@ namespace HomebrewRPG.WebMVC.Controllers
             CharacterSheetModel model = new CharacterSheetModel();
             model.CharacterDetail = characterService.GetEditCharacterById(id);
             model.BonusesDetail = characterService.GetCharacterById(id);
-            //model.WeaponShop = weaponService.GetWeapons();
-            //model.WardrobeShop = wardrobeItemService.GetWardrobeItems();
-            //model.items = characterItemService.GetCharacterItemsByCharacterId(id);
+
 
             model.UntrainedHealth = (model.CharacterDetail.Health * 2) + model.CharacterDetail.Instinct;
             model.UntrainedStrength = (model.CharacterDetail.Strength * 2) + model.CharacterDetail.Instinct;
@@ -153,24 +148,12 @@ namespace HomebrewRPG.WebMVC.Controllers
             model.UntrainedIntelligence = (model.CharacterDetail.Intelligence * 2) + model.CharacterDetail.Instinct;
             model.UntrainedCharisma = (model.CharacterDetail.Charisma * 2) + model.CharacterDetail.Instinct;
 
-            var itemShopList = itemService.GetItems();
-            foreach (var x in itemShopList)
-            {
-                ItemListItem item = new ItemListItem();
-                {
-                    item.ItemId = x.ItemId;
-                    item.ItemName = x.ItemName;
-                    item.Description = x.Description;
-                }
-                model.ItemShop.Add(item);
-            }
-
             var itemList = characterItemService.GetCharacterItemsByCharacterId(id);
             foreach (var x in itemList)
             {
                 CharacterItemDetail y = new CharacterItemDetail();
                 {
-
+                    y.CharacterItemId = x.CharacterItemId;
                     y.CharacterId = x.CharacterId;
                     y.ItemId = x.ItemId;
                     y.Quantity = x.Quantity;
@@ -184,7 +167,7 @@ namespace HomebrewRPG.WebMVC.Controllers
             {
                 CharacterWeaponDetail y = new CharacterWeaponDetail();
                 {
-
+                    y.CharacterWeaponId = x.CharacterWeaponId;
                     y.CharacterId = x.CharacterId;
                     y.CharacterWeaponId = x.CharacterWeaponId;
                     y.WeaponId = x.WeaponId;
@@ -248,7 +231,7 @@ namespace HomebrewRPG.WebMVC.Controllers
             {
                 CharacterWardrobeDetail y = new CharacterWardrobeDetail();
                 {
-
+                    y.CharacterWardrobeId = x.CharacterWardrobeId;
                     y.CharacterId = x.CharacterId;
                     y.CharacterWardrobeId = x.CharacterWardrobeId;
                     y.WardrobeItemId = x.WardrobeItemId;

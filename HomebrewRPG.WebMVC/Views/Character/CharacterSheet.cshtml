@@ -743,6 +743,9 @@
                         <p>
                             @Html.DisplayFor(modelItem => item.Quantity)
                         </p>
+                        <p>
+                            <a href='@Url.Action("Edit", "CharacterItem", new { id = item.CharacterItemId })' class="btn btn-default">Select</a>
+                        </p>
                     </div>
                 </div>
                 <hr />
