@@ -58,7 +58,7 @@ namespace HomebrewRPG.WebMVC.Controllers
             if (service.CreateCharacterItem(model))
             {
                 TempData["SaveResult"] = "Your item was added.";
-                return RedirectToAction("Index");
+                return RedirectToAction("CharacterSheet", "Character", new { id = model.CharacterId });
             };
 
             ModelState.AddModelError("", "Item could not be added.");
@@ -111,7 +111,7 @@ namespace HomebrewRPG.WebMVC.Controllers
             if (service.UpdateCharacterItem(model))
             {
                 TempData["SaveResult"] = "Updated.";
-                return RedirectToAction("Index");
+                return RedirectToAction("CharacterSheet", "Character", new { id = model.CharacterId });
             }
             ModelState.AddModelError("", "Your request could not be updated.");
             return View(model);

@@ -1170,34 +1170,19 @@
     <div class="row">
         <div class="col-md-8 col-sm-8">
             <div class="row">
-
                 <div class="col-md-8 padding fancy-text">
                     <div class="row">
                         <label>
-                            @Html.DisplayNameFor(modelItem => modelItem.Wallet.Gold)
+                                @Html.DisplayNameFor(model => model.Wallet.Gold)
                         </label>
-                        <p>
-                            @Html.DisplayFor(modelItem => modelItem.Wallet.Gold)
-                        </p>
-                        <label>
-                            @Html.DisplayNameFor(modelItem => modelItem.Wallet.Silver)
-                        </label>
-                        <p>
-                            @Html.DisplayFor(modelItem => modelItem.Wallet.Silver)
-                        </p>
-                        <label>
-                            @Html.DisplayNameFor(modelItem => modelItem.Wallet.Silver)
-                        </label>
-                        <p>
-                            @Html.DisplayFor(modelItem => modelItem.Wallet.Copper)
-                        </p>
+                            <p>
+                                @Html.DisplayFor(modelItem => )
+                            </p>
                     </div>
                 </div>
+
             </div>
             <hr />
-            <div class="row">
-                <a href='@Url.Action("Edit", "Wallet", new { id = Model.Wallet.WalletId })' class="btn btn-primary btn-lg">Add Cash!</a>
-            </div>
         </div>
         <div class="col-md-4 col-sm-4">
             <img src="~/Images/FairyTale/png/040-money bag.png" class="img-fluid hidden-xs" />

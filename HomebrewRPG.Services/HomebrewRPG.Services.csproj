@@ -54,11 +54,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CharacterItemService.cs" />
+    <Compile Include="JoinServices\CharacterItemService.cs" />
     <Compile Include="CharacterService.cs" />
-    <Compile Include="CharacterSpellService.cs" />
-    <Compile Include="CharacterWardrobeService.cs" />
-    <Compile Include="CharacterWeaponService.cs" />
+    <Compile Include="JoinServices\CharacterSpellService.cs" />
+    <Compile Include="JoinServices\CharacterWardrobeService.cs" />
+    <Compile Include="JoinServices\CharacterWeaponService.cs" />
     <Compile Include="HeroicService.cs" />
     <Compile Include="ItemService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
