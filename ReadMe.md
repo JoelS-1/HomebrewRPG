@@ -12,7 +12,7 @@ When the project is downloaded and opened you should be able to simply run it an
 
 ## Azure
 This site is deployed on azure as found here:
-
+https://homebrewrpg.azurewebsites.net/
 
 ## Down the road
 I plan to continue working on improvements for this application. Some major things that likely need implemented:
