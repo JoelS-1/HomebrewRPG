@@ -24,6 +24,7 @@ namespace HomebrewRPG.Services
                 new Wallet()
                 {
                     OwnerId = _userId,
+                    CharacterId = model.CharacterId,
                     Gold = model.Gold,
                     Silver = model.Silver,
                     Copper = model.Copper,
@@ -43,12 +44,29 @@ namespace HomebrewRPG.Services
                             new WalletListItem
                             {
                                 WalletId = e.WalletId,
+                                CharacterId = e.CharacterId,
                                 Gold = e.Gold,
                                 Silver = e.Gold,
                                 Copper = e.Copper
                             }
                     );
             return query.ToArray();
+        }
+        public WalletEdit GetWalletByCharacterId(int id)
+        {
+            var entity =
+                _ctx
+                    .Wallets
+                    .Single(e => e.CharacterId == id && e.OwnerId == _userId);
+            return
+                new WalletEdit
+                {
+                    WalletId = entity.WalletId,
+                    CharacterId = entity.CharacterId,
+                    Gold = entity.Gold,
+                    Silver = entity.Silver,
+                    Copper = entity.Copper
+                };
         }
 
         public WalletDetail GetWalletById(int id)
@@ -61,6 +79,7 @@ namespace HomebrewRPG.Services
                 new WalletDetail
                 {
                     WalletId = entity.WalletId,
+                    CharacterId = entity.CharacterId,
                     Gold = entity.Gold,
                     Silver = entity.Silver,
                     Copper = entity.Copper
@@ -74,6 +93,7 @@ namespace HomebrewRPG.Services
                     .Wallets
                     .Single(e => e.WalletId == model.WalletId && e.OwnerId == _userId);
             entity.WalletId = model.WalletId;
+            entity.CharacterId = model.CharacterId;
             entity.Gold = model.Gold;
             entity.Silver = model.Silver;
             entity.Copper = model.Copper;

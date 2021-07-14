@@ -92,29 +92,29 @@
 </script>
 
 @*<script type="text/javascript">
-    let widthHp = '@Model.CharacterDetail.HitPoints';
-    var baseHp = '@Model.CharacterDetail.HitPoints';
+        let widthHp = '@Model.CharacterDetail.HitPoints';
+        var baseHp = '@Model.CharacterDetail.HitPoints';
 
-    function addHp() {
-        let addHealth = document.getElementById('health')
-        widthHp += 1;
+        function addHp() {
+            let addHealth = document.getElementById('health')
+            widthHp += 1;
 
-        if (addHealth) {
-            addHealth.style.width = ((widthHp / baseHp) * 100) + '%';
-            addHealth.innerHTML = widthHp * 1;
+            if (addHealth) {
+                addHealth.style.width = ((widthHp / baseHp) * 100) + '%';
+                addHealth.innerHTML = widthHp * 1;
+            }
         }
-    }
 
-    function removeHp() {
-        let damage = document.getElementById('health')
-        widthHp -= 1;
+        function removeHp() {
+            let damage = document.getElementById('health')
+            widthHp -= 1;
 
-        if (damage) {
-            damage.style.width = ((widthHp / baseHp) * 100) + '%';
-            damage.innerHTML = widthHp - 0;
+            if (damage) {
+                damage.style.width = ((widthHp / baseHp) * 100) + '%';
+                damage.innerHTML = widthHp - 0;
+            }
         }
-    }
-</script>*@
+    </script>*@
 
 <script>
     let tempHp = 0
@@ -168,6 +168,7 @@
     <button class="tablinks" onclick="openCity(event, 'weapon-tab')">Weapons</button>
     <button class="tablinks" onclick="openCity(event, 'wardrobe-tab')">Wardobe</button>
     <button class="tablinks" onclick="openCity(event, 'spell-tab')">Spells</button>
+    <button class="tablinks" onclick="openCity(event, 'wallet-tab')">Wallet</button>
 </div>
 
 <div id="character-tab" class="tabcontent row">
@@ -1163,6 +1164,35 @@
     <div class="row">
         <a href='@Url.Action("Create", "CharacterSpell")' class="btn btn-primary btn-lg">Add Spell</a>
     </div>
+</div>
+
+<div id="wallet-tab" class="tabcontent">
+    <div class="row">
+        <div class="col-md-8 col-sm-8">
+            <div class="row">
+                @if (Model.Wallet != null)
+                {
+                <div class="col-md-8 padding fancy-text">
+                    <div class="row">
+                        @Html.Partial("_WalletEditPartial", Model.Wallet)
+                    </div>
+                </div>
+                }
+                @if (Model.Wallet == null)
+                {
+                    <h2>Looks like you dont have a wallet yet! (Or perhaps it was stolen!)</h2>
+                    <p>
+                        <a href='@Url.Action("Create", "Wallet")' class="btn btn-default">Get yourself a fancy new wallet?</a>
+                    </p>
+                }
+            </div>
+            <hr />
+        </div>
+        <div class="col-md-4 col-sm-4">
+            <img src="~/Images/FairyTale/png/040-money bag.png" class="img-fluid hidden-xs" />
+        </div>
+    </div>
+
 </div>
 
 <script>

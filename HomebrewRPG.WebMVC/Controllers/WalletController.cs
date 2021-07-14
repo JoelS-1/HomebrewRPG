@@ -66,6 +66,7 @@ namespace HomebrewRPG.WebMVC.Controllers
                 new WalletEdit
                 {
                     WalletId = detail.WalletId,
+                    CharacterId = detail.CharacterId,
                     Gold = detail.Gold,
                     Silver = detail.Silver,
                     Copper = detail.Copper
@@ -88,7 +89,7 @@ namespace HomebrewRPG.WebMVC.Controllers
             if (service.UpdateWallet(model))
             {
                 TempData["SaveResult"] = "Your wallet was updated.";
-                return RedirectToAction("Index");
+                return RedirectToAction("CharacterSheet", "Character", new { id = model.CharacterId });
             }
             ModelState.AddModelError("", "Your wallet could not be updated.");
             return View(model);

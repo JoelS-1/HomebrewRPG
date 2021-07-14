@@ -137,11 +137,13 @@ namespace HomebrewRPG.WebMVC.Controllers
             var characterWeaponService = new CharacterWeaponService(userId);
             var characterWardrobeItemService = new CharacterWardrobeService(userId);
             var characterSpellService = new CharacterSpellService(userId);
+            var walletService = new WalletService(userId);
 
 
             CharacterSheetModel model = new CharacterSheetModel();
             model.CharacterDetail = characterService.GetEditCharacterById(id);
             model.BonusesDetail = characterService.GetCharacterById(id);
+            model.Wallet = walletService.GetWalletByCharacterId(id);
 
 
             model.UntrainedHealth = (model.CharacterDetail.Health * 2) + model.CharacterDetail.Instinct;
@@ -150,6 +152,7 @@ namespace HomebrewRPG.WebMVC.Controllers
             model.UntrainedAgility = (model.CharacterDetail.Agility * 2) + model.CharacterDetail.Instinct;
             model.UntrainedIntelligence = (model.CharacterDetail.Intelligence * 2) + model.CharacterDetail.Instinct;
             model.UntrainedCharisma = (model.CharacterDetail.Charisma * 2) + model.CharacterDetail.Instinct;
+
 
             var itemList = characterItemService.GetCharacterItemsByCharacterId(id);
             foreach (var x in itemList)

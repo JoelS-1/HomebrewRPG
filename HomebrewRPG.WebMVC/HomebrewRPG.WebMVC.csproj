@@ -359,10 +359,12 @@
     <Content Include="Views\CharacterSpell\Create.cshtml" />
     <Content Include="Views\CharacterSpell\Edit.cshtml" />
     <Content Include="Views\CharacterSpell\Delete.cshtml" />
+    <Content Include="Views\Wallet\Create.cshtml" />
+    <Content Include="Views\Wallet\Edit.cshtml" />
+    <Content Include="Views\Shared\_WalletEditPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Wallet\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
