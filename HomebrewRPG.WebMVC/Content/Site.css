@@ -120,6 +120,14 @@ font-size: 70%;
     .fa-trash:hover {
         color: #dc3545;
     }
+.fa-edit {
+    color: #393E46;
+    padding-top: 0.8em;
+}
+
+    .fa-edit:hover {
+        color: dodgerblue;
+    }
 .bg-danger:hover{
     color: white;
     background-color: red;

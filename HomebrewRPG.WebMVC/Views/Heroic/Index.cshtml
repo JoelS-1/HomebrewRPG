@@ -8,7 +8,7 @@
 
     <div class="col-sm-12 col-md-6 col-md-offset-2 text-center">
 
-        <h2>Item List</h2>
+        <h2>Heroics</h2>
         <h3>Which item would you like to select?</h3>
 
 
@@ -44,8 +44,11 @@
                             <div class="col-xs-3">
                                 <a href='@Url.Action("Delete", "Heroic", new { id = item.HeroicId })'><i class="fa fa-trash fa-lg"></i></a>
                             </div>
+                            <div class="col-xs-3 padding">
+                                <a href='@Url.Action("Edit", "Heroic", new { id = item.HeroicId })'><i class="fas fa-edit fa-lg"></i></a>
+                            </div>
                         </div>
-                        <a href='@Url.Action("Edit", "Heroic", new { id = item.HeroicId })' class="btn btn-primary btn-lg">Select</a>
+                        <a href='@Url.Action("Details", "Heroic", new { id = item.HeroicId })' class="btn btn-primary btn-lg">Select</a>
                     </div>
                 </div>
             </div>

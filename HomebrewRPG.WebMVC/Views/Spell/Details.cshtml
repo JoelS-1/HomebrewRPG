@@ -6,69 +6,49 @@
 
 <h2>Details</h2>
 
-<div>
-    <h4>SpellDetail</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.SpellId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SpellId)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SpellName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SpellName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SpellDescription)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SpellDescription)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SpellEffect)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SpellEffect)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SpellType)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SpellType)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Range)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Range)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SpellDC)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SpellDC)
-        </dd>
-
-    </dl>
+<div class="row">
+    <div class="col-md-6 padding fancy-text">
+        <label>
+            @Html.DisplayNameFor(modelItem => modelItem.SpellName)
+        </label>
+        <p>
+            @Html.DisplayFor(modelItem => modelItem.SpellName)
+        </p>
+        <label>
+            @Html.DisplayNameFor(modelItem => modelItem.SpellEffect)
+        </label>
+        <p>
+            @Html.DisplayFor(modelItem => modelItem.SpellEffect)
+        </p>
+        <label>
+            @Html.DisplayNameFor(modelItem => modelItem.SpellType)
+        </label>
+        <p>
+            @Html.DisplayFor(modelItem => modelItem.SpellType)
+        </p>
+    </div>
+    <div class="col-md-6 padding fancy-text">
+        <label>
+            @Html.DisplayNameFor(modelItem => modelItem.SpellDescription)
+        </label>
+        <p>
+            @Html.DisplayFor(modelItem => modelItem.SpellDescription)
+        </p>
+        <label>
+            @Html.DisplayNameFor(modelItem => modelItem.SpellDC)
+        </label>
+        <p>
+            @Html.DisplayFor(modelItem => modelItem.SpellDC)
+        </p>
+        <label>
+            @Html.DisplayNameFor(modelItem => modelItem.Range)
+        </label>
+        <p>
+            @Html.DisplayFor(modelItem => modelItem.Range)
+        </p>
+    </div>
 </div>
+<hr />
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.SpellId }) |
-    @Html.ActionLink("Back to List", "Index")
+    <a href='@Url.Action("Index", "Spell")' class="btn btn-primary btn-lg">Back to List</a>
 </p>

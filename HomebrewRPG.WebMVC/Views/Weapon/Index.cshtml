@@ -44,8 +44,12 @@
                             <div class="col-xs-3">
                                 <a href='@Url.Action("Delete", "Weapon", new { id = item.WeaponId })'><i class="fa fa-trash fa-lg"></i></a>
                             </div>
+                            <div class="col-xs-3 padding">
+                                <a href='@Url.Action("Edit", "Weapon", new { id = item.WeaponId })'><i class="fas fa-edit fa-lg"></i></a>
+                            </div>
+                            
                         </div>
-                        <a href='@Url.Action("Edit", "Weapon", new { id = item.WeaponId })' class="btn btn-primary btn-lg">Select</a>
+                        <a href='@Url.Action("Details", "Weapon", new { id = item.WeaponId })' class="btn btn-primary btn-lg">Select</a>
                     </div>
                 </div>
             </div>

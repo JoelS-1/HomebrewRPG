@@ -36,7 +36,8 @@ namespace HomebrewRPG.WebMVC.Controllers
             {
                 "charisma",
                 "intelligence",
-                "instinct"
+                "instinct",
+                "non-magic"
             };
             var magicQuery = from o in magicTypes
                              select new SelectListItem()

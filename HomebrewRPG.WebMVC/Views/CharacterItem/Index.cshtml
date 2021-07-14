@@ -6,5 +6,11 @@
 <h2 class="padding">The change was made!</h2>
 
 <div class="row padding">
-    <a href='@Url.Action("Index", "Character")' class="btn btn-default btn-sm">Back to Characters</a>
+    <button class="btn btn-default" onclick="goBack()">Back to Character</button>
+
+    <script>
+function goBack() {
+  window.history.go(-2);
+}
+    </script>
 </div>

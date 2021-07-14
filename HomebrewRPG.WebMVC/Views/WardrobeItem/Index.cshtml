@@ -44,8 +44,11 @@
                             <div class="col-xs-3">
                                 <a href='@Url.Action("Delete", "WardrobeItem", new { id = item.WardobeItemId })'><i class="fa fa-trash fa-lg"></i></a>
                             </div>
+                            <div class="col-xs-3 padding">
+                                <a href='@Url.Action("Edit", "WardrobeItem", new { id = item.WardobeItemId })'><i class="fas fa-edit fa-lg"></i></a>
+                            </div>
                         </div>
-                        <a href='@Url.Action("Edit", "WardrobeItem", new { id = item.WardobeItemId })' class="btn btn-primary btn-lg">Select</a>
+                        <a href='@Url.Action("Details", "WardrobeItem", new { id = item.WardobeItemId })' class="btn btn-primary btn-lg">Select</a>
                     </div>
                 </div>
             </div>

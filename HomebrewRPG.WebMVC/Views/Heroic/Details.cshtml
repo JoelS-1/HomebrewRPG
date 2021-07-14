@@ -109,6 +109,5 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.HeroicId }) |
-    @Html.ActionLink("Back to List", "Index")
+    <a href='@Url.Action("Index", "Heroic")' class="btn btn-primary btn-lg">Back to List</a>
 </p>
