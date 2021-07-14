@@ -264,6 +264,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="fonts\IMFellEnglish-Italic.ttf" />
     <Content Include="fonts\IMFellEnglish-Regular.ttf" />
+    <Content Include="Other Resources\System_Rules_V.3.3.pdf" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
