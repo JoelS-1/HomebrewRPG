@@ -114,7 +114,7 @@ namespace HomebrewRPG.WebMVC.Controllers
 
             TempData["SaveResult"] = "Your wallet was deleted";
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Character");
         }
     }
 }

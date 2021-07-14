@@ -57,16 +57,32 @@ namespace HomebrewRPG.Services
             var entity =
                 _ctx
                     .Wallets
-                    .Single(e => e.CharacterId == id && e.OwnerId == _userId);
-            return
-                new WalletEdit
+                    .SingleOrDefault(e => e.CharacterId == id && e.OwnerId == _userId);
+            if (entity == default)
+            {
+                var newWallet = new WalletCreate()
                 {
-                    WalletId = entity.WalletId,
-                    CharacterId = entity.CharacterId,
-                    Gold = entity.Gold,
-                    Silver = entity.Silver,
-                    Copper = entity.Copper
+                    CharacterId = id,
+                    Gold = 0,
+                    Silver = 0,
+                    Copper = 0
                 };
+                CreateWallet(newWallet);
+                var final = GetWalletByCharacterId(id);
+                return final;
+            }
+            else
+            {
+                return
+                    new WalletEdit
+                    {
+                        WalletId = entity.WalletId,
+                        CharacterId = entity.CharacterId,
+                        Gold = entity.Gold,
+                        Silver = entity.Silver,
+                        Copper = entity.Copper
+                    };
+            }
         }
 
         public WalletDetail GetWalletById(int id)
@@ -86,7 +102,7 @@ namespace HomebrewRPG.Services
                 };
         }
 
-        public bool UpdateWallet (WalletEdit model)
+        public bool UpdateWallet(WalletEdit model)
         {
             var entity =
                 _ctx

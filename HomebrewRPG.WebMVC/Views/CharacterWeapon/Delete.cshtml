@@ -35,12 +35,10 @@
                 @Html.AntiForgeryToken()
 
                 <div class="row padding">
-                    <input type="submit" value="Remove Weapon Forever" class="btn bg-danger" />
+                    <input type="submit" value="Remove Weapon" class="btn bg-danger" />
                 </div>
             }
-            <div class="row padding">
-                <a href='@Url.Action("Index", "Weapon")' class="btn btn-default">Back to Weapons</a>
-            </div>
+        <a href='@Url.Action("CharacterSheet", "Character", new { id = Model.CharacterId })' class="btn btn-default">Back to Character</a>
         </div>
     </div>
 </div>
