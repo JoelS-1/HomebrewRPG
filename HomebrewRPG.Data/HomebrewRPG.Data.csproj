@@ -78,6 +78,10 @@
     <Compile Include="Migrations\202107130609366_Spell Join Table.Designer.cs">
       <DependentUpon>202107130609366_Spell Join Table.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107140136577_removed uses on item.cs" />
+    <Compile Include="Migrations\202107140136577_removed uses on item.Designer.cs">
+      <DependentUpon>202107140136577_removed uses on item.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Money.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -101,6 +105,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107130609366_Spell Join Table.resx">
       <DependentUpon>202107130609366_Spell Join Table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107140136577_removed uses on item.resx">
+      <DependentUpon>202107140136577_removed uses on item.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

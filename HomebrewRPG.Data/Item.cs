@@ -16,7 +16,6 @@ namespace HomebrewRPG.Data
         public string ItemName { get; set; }
         [Required]
         public string Description { get; set; }
-        public int Uses { get; set; }
         public bool IsConsumable { get; set; }
 
         public Dictionary<string, int> StatBonuses { get; set; }
