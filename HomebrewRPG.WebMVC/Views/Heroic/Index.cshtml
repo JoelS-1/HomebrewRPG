@@ -1,0 +1,60 @@
+﻿@model IEnumerable<HomebrewRPG.Models.HeroicModels.HeroicListItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row padding">
+
+    <div class="col-sm-12 col-md-6 col-md-offset-2 text-center">
+
+        <h2>Heroics</h2>
+        <h3>Which item would you like to select?</h3>
+
+
+
+        @foreach (var item in Model)
+        {
+            <div class="container-fluid padding">
+                <div class="row">
+                    <div class="card">
+                        <div class="row">
+
+                            <div class="col-xs-9">
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <h4>@Html.DisplayFor(modelItem => item.HeroicName)</h4>
+
+                                    </div>
+                                </div>
+                                <div class="row padding">
+                                    <div class="col-xs-6">
+                                        <p class="fancy-text">
+                                            @Html.DisplayFor(modelItem => item.Description)
+                                        </p>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <p class="fancy-text">
+                                            @Html.DisplayNameFor(model => model.IsPersonalHeroic):
+                                            @Html.DisplayFor(modelItem => item.IsPersonalHeroic)
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-3">
+                                <a href='@Url.Action("Delete", "Heroic", new { id = item.HeroicId })'><i class="fa fa-trash fa-lg"></i></a>
+                            </div>
+                            <div class="col-xs-3 padding">
+                                <a href='@Url.Action("Edit", "Heroic", new { id = item.HeroicId })'><i class="fas fa-edit fa-lg"></i></a>
+                            </div>
+                        </div>
+                        <a href='@Url.Action("Details", "Heroic", new { id = item.HeroicId })' class="btn btn-primary btn-lg">Select</a>
+                    </div>
+                </div>
+            </div>
+        }
+        <div class="row padding">
+            <a href='@Url.Action("Create", "Heroic")' class="btn btn-primary btn-lg">Create New</a>
+        </div>
+    </div>
+</div>

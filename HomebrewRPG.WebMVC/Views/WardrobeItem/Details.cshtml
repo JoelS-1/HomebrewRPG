@@ -1,0 +1,56 @@
+﻿@model HomebrewRPG.Models.WardrobeItemModels.WardrobeItemDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-6 padding fancy-text">
+        <label>
+            @Html.DisplayNameFor(modelItem => modelItem.ArmorName)
+        </label>
+        <p>
+            @Html.DisplayFor(modelItem => modelItem.ArmorName)
+        </p>
+        <label>
+            @Html.DisplayNameFor(modelItem => modelItem.ArmorType)
+        </label>
+        <p>
+            @Html.DisplayFor(modelItem => modelItem.ArmorType)
+        </p>
+        <label>
+            @Html.DisplayNameFor(modelItem => modelItem.Special)
+        </label>
+        <p>
+            @Html.DisplayFor(modelItem => modelItem.Special)
+        </p>
+    </div>
+    <div class="col-md-6 padding fancy-text">
+
+        <label>
+            @Html.DisplayNameFor(modelItem => modelItem.PhysicalResistance)
+        </label>
+        <p>
+            @Html.DisplayFor(modelItem => modelItem.PhysicalResistance)
+        </p>
+        <label>
+            @Html.DisplayNameFor(modelItem => modelItem.MagicalResistance)
+        </label>
+        <p>
+            @Html.DisplayFor(modelItem => modelItem.MagicalResistance)
+        </p>
+        <label>
+            @Html.DisplayNameFor(modelItem => modelItem.Description)
+        </label>
+        <p>
+            @Html.DisplayFor(modelItem => modelItem.Description)
+        </p>
+    </div>
+</div>
+
+<p>
+    <a href='@Url.Action("Index", "WardrobeItem")' class="btn btn-primary btn-lg">Back to List</a>
+</p>

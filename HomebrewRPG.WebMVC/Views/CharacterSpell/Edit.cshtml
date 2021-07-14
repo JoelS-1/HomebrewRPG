@@ -1,0 +1,43 @@
+﻿@model HomebrewRPG.Models.CharacterSpell.CharacterSpellEdit
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+
+@using(Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.CharacterSpellId)
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.CharacterId)
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.SpellId)
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <p>Jokes, you can only delete it.</p>
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-offset-2 col-md-4 padding">
+                    <input type="submit" value="Save" class="btn btn-default hidden" />
+                </div>
+                <div class="col-md-6 padding">
+                    <a href='@Url.Action("Delete", "CharacterSpell", new { id = Model.CharacterSpellId })'><i class="fa fa-trash fa-lg"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<div class="row padding">
+    <a href='@Url.Action("CharacterSheet", "Character", new { id = Model.CharacterId })' class="btn btn-default btn-sm">Back to Character</a>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

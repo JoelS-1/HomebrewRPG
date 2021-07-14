@@ -1,0 +1,31 @@
+﻿@model HomebrewRPG.Models.WalletModels.WalletDetail
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div class="row padding">
+
+    <div class="col-sm-12 col-md-6 col-md-offset-2 text-center">
+        <h2>Delete</h2>
+
+        <h3>Are you sure you want to delete this item?</h3>
+        <div>
+            <hr />
+
+            <p>Dang, mugged again?</p>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="row padding">
+                    <input type="submit" value="Remove Wallet" class="btn bg-danger" />
+                </div>
+            }
+            <div class="row padding">
+                <a href='@Url.Action("CharacterSheet", "Character", new { id = Model.CharacterId })' class="btn btn-default">Back to Character</a>
+            </div>
+        </div>
+    </div>
+</div>

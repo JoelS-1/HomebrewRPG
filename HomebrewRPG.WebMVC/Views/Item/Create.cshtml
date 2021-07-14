@@ -1,0 +1,61 @@
+﻿@model HomebrewRPG.Models.ItemModels.ItemCreate
+
+@{
+    ViewBag.Title = "Create";
+}
+
+
+<div class="row padding">
+    <div class="col-sm-12 col-md-6 col-md-offset-2 text-center container-fluid padding">
+        <h2>Create an Item</h2>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ItemName, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.ItemName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.ItemName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <hr />
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <hr />
+                <div class="row form-group">
+                    @Html.LabelFor(model => model.IsConsumable, htmlAttributes: new { @class = "control-label col-md-6" })
+                    <div class="col-md-6">
+                        @Html.EditorFor(model => model.IsConsumable, new { htmlAttributes = new { @class = "form-check-inputl" } })
+                        @Html.ValidationMessageFor(model => model.IsConsumable, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <hr />
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Create" class="btn btn-primary btn-lg" />
+                    </div>
+                </div>
+
+            </div>
+
+        }
+    </div>
+</div>
+
+
+<div class="row padding">
+    <a href='@Url.Action("Index", "Item")' class="btn btn-default btn-sm">Back to Items</a>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

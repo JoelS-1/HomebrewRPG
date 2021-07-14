@@ -1,0 +1,44 @@
+﻿@model HomebrewRPG.Models.CharacterSpell.CharacterSpellDetail
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div class="row padding">
+
+    <div class="col-sm-12 col-md-6 col-md-offset-2 text-center">
+        <h2>Delete</h2>
+
+        <h3>Are you sure you want to remove this spell from your spellbook?</h3>
+        <div>
+            <hr />
+            <dl class="dl-horizontal">
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.SpellName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.SpellName)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.SpellDescription)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.SpellDescription)
+                </dd>
+            </dl>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="row padding">
+                    <input type="submit" value="Remove Spell" class="btn bg-danger" />
+                </div>
+            }
+        <a href='@Url.Action("CharacterSheet", "Character", new { id = Model.CharacterId })' class="btn btn-default">Back to Character</a>
+        </div>
+    </div>
+</div>

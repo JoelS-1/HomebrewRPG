@@ -1,0 +1,18 @@
+namespace HomebrewRPG.Data.Migrations
+{
+    using System;
+    using System.Data.Entity.Migrations;
+    
+    public partial class removedusesonitem : DbMigration
+    {
+        public override void Up()
+        {
+            DropColumn("dbo.Item", "Uses");
+        }
+        
+        public override void Down()
+        {
+            AddColumn("dbo.Item", "Uses", c => c.Int(nullable: false));
+        }
+    }
+}

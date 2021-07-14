@@ -1,0 +1,37 @@
+﻿@model HomebrewRPG.Models.ItemModels.ItemDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+
+<div class="row">
+    <div class="col-md-6 padding fancy-text">
+        <label>
+            @Html.DisplayNameFor(modelItem => modelItem.ItemName)
+        </label>
+        <p>
+            @Html.DisplayFor(modelItem => modelItem.ItemName)
+        </p>
+        <label>
+            @Html.DisplayNameFor(modelItem => modelItem.Description)
+        </label>
+        <p>
+            @Html.DisplayFor(modelItem => modelItem.Description)
+        </p>
+    </div>
+    <div class="col-md-6 padding fancy-text">
+        <label>
+            @Html.DisplayNameFor(modelItem => modelItem.IsConsumable)
+        </label>
+        <p>
+            @Html.DisplayFor(modelItem => modelItem.IsConsumable)
+        </p>
+    </div>
+</div>
+<hr />
+<p>
+    <a href='@Url.Action("Index", "Item")' class="btn btn-primary btn-lg">Back to List</a>
+</p>

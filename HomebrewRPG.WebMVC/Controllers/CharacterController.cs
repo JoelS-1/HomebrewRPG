@@ -1,9 +1,15 @@
-﻿using HomebrewRPG.Models;
+﻿using HomebrewRPG.Data;
+using HomebrewRPG.Models;
+using HomebrewRPG.Models.CharacterItemModels;
+using HomebrewRPG.Models.CharacterSpell;
+using HomebrewRPG.Models.CharacterWardrobeModels;
+using HomebrewRPG.Models.CharacterWeaponModels;
 using HomebrewRPG.Services;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Web;
 using System.Web.Mvc;
 
@@ -24,7 +30,70 @@ namespace HomebrewRPG.WebMVC.Controllers
         //GET
         public ActionResult Create()
         {
-            return View();
+            ViewBag.Title = "New Character";
+
+            List<string> magicTypes = new List<string>()
+            {
+                "charisma",
+                "intelligence",
+                "instinct",
+                "non-magic"
+            };
+            var magicQuery = from o in magicTypes
+                             select new SelectListItem()
+                             {
+                                 Value = o,
+                                 Text = o
+                             };
+            ViewBag.MagicType = magicQuery.ToList();
+
+            List<string> prowessTypes = new List<string>()
+            {
+                "agility",
+                "strength"
+            };
+            var prowessQuery = from o in prowessTypes
+                               select new SelectListItem()
+                               {
+                                   Value = o,
+                                   Text = o
+                               };
+            ViewBag.ProwessType = prowessQuery.ToList();
+
+            var model =
+                new CharacterCreate
+                {
+                    CharacterLevel = 1,
+                    Health = 0,
+                    Strength = 0,
+                    Instinct = 0,
+                    Agility = 0,
+                    Intelligence = 0,
+                    Charisma = 0,
+
+                    Endurance = 0,
+                    Constitution = 0,
+                    Athletics = 0,
+                    Tenacity = 0,
+                    Acrobatics = 0,
+                    SleightOfHand = 0,
+                    Sneak = 0,
+                    Willpower = 0,
+                    Investigation = 0,
+                    Knowledge = 0,
+                    Bravery = 0,
+                    Pilotry = 0,
+                    Insight = 0,
+                    Perception = 0,
+                    Survival = 0,
+                    Faith = 0,
+                    Deception = 0,
+                    Diplomacy = 0,
+                    Intimidation = 0,
+                    Performance = 0,
+                    Seduction = 0,
+                };
+            return View(model);
         }
 
         [HttpPost]
@@ -60,10 +129,234 @@ namespace HomebrewRPG.WebMVC.Controllers
             return View(model);
         }
 
+        public ActionResult CharacterSheet(int id)
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var characterService = new CharacterService(userId);
+            var characterItemService = new CharacterItemService(userId);
+            var characterWeaponService = new CharacterWeaponService(userId);
+            var characterWardrobeItemService = new CharacterWardrobeService(userId);
+            var characterSpellService = new CharacterSpellService(userId);
+            var walletService = new WalletService(userId);
+
+
+            CharacterSheetModel model = new CharacterSheetModel();
+            model.CharacterDetail = characterService.GetEditCharacterById(id);
+            model.BonusesDetail = characterService.GetCharacterById(id);
+            model.Wallet = walletService.GetWalletByCharacterId(id);
+
+
+            model.UntrainedHealth = (model.CharacterDetail.Health * 2) + model.CharacterDetail.Instinct;
+            model.UntrainedStrength = (model.CharacterDetail.Strength * 2) + model.CharacterDetail.Instinct;
+            model.UntrainedInstinct = (model.CharacterDetail.Instinct * 2) + model.CharacterDetail.Instinct;
+            model.UntrainedAgility = (model.CharacterDetail.Agility * 2) + model.CharacterDetail.Instinct;
+            model.UntrainedIntelligence = (model.CharacterDetail.Intelligence * 2) + model.CharacterDetail.Instinct;
+            model.UntrainedCharisma = (model.CharacterDetail.Charisma * 2) + model.CharacterDetail.Instinct;
+
+
+            var itemList = characterItemService.GetCharacterItemsByCharacterId(id);
+            foreach (var x in itemList)
+            {
+                CharacterItemDetail y = new CharacterItemDetail();
+                {
+                    y.CharacterItemId = x.CharacterItemId;
+                    y.CharacterId = x.CharacterId;
+                    y.ItemId = x.ItemId;
+                    y.Quantity = x.Quantity;
+                    y.ItemName = x.ItemName;
+                    y.ItemDescription = x.ItemDescription;
+                };
+                model.Items.Add(y);
+            }
+
+            var spellList = characterSpellService.GetCharacterSpellsByCharacterId(id);
+            foreach (var x in spellList)
+            {
+                CharacterSpellDetail y = new CharacterSpellDetail();
+                {
+                    y.CharacterSpellId = x.CharacterSpellId;
+                    y.CharacterId = x.CharacterId;
+                    y.SpellId = x.SpellId;
+
+                    y.SpellName = x.SpellName;
+                    y.SpellDescription = x.SpellDescription;
+                    y.SpellEffect = x.SpellEffect;
+                    y.SpellType = x.SpellType;
+                    y.Range = x.Range;
+                    y.SpellDC = x.SpellDC;
+                };
+                model.Spells.Add(y);
+            }
+
+                var weaponList = characterWeaponService.GetCharacterWeaponsByCharacterId(id);
+            foreach (var x in weaponList)
+            {
+                CharacterWeaponDetail y = new CharacterWeaponDetail();
+                {
+                    y.CharacterWeaponId = x.CharacterWeaponId;
+                    y.CharacterId = x.CharacterId;
+                    y.CharacterWeaponId = x.CharacterWeaponId;
+                    y.WeaponId = x.WeaponId;
+                    y.IsEquipped = x.IsEquipped;
+
+                    y.WeaponName = x.WeaponName;
+                    y.Description = x.Description;
+                    y.WeaponType = x.WeaponType;
+                    y.DamageDice = x.DamageDice;
+                    y.DamageModifier = x.DamageModifier;
+                    y.ProwessBonus = x.ProwessBonus;
+                    y.Range = x.Range;
+                    y.CriticalRange = x.CriticalRange;
+                    y.Special = x.Special;
+
+                    if (x.IsEquipped)
+                    {
+                        model.BonusesDetail.Health += x.Health;
+                        model.BonusesDetail.Strength += x.Strength;
+                        model.BonusesDetail.Instinct += x.Instinct;
+                        model.BonusesDetail.Agility += x.Agility;
+                        model.BonusesDetail.Intelligence += x.Intelligence;
+                        model.BonusesDetail.Charisma += x.Charisma;
+
+                        model.BonusesDetail.HitPoints += x.HitPoints;
+                        model.BonusesDetail.Sanity += x.Sanity;
+                        model.BonusesDetail.Dodge += x.Dodge;
+                        model.BonusesDetail.Reaction += x.Reaction;
+                        model.BonusesDetail.Magic += x.Magic;
+                        model.BonusesDetail.BaseProwess += x.ProwessBonus;
+                        model.BonusesDetail.Fate += x.Fate;
+
+                        model.BonusesDetail.Endurance += x.Endurance;
+                        model.BonusesDetail.Constitution += x.Constitution;
+                        model.BonusesDetail.Athletics += x.Athletics;
+                        model.BonusesDetail.Tenacity += x.Tenacity;
+                        model.BonusesDetail.Acrobatics += x.Acrobatics;
+                        model.BonusesDetail.SleightOfHand += x.SleightOfHand;
+                        model.BonusesDetail.Sneak += x.Sneak;
+                        model.BonusesDetail.Willpower += x.Willpower;
+                        model.BonusesDetail.Investigation += x.Investigation;
+                        model.BonusesDetail.Knowledge += x.Knowledge;
+                        model.BonusesDetail.Bravery += x.Bravery;
+                        model.BonusesDetail.Pilotry += x.Pilotry;
+                        model.BonusesDetail.Insight += x.Insight;
+                        model.BonusesDetail.Perception += x.Perception;
+                        model.BonusesDetail.Survival += x.Survival;
+                        model.BonusesDetail.Faith += x.Faith;
+                        model.BonusesDetail.Deception += x.Deception;
+                        model.BonusesDetail.Diplomacy += x.Diplomacy;
+                        model.BonusesDetail.Intimidation += x.Intimidation;
+                        model.BonusesDetail.Performance += x.Performance;
+                        model.BonusesDetail.Seduction += x.Seduction;
+                    }
+                };
+
+                model.Weapons.Add(y);
+            }
+            var wardrobeList = characterWardrobeItemService.GetCharacterWardrobeListByCharacterId(id);
+            foreach (var x in wardrobeList)
+            {
+                CharacterWardrobeDetail y = new CharacterWardrobeDetail();
+                {
+                    y.CharacterWardrobeId = x.CharacterWardrobeId;
+                    y.CharacterId = x.CharacterId;
+                    y.CharacterWardrobeId = x.CharacterWardrobeId;
+                    y.WardrobeItemId = x.WardrobeItemId;
+                    y.IsEquipped = x.IsEquipped;
+
+                    y.ArmorName = x.ArmorName;
+                    y.ArmorType = x.ArmorType;
+                    y.Description = x.Description;
+                    y.HealthRequired = x.HealthRequired;
+                    y.StrengthRequired = x.StrengthRequired;
+                    y.AgilityRequired = x.AgilityRequired;
+                    y.Special = x.Special;
+                    y.MagicRequired = x.MagicRequired;
+                    y.PhysicalBlocking = x.PhysicalBlocking;
+                    y.PhysicalResistance = x.PhysicalResistance;
+                    y.MagicalBlocking = x.MagicalBlocking;
+                    y.MagicalResistance = x.MagicalResistance;
+                    if (x.IsEquipped)
+                    {
+                        model.BonusesDetail.Health += x.Health;
+                        model.BonusesDetail.Strength += x.Strength;
+                        model.BonusesDetail.Instinct += x.Instinct;
+                        model.BonusesDetail.Agility += x.Agility;
+                        model.BonusesDetail.Intelligence += x.Intelligence;
+                        model.BonusesDetail.Charisma += x.Charisma;
+
+                        model.BonusesDetail.HitPoints += x.HitPoints;
+                        model.BonusesDetail.Sanity += x.Sanity;
+                        model.BonusesDetail.Dodge += x.Dodge;
+                        model.BonusesDetail.Reaction += x.Reaction;
+                        model.BonusesDetail.Magic += x.Magic;
+                        model.BonusesDetail.BaseProwess += x.BaseProwess;
+                        model.BonusesDetail.Fate += x.Fate;
+
+                        model.BonusesDetail.Endurance += x.Endurance;
+                        model.BonusesDetail.Constitution += x.Constitution;
+                        model.BonusesDetail.Athletics += x.Athletics;
+                        model.BonusesDetail.Tenacity += x.Tenacity;
+                        model.BonusesDetail.Acrobatics += x.Acrobatics;
+                        model.BonusesDetail.SleightOfHand += x.SleightOfHand;
+                        model.BonusesDetail.Sneak += x.Sneak;
+                        model.BonusesDetail.Willpower += x.Willpower;
+                        model.BonusesDetail.Investigation += x.Investigation;
+                        model.BonusesDetail.Knowledge += x.Knowledge;
+                        model.BonusesDetail.Bravery += x.Bravery;
+                        model.BonusesDetail.Pilotry += x.Pilotry;
+                        model.BonusesDetail.Insight += x.Insight;
+                        model.BonusesDetail.Perception += x.Perception;
+                        model.BonusesDetail.Survival += x.Survival;
+                        model.BonusesDetail.Faith += x.Faith;
+                        model.BonusesDetail.Deception += x.Deception;
+                        model.BonusesDetail.Diplomacy += x.Diplomacy;
+                        model.BonusesDetail.Intimidation += x.Intimidation;
+                        model.BonusesDetail.Performance += x.Performance;
+                        model.BonusesDetail.Seduction += x.Seduction;
+
+                        model.PhysicalResistance += x.PhysicalResistance;
+                        model.MagicResistance += x.MagicalResistance;
+                    }
+                };
+                model.WardrobeItems.Add(y);
+            }
+
+            return View(model);
+        }
+
         public ActionResult Edit(int id)
         {
+            ViewBag.Title = "Edit Character";
+
+            List<string> magicTypes = new List<string>()
+            {
+                "charisma",
+                "intelligence",
+                "instinct"
+            };
+            var magicQuery = from o in magicTypes
+                             select new SelectListItem()
+                             {
+                                 Value = o,
+                                 Text = o,
+                             };
+            ViewBag.MagicType = magicQuery.ToList();
+
+            List<string> prowessTypes = new List<string>()
+            {
+                "agility",
+                "strength"
+            };
+            var prowessQuery = from o in prowessTypes
+                               select new SelectListItem()
+                               {
+                                   Value = o,
+                                   Text = o
+                               };
+            ViewBag.ProwessType = prowessQuery.ToList();
+
             var service = CreateCharacterService();
-            var detail = service.GetCharacterById(id);
+            var detail = service.GetEditCharacterById(id);
             var model =
                 new CharacterEdit
                 {
@@ -81,13 +374,45 @@ namespace HomebrewRPG.WebMVC.Controllers
                     Intelligence = detail.Intelligence,
                     Charisma = detail.Charisma,
                     MagicType = detail.MagicType,
-                    ProwessType = detail.ProwessType
+                    ProwessType = detail.ProwessType,
+
+                    HitPoints = detail.HitPoints,
+                    Sanity = detail.Sanity,
+                    Dodge = detail.Dodge,
+                    Reaction = detail.Reaction,
+                    BaseProwess = detail.BaseProwess,
+                    Magic = detail.Magic,
+                    Fate = detail.Fate,
+                    Speed = detail.Speed,
+
+
+                    Endurance = detail.Endurance,
+                    Constitution = detail.Constitution,
+                    Athletics = detail.Athletics,
+                    Tenacity = detail.Tenacity,
+                    Acrobatics = detail.Acrobatics,
+                    SleightOfHand = detail.SleightOfHand,
+                    Sneak = detail.Sneak,
+                    Willpower = detail.Willpower,
+                    Investigation = detail.Investigation,
+                    Knowledge = detail.Knowledge,
+                    Bravery = detail.Bravery,
+                    Pilotry = detail.Pilotry,
+                    Insight = detail.Insight,
+                    Perception = detail.Perception,
+                    Survival = detail.Survival,
+                    Faith = detail.Faith,
+                    Deception = detail.Deception,
+                    Diplomacy = detail.Diplomacy,
+                    Intimidation = detail.Intimidation,
+                    Performance = detail.Performance,
+                    Seduction = detail.Seduction,
                 };
-            if(detail.CharacterLevel < 3)
+            if (detail.CharacterLevel < 3)
             {
                 model.Proficiency = 2;
             }
-            else if(detail.CharacterLevel < 8)
+            else if (detail.CharacterLevel < 8)
             {
                 model.Proficiency = 3;
             }
@@ -110,19 +435,20 @@ namespace HomebrewRPG.WebMVC.Controllers
             return View(model);
         }
 
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, CharacterEdit model)
         {
             if (!ModelState.IsValid) return View(model);
 
-            if(model.CharacterId != id)
+            if (model.CharacterId != id)
             {
                 ModelState.AddModelError("", "Id Mismatch");
                 return View(model);
             }
             var service = CreateCharacterService();
-            if(service.UpdateCharacter(model))
+            if (service.UpdateCharacter(model))
             {
                 TempData["SaveResult"] = "Your character was updated.";
                 return RedirectToAction("Index");
@@ -130,6 +456,7 @@ namespace HomebrewRPG.WebMVC.Controllers
             ModelState.AddModelError("", "Your character could not be updated.");
             return View(model);
         }
+
 
         [ActionName("Delete")]
         public ActionResult Delete(int id)

@@ -1,0 +1,69 @@
+﻿@model HomebrewRPG.Models.WeaponModels.WeaponDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div class="row">
+    <hr />
+    <div class="col-md-6 padding fancy-text">
+        <label>
+            @Html.DisplayNameFor(modelItem => modelItem.WeaponName)
+        </label>
+        <p>
+            @Html.DisplayFor(modelItem => modelItem.WeaponName)
+        </p>
+        <label>
+            @Html.DisplayNameFor(modelItem => modelItem.DamageDice)
+        </label>
+        <p>
+            @Html.DisplayFor(modelItem => modelItem.DamageDice)
+        </p>
+        <label>
+            @Html.DisplayNameFor(modelItem => modelItem.Range)
+        </label>
+        <p>
+            @Html.DisplayFor(modelItem => modelItem.Range)
+        </p>
+        <label>
+            @Html.DisplayNameFor(modelItem => modelItem.Special)
+        </label>
+        <p>
+            @Html.DisplayFor(modelItem => modelItem.Special)
+        </p>
+    </div>
+
+    <div class="col-md-6 padding fancy-text">
+
+        <label>
+            @Html.DisplayNameFor(modelItem => modelItem.WeaponType)
+        </label>
+        <p>
+            @Html.DisplayFor(modelItem => modelItem.WeaponType)
+        </p>
+        <label>
+            @Html.DisplayNameFor(modelItem => modelItem.DamageModifier)
+        </label>
+        <p>
+            @Html.DisplayFor(modelItem => modelItem.DamageModifier)
+        </p>
+        <label>
+            @Html.DisplayNameFor(modelItem => modelItem.CriticalRange)
+        </label>
+        <p>
+            @Html.DisplayFor(modelItem => modelItem.CriticalRange)
+        </p>
+        <label>
+            @Html.DisplayNameFor(modelItem => modelItem.Description)
+        </label>
+        <p>
+            @Html.DisplayFor(modelItem => modelItem.Description)
+        </p>
+    </div>
+
+</div>
+<p>
+    <a href='@Url.Action("Index", "Weapon")' class="btn btn-primary btn-lg">Back to List</a>
+</p>

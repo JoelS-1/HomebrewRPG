@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,11 +13,13 @@ namespace HomebrewRPG.Data
         [Key]
         public int CharacterId { get; set; }
         [Required]
+        [Display(Name = "Name")]
         public string CharacterName { get; set; }
         [Required]
         public string Race { get; set; }
         [Required]
         [Range(1, 20)]
+        [Display(Name = "Level")]
         public int CharacterLevel { get; set; }
         public int Age { get; set; }
         public string Gender { get; set; }
@@ -36,15 +39,23 @@ namespace HomebrewRPG.Data
         public int Charisma { get; set; }
 
         [Required]
+        [Display(Name = "Magic Type")]
         public string MagicType { get; set; }
         [Required]
+        [Display(Name = "Prowess Type")]
         public string ProwessType { get; set; }
         public int Proficiency { get; set; }
 
+        [Display(Name = "Hit Points")]
         public int HitPoints { get; set; }
+        [Display(Name = "Current HP")]
+        public int CurrentHitPoints { get; set; }
+        [Display(Name = "Temp HP")]
+        public int TempHitPoints { get; set; }
         public int Sanity { get; set; }
         public int Dodge { get; set; }
         public int Reaction { get; set; }
+        [Display(Name = "Prowess")]
         public int BaseProwess { get; set; }
         public int Magic { get; set; }
         public int Fate { get; set; }
@@ -55,6 +66,7 @@ namespace HomebrewRPG.Data
         public int Athletics { get; set; }
         public int Tenacity { get; set; }
         public int Acrobatics { get; set; }
+        [Display(Name = "Sleight Of Hand")]
         public int SleightOfHand { get; set; }
         public int Sneak { get; set; }
         public int Willpower { get; set; }
@@ -72,10 +84,10 @@ namespace HomebrewRPG.Data
         public int Performance { get; set; }
         public int Seduction { get; set; }
 
-        public int DamageResistance { get; set; }
+        [Display(Name = "Physical Resistance")]
+        public int PhysicalResistance { get; set; }
+        [Display(Name = "Magical Resistance")]
         public int MagicResistance { get; set; }
-
-        //public virtual EssentialSkills EssentialSkills { get; set; }
 
         public Guid OwnerId { get; set; }
     }

@@ -45,6 +45,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -112,12 +118,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
     </Reference>
@@ -169,8 +169,18 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CharacterController.cs" />
+    <Compile Include="Controllers\JoinControllers\CharacterItemController.cs" />
+    <Compile Include="Controllers\JoinControllers\CharacterSpellController.cs" />
+    <Compile Include="Controllers\JoinControllers\CharacterWardrobeController.cs" />
+    <Compile Include="Controllers\JoinControllers\CharacterWeaponController.cs" />
+    <Compile Include="Controllers\HeroicController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ItemController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\SpellController.cs" />
+    <Compile Include="Controllers\WalletController.cs" />
+    <Compile Include="Controllers\WardrobeItemController.cs" />
+    <Compile Include="Controllers\WeaponController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -188,8 +198,73 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\annie-spratt-4aVUigDCLV8-unsplash.jpg" />
+    <Content Include="Images\annie-spratt-xTaOPMa6wAE-unsplash.jpg" />
+    <Content Include="Images\bin.png" />
+    <Content Include="Images\dndBackground.jpeg" />
+    <Content Include="Images\FairyTale\png\001-sword.png" />
+    <Content Include="Images\FairyTale\png\002-magic potion.png" />
+    <Content Include="Images\FairyTale\png\003-frog.png" />
+    <Content Include="Images\FairyTale\png\004-elf.png" />
+    <Content Include="Images\FairyTale\png\005-cauldron.png" />
+    <Content Include="Images\FairyTale\png\006-little red riding hood.png" />
+    <Content Include="Images\FairyTale\png\007-helmet.png" />
+    <Content Include="Images\FairyTale\png\008-crown.png" />
+    <Content Include="Images\FairyTale\png\009-standard.png" />
+    <Content Include="Images\FairyTale\png\010-coach.png" />
+    <Content Include="Images\FairyTale\png\011-jester.png" />
+    <Content Include="Images\FairyTale\png\012-rainbow.png" />
+    <Content Include="Images\FairyTale\png\013-magic mirror.png" />
+    <Content Include="Images\FairyTale\png\014-kraken.png" />
+    <Content Include="Images\FairyTale\png\015-magic broom.png" />
+    <Content Include="Images\FairyTale\png\016-cyclops.png" />
+    <Content Include="Images\FairyTale\png\017-treasure chest.png" />
+    <Content Include="Images\FairyTale\png\018-gold key.png" />
+    <Content Include="Images\FairyTale\png\019-gnome.png" />
+    <Content Include="Images\FairyTale\png\020-scepter.png" />
+    <Content Include="Images\FairyTale\png\021-torch.png" />
+    <Content Include="Images\FairyTale\png\022-bow.png" />
+    <Content Include="Images\FairyTale\png\023-magic wand.png" />
+    <Content Include="Images\FairyTale\png\024-princess.png" />
+    <Content Include="Images\FairyTale\png\025-magic lamp.png" />
+    <Content Include="Images\FairyTale\png\026-dragon.png" />
+    <Content Include="Images\FairyTale\png\027-shield.png" />
+    <Content Include="Images\FairyTale\png\028-mermaid.png" />
+    <Content Include="Images\FairyTale\png\029-helmet.png" />
+    <Content Include="Images\FairyTale\png\030-mushrooms.png" />
+    <Content Include="Images\FairyTale\png\031-axe.png" />
+    <Content Include="Images\FairyTale\png\032-crossbow.png" />
+    <Content Include="Images\FairyTale\png\033-wizard.png" />
+    <Content Include="Images\FairyTale\png\034-storytelling.png" />
+    <Content Include="Images\FairyTale\png\035-shoe.png" />
+    <Content Include="Images\FairyTale\png\036-medusa.png" />
+    <Content Include="Images\FairyTale\png\037-pirate hat.png" />
+    <Content Include="Images\FairyTale\png\038-demon.png" />
+    <Content Include="Images\FairyTale\png\039-orc.png" />
+    <Content Include="Images\FairyTale\png\040-money bag.png" />
+    <Content Include="Images\FairyTale\png\041-owl.png" />
+    <Content Include="Images\FairyTale\png\042-crystal.png" />
+    <Content Include="Images\FairyTale\png\043-magic.png" />
+    <Content Include="Images\FairyTale\png\044-trumpet.png" />
+    <Content Include="Images\FairyTale\png\045-armor.png" />
+    <Content Include="Images\FairyTale\png\046-death.png" />
+    <Content Include="Images\FairyTale\png\047-fairy tale.png" />
+    <Content Include="Images\FairyTale\png\048-mummy.png" />
+    <Content Include="Images\FairyTale\png\049-gingerbread house.png" />
+    <Content Include="Images\FairyTale\png\050-unicorn.png" />
+    <Content Include="Images\sheet-attribute-bg.png" />
+    <Content Include="Images\sheet-bar-border.png" />
+    <Content Include="Images\sheet-bar-spacer.png" />
+    <Content Include="Images\sheet-box-border.png" />
+    <Content Include="Images\sheet-header-bg.png" />
+    <Content Include="Images\sheet-spell-header.png" />
+    <Content Include="Images\sheet-well-border.png" />
+    <Content Include="Images\vintage-textured-paper-background-vector.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="fonts\IMFellEnglish-Italic.ttf" />
+    <Content Include="fonts\IMFellEnglish-Regular.ttf" />
+    <Content Include="Other Resources\System_Rules_V.3.3.pdf" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -240,6 +315,52 @@
     <Content Include="Views\Character\Details.cshtml" />
     <Content Include="Views\Character\Edit.cshtml" />
     <Content Include="Views\Character\Delete.cshtml" />
+    <Content Include="Views\Weapon\Index.cshtml" />
+    <Content Include="Views\Item\Index.cshtml" />
+    <Content Include="Views\Item\Create.cshtml" />
+    <Content Include="Views\Item\Details.cshtml" />
+    <Content Include="Views\Item\Edit.cshtml" />
+    <Content Include="Views\Item\Delete.cshtml" />
+    <Content Include="Views\WardrobeItem\Index.cshtml" />
+    <Content Include="Views\Spell\Index.cshtml" />
+    <Content Include="Views\Spell\Create.cshtml" />
+    <Content Include="Views\Spell\Details.cshtml" />
+    <Content Include="Views\Spell\Edit.cshtml" />
+    <Content Include="Views\Spell\Delete.cshtml" />
+    <Content Include="Views\Heroic\Index.cshtml" />
+    <Content Include="Views\Heroic\Create.cshtml" />
+    <Content Include="Views\Heroic\Details.cshtml" />
+    <Content Include="Views\Heroic\Edit.cshtml" />
+    <Content Include="Views\Heroic\Delete.cshtml" />
+    <Content Include="Views\Character\CharacterSheet.cshtml" />
+    <Content Include="Views\CharacterWeapon\Create.cshtml" />
+    <Content Include="Views\CharacterWardrobe\Create.cshtml" />
+    <Content Include="Views\Weapon\Create.cshtml" />
+    <Content Include="Views\Weapon\Details.cshtml" />
+    <Content Include="Views\Weapon\Edit.cshtml" />
+    <Content Include="Views\WardrobeItem\Create.cshtml" />
+    <Content Include="Views\WardrobeItem\Details.cshtml" />
+    <Content Include="Views\WardrobeItem\Edit.cshtml" />
+    <Content Include="Views\Weapon\Delete.cshtml" />
+    <Content Include="Views\WardrobeItem\Delete.cshtml" />
+    <Content Include="Views\Shared\_CharacterEditPartialView.cshtml" />
+    <Content Include="Views\CharacterItem\Edit.cshtml" />
+    <Content Include="Views\CharacterItem\Delete.cshtml" />
+    <Content Include="Views\CharacterItem\Create.cshtml" />
+    <Content Include="Views\CharacterWeapon\Edit.cshtml" />
+    <Content Include="Views\CharacterWeapon\Delete.cshtml" />
+    <Content Include="Views\CharacterWardrobe\Edit.cshtml" />
+    <Content Include="Views\CharacterWardrobe\Delete.cshtml" />
+    <Content Include="Views\CharacterWardrobe\Index.cshtml" />
+    <Content Include="Views\CharacterWeapon\Index.cshtml" />
+    <Content Include="Views\CharacterItem\Index.cshtml" />
+    <Content Include="Views\CharacterSpell\Index.cshtml" />
+    <Content Include="Views\CharacterSpell\Create.cshtml" />
+    <Content Include="Views\CharacterSpell\Edit.cshtml" />
+    <Content Include="Views\CharacterSpell\Delete.cshtml" />
+    <Content Include="Views\Wallet\Create.cshtml" />
+    <Content Include="Views\Wallet\Edit.cshtml" />
+    <Content Include="Views\Wallet\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

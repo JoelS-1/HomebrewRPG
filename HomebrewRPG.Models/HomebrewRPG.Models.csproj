@@ -57,13 +57,56 @@
     <Compile Include="CharacterCreate.cs" />
     <Compile Include="CharacterDetail.cs" />
     <Compile Include="CharacterEdit.cs" />
+    <Compile Include="JoinModels\CharacterItemModels\CharacterItemCreate.cs" />
+    <Compile Include="JoinModels\CharacterItemModels\CharacterItemDetail.cs" />
+    <Compile Include="JoinModels\CharacterItemModels\CharacterItemEdit.cs" />
+    <Compile Include="JoinModels\CharacterItemModels\CharacterItemList.cs" />
     <Compile Include="CharacterListItem.cs" />
+    <Compile Include="CharacterSheetModel.cs" />
+    <Compile Include="JoinModels\CharacterSpell\CharacterSpellCreate.cs" />
+    <Compile Include="JoinModels\CharacterSpell\CharacterSpellDetail.cs" />
+    <Compile Include="JoinModels\CharacterSpell\CharacterSpellEdit.cs" />
+    <Compile Include="JoinModels\CharacterWardrobeModels\CharacterWardrobeCreate.cs" />
+    <Compile Include="JoinModels\CharacterWardrobeModels\CharacterWardrobeDetail.cs" />
+    <Compile Include="JoinModels\CharacterWardrobeModels\CharacterWardrobeEdit.cs" />
+    <Compile Include="JoinModels\CharacterWeaponModels\CharacterWeaponCreate.cs" />
+    <Compile Include="JoinModels\CharacterWeaponModels\CharacterWeaponDetail.cs" />
+    <Compile Include="JoinModels\CharacterWeaponModels\CharacterWeaponEdit.cs" />
+    <Compile Include="HeroicModels\HeroicDetail.cs" />
+    <Compile Include="HeroicModels\HeroicCreate.cs" />
+    <Compile Include="HeroicModels\HeroicEdit.cs" />
+    <Compile Include="HeroicModels\HeroicListItem.cs" />
+    <Compile Include="ItemModels\ItemListItem.cs" />
+    <Compile Include="ItemModels\ItemCreate.cs" />
+    <Compile Include="ItemModels\ItemDetail.cs" />
+    <Compile Include="ItemModels\ItemEdit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SpellModels\SpellCreate.cs" />
+    <Compile Include="SpellModels\SpellDetail.cs" />
+    <Compile Include="SpellModels\SpellEdit.cs" />
+    <Compile Include="SpellModels\SpellListItem.cs" />
+    <Compile Include="WalletModels\WalletCreate.cs" />
+    <Compile Include="WalletModels\WalletDetail.cs" />
+    <Compile Include="WalletModels\WalletEdit.cs" />
+    <Compile Include="WalletModels\WalletListItem.cs" />
+    <Compile Include="WardrobeItemModels\WardrobeItemCreate.cs" />
+    <Compile Include="WardrobeItemModels\WardrobeItemDetail.cs" />
+    <Compile Include="WardrobeItemModels\WardrobeItemEdit.cs" />
+    <Compile Include="WardrobeItemModels\WardrobeListItem.cs" />
+    <Compile Include="WeaponModels\WeaponCreate.cs" />
+    <Compile Include="WeaponModels\WeaponDetail.cs" />
+    <Compile Include="WeaponModels\WeaponEdit.cs" />
+    <Compile Include="WeaponModels\WeaponListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\HomebrewRPG.Data\HomebrewRPG.Data.csproj">
+      <Project>{72E358FA-A349-4911-A8E6-3A55A84EC9B9}</Project>
+      <Name>HomebrewRPG.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

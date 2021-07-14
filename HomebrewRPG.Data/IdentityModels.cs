@@ -33,7 +33,16 @@ namespace HomebrewRPG.Data
         }
 
         public DbSet<Character> Characters { get; set; }
-        //public DbSet<Weapon> Weapons { get; set; }
+        public DbSet<Weapon> Weapons { get; set; }
+        public DbSet<Item> Items { get; set; }
+        public DbSet<Heroic> Heroics { get; set; }
+        public DbSet<Wallet> Wallets { get; set; }
+        public DbSet<Spell> Spells { get; set; }
+        public DbSet<WardrobeItem> WardrobeItems { get; set; }
+        public DbSet<CharacterItem> CharacterItems { get; set; }
+        public DbSet<CharacterWeapon> CharacterWeapons { get; set; }
+        public DbSet<CharacterWardrobe> CharacterWardrobes { get; set; }
+        public DbSet<CharacterSpell> CharacterSpells { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
