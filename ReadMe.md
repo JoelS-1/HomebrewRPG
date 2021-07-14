@@ -13,17 +13,19 @@ When the project is downloaded and opened you should be able to simply run it an
 ## Azure
 This site is deployed on azure as found here:
 https://homebrewrpg.azurewebsites.net/
+Currently logging in will not work on azure, spent a good chunk of time on this and will need to revisit this later. Possible connection string or database read issue.
 
 ## Down the road
 I plan to continue working on improvements for this application. Some major things that likely need implemented:
 
-* Partial views to create the character sheet for scalability
-* Edit partial views for more seamless in game changes
+* Partial views to create the character sheet for modular implementation
+* Edit partial views for more seamless in game changes to character sheet
 
 ### Nice to implement features I may look to move into:
 * Campaigns players can join
 * User roles (including a game master view)
 * An item shop
+* Auto character creater for GM
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
