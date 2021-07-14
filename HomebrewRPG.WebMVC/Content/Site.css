@@ -3,7 +3,17 @@
     padding-bottom: 20px;
 }
 
-.navbar {
+.h1, .h2, .h3, .h4, h1, h2, h3, h4 {
+    font-family: IM Fell English SC, serif;
+    font-weight: 400;
+}
+.fancy-text {
+    font-family: IM Fell English SC, serif;
+    font-size: 110%;
+}
+
+
+    .navbar {
     padding: .5em;
     background-color: #393E46;
 }
@@ -37,12 +47,23 @@
     color: #eeeeee;
     border-color: #53a2be;
 }
+.btn-primary a{
+    background-color: #53A2BE;
+    color: #eeeeee;
+    border-color: #53a2be;
+}
     .btn-primary:hover {
+        background-color: #393e46;
+    }
+    .btn-primary a:hover {
         background-color: #393e46;
     }
 
 .padding {
     padding-top: 2rem;
+}
+.spacing{
+    margin-top: 2rem;
 }
 .img-fluid{
     max-width: 100%;
@@ -66,14 +87,53 @@
 input,
 select,
 textarea {
-    max-width: 280px;
+/*    max-width: 280px;*/
 }
 
 footer {
 font-size: 70%;
 }
 
-/*below is for create page*/
+/*index page*/
+.card {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+    padding: .5em;
+}
+.fa-trash {
+    color: #393E46;
+    padding-top: 0.8em;
+}
+
+    .fa-trash:hover {
+        color: #dc3545;
+    }
+.fa-edit {
+    color: #393E46;
+    padding-top: 0.8em;
+}
+
+    .fa-edit:hover {
+        color: dodgerblue;
+    }
+.bg-danger:hover{
+    color: white;
+    background-color: red;
+}
+
+/*create page*/
 .tab {
     display: none;
 }
@@ -89,13 +149,96 @@ font-size: 70%;
     opacity: 0.5;
 }
 
-.step-active {
-    opacity: 1;
-}
+    .step.active {
+        background-color: #04AA6D;
+    }
 
 .step-finish {
     background-color: darkslategrey;
 }
+.form-group {
+    padding: .5em;
+    margin: 0.2em;
+}
+
+/*character sheet*/
+.tab-sheet {
+    overflow: hidden;
+
+}
+.item-spacer{
+    padding-bottom: 5.5em;
+}
+.progress-bar {
+    background-color: #204d74;
+}
+.progress{
+    background-color: darkred;
+    margin-bottom: 0.1em;
+}
+.click{
+    padding: 0;
+    margin: 0;
+}
+.bg-success:hover{
+    background-color: forestgreen;
+}
+.shield {
+    height: 40px;
+    width: 40px;
+    border: 2px solid;
+    border-radius: 50% 50% 50% 50% / 12% 12% 88% 88%;
+    display: inline-block;
+    background-color: dimgrey;
+    color: white;
+    text-align: center;
+    padding: 0.65em;
+}
+.circle {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: rebeccapurple;
+    color: white;
+    text-align: center;
+    padding: 0.7em;
+}
+
+
+/* Style the buttons that are used to open the tab content */
+.tab-sheet button {
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+    /* Change background color of buttons on hover */
+    .tab-sheet button:hover {
+        background-color: #ddd;
+    }
+
+    /* Create an active/current tablink class */
+    .tab-sheet button.active {
+        background-color: #ccc;
+    }
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+}
+
+
+
+
+
+
+
+
 
 
 

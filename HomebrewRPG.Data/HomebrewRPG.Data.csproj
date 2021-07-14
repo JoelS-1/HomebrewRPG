@@ -56,6 +56,7 @@
   <ItemGroup>
     <Compile Include="Character.cs" />
     <Compile Include="CharacterItem.cs" />
+    <Compile Include="CharacterSpell.cs" />
     <Compile Include="CharacterWardrobe.cs" />
     <Compile Include="CharacterWeapon.cs" />
     <Compile Include="Heroic.cs" />
@@ -68,6 +69,18 @@
     <Compile Include="Migrations\202107101732058_added stats to weapon and wardrobe.cs" />
     <Compile Include="Migrations\202107101732058_added stats to weapon and wardrobe.Designer.cs">
       <DependentUpon>202107101732058_added stats to weapon and wardrobe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107130312154_item change.cs" />
+    <Compile Include="Migrations\202107130312154_item change.Designer.cs">
+      <DependentUpon>202107130312154_item change.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107130609366_Spell Join Table.cs" />
+    <Compile Include="Migrations\202107130609366_Spell Join Table.Designer.cs">
+      <DependentUpon>202107130609366_Spell Join Table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107140136577_removed uses on item.cs" />
+    <Compile Include="Migrations\202107140136577_removed uses on item.Designer.cs">
+      <DependentUpon>202107140136577_removed uses on item.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Money.cs" />
@@ -86,6 +99,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107101732058_added stats to weapon and wardrobe.resx">
       <DependentUpon>202107101732058_added stats to weapon and wardrobe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107130312154_item change.resx">
+      <DependentUpon>202107130312154_item change.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107130609366_Spell Join Table.resx">
+      <DependentUpon>202107130609366_Spell Join Table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107140136577_removed uses on item.resx">
+      <DependentUpon>202107140136577_removed uses on item.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

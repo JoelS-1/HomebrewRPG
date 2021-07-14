@@ -10,9 +10,11 @@ namespace HomebrewRPG.Models.ItemModels
     public class ItemCreate
     {
         [Required]
+        [Display(Name ="Name")]
         public string ItemName { get; set; }
         [Required]
         public string Description { get; set; }
-        public int Uses { get; set; }
+        [Display(Name="Consumable?")]
+        public bool IsConsumable { get; set; }
     }
 }

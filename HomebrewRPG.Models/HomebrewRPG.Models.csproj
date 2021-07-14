@@ -63,6 +63,9 @@
     <Compile Include="CharacterItemModels\CharacterItemList.cs" />
     <Compile Include="CharacterListItem.cs" />
     <Compile Include="CharacterSheetModel.cs" />
+    <Compile Include="CharacterSpell\CharacterSpellCreate.cs" />
+    <Compile Include="CharacterSpell\CharacterSpellDetail.cs" />
+    <Compile Include="CharacterSpell\CharacterSpellEdit.cs" />
     <Compile Include="CharacterWardrobeModels\CharacterWardrobeCreate.cs" />
     <Compile Include="CharacterWardrobeModels\CharacterWardrobeDetail.cs" />
     <Compile Include="CharacterWardrobeModels\CharacterWardrobeEdit.cs" />
@@ -73,7 +76,6 @@
     <Compile Include="HeroicModels\HeroicCreate.cs" />
     <Compile Include="HeroicModels\HeroicEdit.cs" />
     <Compile Include="HeroicModels\HeroicListItem.cs" />
-    <Compile Include="InventoryModels\InventoryCreate.cs" />
     <Compile Include="ItemModels\ItemListItem.cs" />
     <Compile Include="ItemModels\ItemCreate.cs" />
     <Compile Include="ItemModels\ItemDetail.cs" />

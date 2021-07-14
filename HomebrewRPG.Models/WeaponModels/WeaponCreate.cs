@@ -10,28 +10,36 @@ namespace HomebrewRPG.Models.WeaponModels
     public class WeaponCreate
     {
         [Required]
+        [Display(Name ="Name")]
         public string WeaponName { get; set; }
         [Required]
         public string Description { get; set; }
         [Required]
+        [Display(Name = "Weapon Type")]
         public string WeaponType { get; set; }
 
         [Required]
+        [Display(Name = "Damage Dice")]
         public string DamageDice { get; set; }
         [Required]
         public int Range { get; set; }
         [Required]
+        [Display(Name = "Critical Strikes at")]
         public string CriticalRange { get; set; }
         [Required]
         public string Special { get; set; }
 
         public int Parrying { get; set; }
+        [Display(Name = "Physical Block")]
         public int PhysicalBlocking { get; set; }
+        [Display(Name = "Magical Block")]
         public int MagicalBlocking { get; set; }
 
         [Required]
+        [Display(Name = "Damage Modifier")]
         public int DamageModifier { get; set; }
         [Required]
+        [Display(Name = "Prowess Bonus")]
         public int ProwessBonus { get; set; }
 
         public int Health { get; set; }

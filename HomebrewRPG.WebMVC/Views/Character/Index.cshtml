@@ -4,59 +4,61 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<div class="row padding">
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-@if (TempData.ContainsKey("SaveResult"))
-{
-    <div class="alert" alert-success fade in" role="alert">
-        @ViewBag.SaveResult
-        <button type="button" class="close" data-dismiss="alert">
-            <span>&times;</span>
-        </button>
+    <div class="col-sm-12 col-md-6 col-md-offset-2 text-center">
+
+        <h2>Your Characters</h2>
+        <h3>Which character would you like to select?</h3>
+
+
+
+        @foreach (var item in Model)
+        {
+            <div class="container-fluid padding">
+                <div class="row">
+                    <div class="card">
+                        <div class="row">
+
+                            <div class="col-xs-9">
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                    <h4>@Html.DisplayFor(modelItem => item.CharacterName)</h4>
+
+                                    </div>
+                                </div>
+                                    <div class="row padding">
+                                        <div class="col-xs-6">
+                                            <p class="fancy-text">
+                                                @Html.DisplayNameFor(model => model.Race):
+                                                @Html.DisplayFor(modelItem => item.Race)
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <p class="fancy-text">
+                                                @Html.DisplayNameFor(model => model.CharacterLevel):
+                                                @Html.DisplayFor(modelItem => item.CharacterLevel)
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            <div class="col-xs-3">
+                                <a href='@Url.Action("Delete", "Character", new { id = item.CharacterId })'><i class="fa fa-trash fa-lg"></i></a>
+                            </div>
+                            </div>
+                        <a href='@Url.Action("CharacterSheet", "Character", new { id = item.CharacterId })' class="btn btn-primary btn-lg">Select</a>
+                    </div>
+                </div>
+            </div>
+        }
+        <div class="row padding">
+            <a href='@Url.Action("Create", "Character")' class="btn btn-primary btn-lg">Create New</a>
+        </div>
     </div>
-}
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.CharacterId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CharacterName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Race)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CharacterLevel)
-        </th>
-        <th></th>
-    </tr>
+</div>
+@*
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.CharacterId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CharacterName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Race)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CharacterLevel)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.CharacterId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.CharacterId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.CharacterId })
-                @Html.ActionLink("Character Sheet", "CharacterSheet", new { id = item.CharacterId })
-            </td>
-        </tr>
-    }
-
-</table>
+    @Html.ActionLink("Details", "Details", new { id = item.CharacterId }) |
+    @Html.ActionLink("Delete", "Delete", new { id = item.CharacterId })
+    @Html.ActionLink("Character Sheet", "CharacterSheet", new { id = item.CharacterId })
+*@

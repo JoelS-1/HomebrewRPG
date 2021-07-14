@@ -6,45 +6,32 @@
 
 <h2>Details</h2>
 
-<div>
-    <h4>ItemDetail</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.ItemId)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.ItemId)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ItemName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ItemName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Uses)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Uses)
-        </dd>
-
-    </dl>
+<div class="row">
+    <div class="col-md-6 padding fancy-text">
+        <label>
+            @Html.DisplayNameFor(modelItem => modelItem.ItemName)
+        </label>
+        <p>
+            @Html.DisplayFor(modelItem => modelItem.ItemName)
+        </p>
+        <label>
+            @Html.DisplayNameFor(modelItem => modelItem.Description)
+        </label>
+        <p>
+            @Html.DisplayFor(modelItem => modelItem.Description)
+        </p>
+    </div>
+    <div class="col-md-6 padding fancy-text">
+        <label>
+            @Html.DisplayNameFor(modelItem => modelItem.IsConsumable)
+        </label>
+        <p>
+            @Html.DisplayFor(modelItem => modelItem.IsConsumable)
+        </p>
+    </div>
 </div>
+<hr />
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ItemId }) |
-    @Html.ActionLink("Back to List", "Index")
+    <a href='@Url.Action("Index", "Item")' class="btn btn-primary btn-lg">Back to List</a>
 </p>

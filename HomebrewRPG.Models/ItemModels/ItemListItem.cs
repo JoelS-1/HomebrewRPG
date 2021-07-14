@@ -11,6 +11,6 @@ namespace HomebrewRPG.Models
         public int ItemId { get; set; }
         public string ItemName { get; set; }
         public string Description { get; set; }
-        public int Uses { get; set; }
+        public bool IsConsumable { get; set; }
     }
 }

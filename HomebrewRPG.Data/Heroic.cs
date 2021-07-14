@@ -12,9 +12,10 @@ namespace HomebrewRPG.Data
         [Key]
         public int HeroicId { get; set; }
         [Required]
+        [Display(Name ="Name")]
         public string HeroicName { get; set; }
         [Required]
-        [Display(Name = "PersonalHeroic")]
+        [Display(Name = "Personal Heroic")]
         public bool IsPersonalHeroic { get; set; }
         [Required]
         public string Description { get; set; }

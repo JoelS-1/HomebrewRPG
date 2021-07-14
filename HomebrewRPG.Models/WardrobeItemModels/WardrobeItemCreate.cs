@@ -10,28 +10,36 @@ namespace HomebrewRPG.Models.WardrobeItemModels
     public class WardrobeItemCreate
     {
         [Required]
+        [Display(Name = "Name")]
         public string ArmorName { get; set; }
         [Required]
+        [Display(Name = "Armor Type")]
         public string ArmorType { get; set; }
         [Required]
         public string Description { get; set; }
 
         [Required]
+        [Display(Name = "Required Health")]
         public int HealthRequired { get; set; }
         [Required]
+        [Display(Name = "Required Strength")]
         public int StrengthRequired { get; set; }
         [Required]
+        [Display(Name = "Required Agility")]
         public int AgilityRequired { get; set; }
         [Required]
+        [Display(Name = "Required Magic")]
         public int MagicRequired { get; set; }
         [Required]
         public string Special { get; set; }
 
         [Required]
+        [Display(Name = "Armor")]
         public int PhysicalResistance { get; set; }
         [Display(Name = "Block Modifier")]
         public string BlockModifier { get; set; }
         [Required]
+        [Display(Name = "Magic Resist")]
         public int MagicalResistance { get; set; }
 
         public int Health { get; set; }

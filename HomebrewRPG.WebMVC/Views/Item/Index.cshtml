@@ -4,58 +4,58 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<div class="row padding">
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-@if (TempData.ContainsKey("SaveResult"))
-{
-    <div class="alert" alert-success fade in" role="alert">
-        @ViewBag.SaveResult
-        <button type="button" class="close" data-dismiss="alert">
-            <span>&times;</span>
-        </button>
+    <div class="col-sm-12 col-md-6 col-md-offset-2 text-center">
+
+        <h2>Item List</h2>
+        <h3>Which item would you like to select?</h3>
+
+
+
+        @foreach (var item in Model)
+        {
+            <div class="container-fluid padding">
+                <div class="row">
+                    <div class="card">
+                        <div class="row">
+
+                            <div class="col-xs-9">
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <h4>@Html.DisplayFor(modelItem => item.ItemName)</h4>
+
+                                    </div>
+                                </div>
+                                <div class="row padding">
+                                    <div class="col-xs-6">
+                                        <p class="fancy-text">
+                                            @Html.DisplayNameFor(model => model.Description):
+                                            @Html.DisplayFor(modelItem => item.Description)
+                                        </p>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <p class="fancy-text">
+                                            @Html.DisplayNameFor(model => model.IsConsumable):
+                                            @Html.DisplayFor(modelItem => item.IsConsumable)
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-3">
+                                <a href='@Url.Action("Delete", "Item", new { id = item.ItemId })'><i class="fa fa-trash fa-lg"></i></a>
+                            </div>
+                            <div class="col-xs-3 padding">
+                                <a href='@Url.Action("Edit", "Item", new { id = item.ItemId })'><i class="fas fa-edit fa-lg"></i></a>
+                            </div>
+                        </div>
+                        <a href='@Url.Action("Details", "Item", new { id = item.ItemId })' class="btn btn-primary btn-lg">Select</a>
+                    </div>
+                </div>
+            </div>
+        }
+        <div class="row padding">
+            <a href='@Url.Action("Create", "Item")' class="btn btn-primary btn-lg">Create New</a>
+        </div>
     </div>
-}
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ItemId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ItemName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Uses)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ItemId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ItemName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Uses)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.ItemId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.ItemId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ItemId })
-            </td>
-        </tr>
-    }
-
-</table>
+</div>

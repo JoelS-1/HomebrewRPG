@@ -42,6 +42,7 @@ namespace HomebrewRPG.Data
         public DbSet<CharacterItem> CharacterItems { get; set; }
         public DbSet<CharacterWeapon> CharacterWeapons { get; set; }
         public DbSet<CharacterWardrobe> CharacterWardrobes { get; set; }
+        public DbSet<CharacterSpell> CharacterSpells { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

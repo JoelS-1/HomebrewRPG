@@ -1,4 +1,6 @@
-﻿using HomebrewRPG.Models.CharacterWardrobeModels;
+﻿using HomebrewRPG.Models;
+using HomebrewRPG.Models.CharacterWardrobeModels;
+using HomebrewRPG.Models.WardrobeItemModels;
 using HomebrewRPG.Services;
 using Microsoft.AspNet.Identity;
 using System;
@@ -19,6 +21,29 @@ namespace HomebrewRPG.WebMVC.Controllers
 
         public ActionResult Create()
         {
+            ViewBag.Title = "New CharacterWardrobe";
+
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var characterService = new CharacterService(userId);
+            var wardrobeItemService = new WardrobeItemService(userId);
+
+            List<CharacterListItem> characters = characterService.GetCharacters().ToList();
+            var queryCharacter = from o in characters
+                                 select new SelectListItem()
+                                 {
+                                     Value = o.CharacterId.ToString(),
+                                     Text = o.CharacterName
+                                 };
+            ViewBag.CharacterId = queryCharacter.ToList();
+
+            List<WardrobeListItem> apparel = wardrobeItemService.GetWardrobeListItems().ToList();
+            var queryItem = from o in apparel
+                            select new SelectListItem()
+                            {
+                                Value = o.WardobeItemId.ToString(),
+                                Text = o.ArmorName
+                            };
+            ViewBag.WardrobeItemId = queryItem.ToList();
             return View();
         }
 
@@ -81,6 +106,28 @@ namespace HomebrewRPG.WebMVC.Controllers
             }
             ModelState.AddModelError("", "Your request could not be updated.");
             return View(model);
+        }
+
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateCharacterWardrobeService();
+            var model = svc.GetCharacterWardrobeById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletePost(int id)
+        {
+            var svc = CreateCharacterWardrobeService();
+            svc.DeleteCharacterWardrobe(id);
+
+            TempData["SaveResult"] = "Your apparel was removed";
+
+            return RedirectToAction("Index");
         }
     }
 }

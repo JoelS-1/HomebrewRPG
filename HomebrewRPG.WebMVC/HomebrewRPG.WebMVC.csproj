@@ -170,6 +170,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CharacterController.cs" />
     <Compile Include="Controllers\CharacterItemController.cs" />
+    <Compile Include="Controllers\CharacterSpellController.cs" />
     <Compile Include="Controllers\CharacterWardrobeController.cs" />
     <Compile Include="Controllers\CharacterWeaponController.cs" />
     <Compile Include="Controllers\HeroicController.cs" />
@@ -198,6 +199,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Images\annie-spratt-4aVUigDCLV8-unsplash.jpg" />
     <Content Include="Images\annie-spratt-xTaOPMa6wAE-unsplash.jpg" />
+    <Content Include="Images\bin.png" />
     <Content Include="Images\dndBackground.jpeg" />
     <Content Include="Images\FairyTale\png\001-sword.png" />
     <Content Include="Images\FairyTale\png\002-magic potion.png" />
@@ -259,6 +261,8 @@
     <Content Include="Images\vintage-textured-paper-background-vector.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="fonts\IMFellEnglish-Italic.ttf" />
+    <Content Include="fonts\IMFellEnglish-Regular.ttf" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -327,7 +331,6 @@
     <Content Include="Views\Heroic\Edit.cshtml" />
     <Content Include="Views\Heroic\Delete.cshtml" />
     <Content Include="Views\Character\CharacterSheet.cshtml" />
-    <Content Include="Views\CharacterItem\Create.cshtml" />
     <Content Include="Views\CharacterWeapon\Create.cshtml" />
     <Content Include="Views\CharacterWardrobe\Create.cshtml" />
     <Content Include="Views\Weapon\Create.cshtml" />
@@ -336,6 +339,25 @@
     <Content Include="Views\WardrobeItem\Create.cshtml" />
     <Content Include="Views\WardrobeItem\Details.cshtml" />
     <Content Include="Views\WardrobeItem\Edit.cshtml" />
+    <Content Include="Views\Weapon\Delete.cshtml" />
+    <Content Include="Views\WardrobeItem\Delete.cshtml" />
+    <Content Include="Views\Shared\_CharacterEditPartialView.cshtml" />
+    <Content Include="Views\Character\EditStats.cshtml" />
+    <Content Include="Views\Character\EditSkills.cshtml" />
+    <Content Include="Views\CharacterItem\Edit.cshtml" />
+    <Content Include="Views\CharacterItem\Delete.cshtml" />
+    <Content Include="Views\CharacterItem\Create.cshtml" />
+    <Content Include="Views\CharacterWeapon\Edit.cshtml" />
+    <Content Include="Views\CharacterWeapon\Delete.cshtml" />
+    <Content Include="Views\CharacterWardrobe\Edit.cshtml" />
+    <Content Include="Views\CharacterWardrobe\Delete.cshtml" />
+    <Content Include="Views\CharacterWardrobe\Index.cshtml" />
+    <Content Include="Views\CharacterWeapon\Index.cshtml" />
+    <Content Include="Views\CharacterItem\Index.cshtml" />
+    <Content Include="Views\CharacterSpell\Index.cshtml" />
+    <Content Include="Views\CharacterSpell\Create.cshtml" />
+    <Content Include="Views\CharacterSpell\Edit.cshtml" />
+    <Content Include="Views\CharacterSpell\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

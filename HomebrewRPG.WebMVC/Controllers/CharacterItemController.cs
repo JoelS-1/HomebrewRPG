@@ -1,4 +1,6 @@
-﻿using HomebrewRPG.Models.CharacterItemModels;
+﻿using HomebrewRPG.Data;
+using HomebrewRPG.Models;
+using HomebrewRPG.Models.CharacterItemModels;
 using HomebrewRPG.Services;
 using Microsoft.AspNet.Identity;
 using System;
@@ -19,6 +21,30 @@ namespace HomebrewRPG.WebMVC.Controllers
 
         public ActionResult Create()
         {
+            ViewBag.Title = "New CharacterItem";
+
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var characterService = new CharacterService(userId);
+            var itemService = new ItemService(userId);
+
+            List<CharacterListItem> characters = characterService.GetCharacters().ToList();
+            var queryCharacter = from o in characters
+                        select new SelectListItem()
+                        {
+                            Value = o.CharacterId.ToString(),
+                            Text = o.CharacterName
+                        };
+            ViewBag.CharacterId = queryCharacter.ToList();
+
+            List<ItemListItem> items = itemService.GetItems().ToList();
+            var queryItem = from o in items
+                        select new SelectListItem()
+                        {
+                            Value = o.ItemId.ToString(),
+                            Text = o.ItemName
+                        };
+            ViewBag.ItemId = queryItem.ToList();
+
             return View();
         }
 
@@ -62,6 +88,7 @@ namespace HomebrewRPG.WebMVC.Controllers
             var model =
                 new CharacterItemEdit
                 {
+                    CharacterItemId = detail.CharacterItemId,
                     CharacterId = detail.CharacterId,
                     ItemId = detail.ItemId,
                     Quantity = detail.Quantity

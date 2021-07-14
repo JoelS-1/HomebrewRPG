@@ -4,21 +4,18 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
-
-
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>CharacterWeaponCreate</h4>
+
+    <div class="form-horizontal padding">
+        <h4>Add Weapon</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
             @Html.LabelFor(model => model.WeaponId, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.WeaponId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownListFor(model => model.WeaponId, ViewBag.ItemId as SelectList, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.WeaponId, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -26,7 +23,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.CharacterId, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.CharacterId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownListFor(model => model.CharacterId, ViewBag.CharacterId as SelectList, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.CharacterId, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -34,23 +31,21 @@
         <div class="form-group">
             @Html.LabelFor(model => model.IsEquipped, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.IsEquipped)
-                    @Html.ValidationMessageFor(model => model.IsEquipped, "", new { @class = "text-danger" })
-                </div>
+                @Html.EditorFor(model => model.IsEquipped, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.IsEquipped, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Add" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
+<div class="row padding">
+    <a href='@Url.Action("Index", "Character")' class="btn btn-default btn-sm">Back to Characters</a>
 </div>
 
 @section Scripts {

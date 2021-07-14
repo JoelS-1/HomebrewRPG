@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,18 +10,27 @@ namespace HomebrewRPG.Models.WardrobeItemModels
     public class WardrobeItemDetail
     {
         public int WardobeItemId { get; set; }
+        [Display(Name = "Name")]
         public string ArmorName { get; set; }
+        [Display(Name = "Armor Type")]
         public string ArmorType { get; set; }
         public string Description { get; set; }
 
+        [Display(Name = "Required Health")]
         public int HealthRequired { get; set; }
+        [Display(Name = "Required Strength")]
         public int StrengthRequired { get; set; }
+        [Display(Name = "Required Agility")]
         public int AgilityRequired { get; set; }
+        [Display(Name = "Required Magic")]
         public int MagicRequired { get; set; }
         public string Special { get; set; }
 
+        [Display(Name = "Armor")]
         public int PhysicalResistance { get; set; }
+        [Display(Name = "Block Modifier")]
         public string BlockModifier { get; set; }
+        [Display(Name = "Magic Resist")]
         public int MagicalResistance { get; set; }
 
         public int Health { get; set; }

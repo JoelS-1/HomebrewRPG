@@ -100,15 +100,16 @@ namespace HomebrewRPG.Services
             return query.ToArray();
         }
 
-        public CharacterWardrobeEdit GetCharacterWardrobeById(int id)
+        public CharacterWardrobeDetail GetCharacterWardrobeById(int id)
         {
             var entity =
                 _ctx
                     .CharacterWardrobes
                     .Single(e => e.CharacterWardobeId == id && e.OwnerId == _userId);
-            CharacterWardrobeEdit detail =
-                new CharacterWardrobeEdit
+            CharacterWardrobeDetail detail =
+                new CharacterWardrobeDetail
                 {
+                    CharacterWardrobeId = entity.CharacterWardobeId,
                     CharacterId = entity.CharacterId,
                     WardrobeItemId = entity.WardrobeItemId,
                     IsEquipped = entity.IsEquipped,
@@ -123,6 +124,7 @@ namespace HomebrewRPG.Services
                     .CharacterWardrobes
                     .Single(e => e.CharacterWardobeId == model.CharacterWardrobeId && e.OwnerId == _userId);
 
+            entity.CharacterWardobeId = model.CharacterWardrobeId;
             entity.CharacterId = model.CharacterId;
             entity.WardrobeItemId = model.WardrobeItemId;
             entity.IsEquipped = model.IsEquipped;
