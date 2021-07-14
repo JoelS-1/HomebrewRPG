@@ -85,6 +85,10 @@
     <Compile Include="SpellModels\SpellDetail.cs" />
     <Compile Include="SpellModels\SpellEdit.cs" />
     <Compile Include="SpellModels\SpellListItem.cs" />
+    <Compile Include="WalletModels\WalletCreate.cs" />
+    <Compile Include="WalletModels\WalletDetail.cs" />
+    <Compile Include="WalletModels\WalletEdit.cs" />
+    <Compile Include="WalletModels\WalletListItem.cs" />
     <Compile Include="WardrobeItemModels\WardrobeItemCreate.cs" />
     <Compile Include="WardrobeItemModels\WardrobeItemDetail.cs" />
     <Compile Include="WardrobeItemModels\WardrobeItemEdit.cs" />

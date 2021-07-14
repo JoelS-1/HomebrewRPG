@@ -178,6 +178,7 @@
     <Compile Include="Controllers\ItemController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\SpellController.cs" />
+    <Compile Include="Controllers\WalletController.cs" />
     <Compile Include="Controllers\WardrobeItemController.cs" />
     <Compile Include="Controllers\WeaponController.cs" />
     <Compile Include="Global.asax.cs">
@@ -361,6 +362,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Wallet\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

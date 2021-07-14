@@ -63,6 +63,7 @@
     <Compile Include="ItemService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SpellService.cs" />
+    <Compile Include="WalletService.cs" />
     <Compile Include="WardrobeItemService.cs" />
     <Compile Include="WeaponService.cs" />
   </ItemGroup>
