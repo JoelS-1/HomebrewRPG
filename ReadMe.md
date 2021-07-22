@@ -10,11 +10,6 @@ This program can be downloaded using the clone or download zip options from the 
 
 When the project is downloaded and opened you should be able to simply run it and be good to go. Startup should be set to HomeBrewRPG.WebMVC
 
-## Azure
-This site is deployed on azure as found here:
-https://homebrewrpg.azurewebsites.net/
-Currently logging in will not work on azure, spent a good chunk of time on this and will need to revisit this later. Possible connection string or database read issue.
-
 ## Down the road
 I plan to continue working on improvements for this application. Some major things that likely need implemented:
 
